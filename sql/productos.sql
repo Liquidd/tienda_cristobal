@@ -36,6 +36,7 @@ CREATE TABLE `productos` (
   `descripcion` varchar(100) NOT NULL,
   `precio` decimal(10,2) NOT NULL,
   `cantidad_existente` tinyint(4) NOT NULL,
+  'estado' tinyint(1) DEFAULT NULL,
   `alta_producto` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -44,10 +45,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `modelo`, `marca`, `categoria`, `descripcion`, `precio`, `cantidad_existente`, `alta_producto`) VALUES
-(1, 'Laptop VivoBook X556UQ-NB51', 'ASUS', 'Electronicos', 'descripcion', '2000.00', 10, '2018-07-18 15:17:54'),
-(2, 'Laptop VivoBook X522U', 'ASUS', 'electronicos', 'blabla', '11.00', -12, '2018-07-19 01:25:59'),
-(3, 'Laptop VivoBook', 'ASUS', 'electronicos', 'blabla', '-1.00', -12, '2018-07-19 01:33:33'),
-(4, 'Laptop VivoBook X23', 'ASUS', 'electronicos', 'blabla', '11.00', 12, '2018-07-19 02:27:27');
+(1, 'Laptop VivoBook X556UQ-NB51', 'ASUS', 'Electronicos', 'descripcion', '2000.00', 10, '2018-07-18 15:17:54',1),
+(2, 'Laptop VivoBook X522U', 'ASUS', 'electronicos', 'blabla', '11.00', -12, '2018-07-19 01:25:59',1),
+(3, 'Laptop VivoBook', 'ASUS', 'electronicos', 'blabla', '-1.00', -12, '2018-07-19 01:33:33',1),
+(4, 'Laptop VivoBook X23', 'ASUS', 'electronicos', 'blabla', '11.00', 12, '2018-07-19 02:27:27',1);
 
 --
 -- Índices para tablas volcadas
