@@ -5,6 +5,11 @@ WHERE historial.id_usuario = 87
 
 SELECT COUNT( id_producto ) AS total FROM historial GROUP BY id_producto ORDER BY total DESC
 
+SELECT productos.id_producto as id_producto,COUNT( productos.id_producto ) AS total,productos.cantidad_existente as cantidad_existente,productos.estado as estado
+FROM historial INNER JOIN productos ON productos.id_producto = historial.id_producto 
+WHERE productos.cantidad_existente > 0 AND productos.estado = 1 
+GROUP BY id_producto ORDER BY total DESC LIMIT 3
+
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `alta_producto`(IN `_modelo` VARCHAR(50), IN `_marca` VARCHAR(50), IN `_categoria` VARCHAR(50), IN `_descripcion` VARCHAR(100), IN `_cantidad` TINYINT(4), IN `_precio` INT(10), OUT `respuesta` VARCHAR(100))
