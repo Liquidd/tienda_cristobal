@@ -7,7 +7,11 @@ class Controlador_general extends CI_Controller {
     }
     public function view($view, $params = null)
     {
-        // llega por parametro la vista a cargar dentro del contenedor layout y valore a la vista (parmetro opcional iniciando con valor nulo)
+        /**
+         * @view parametro por donde llega la vista que se desea cargar dentro del layout
+         * @param valores que se cargan en la vista (opcional iniciando como nulo)
+         * @data['content'] arreglo que se mandara a llamar desde el contendor del layout
+         */
         $data = array();
         $data['content'] = $this->load->view('vistas/'.$view, $params, true);
         $this->load->view('vistas/layout',$data, false);
