@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inicio | GA Recompensas</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>estoy en log in</h1>
+    <nav>
+        <h1>Navegacion</h1>
+    </nav>
+    <header>
+        <h1> Header </h1>
+    </header>
+    <section>
+        
+    </section>
+    <footer>
+        <h1> FOOTER </h1>
+    </footer>
 </body>
 </html>
