@@ -1,10 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 include_once('controlador_general.php');
 class Productos extends Controlador_general {
+
     public function __construct(){
         parent::__construct();
         $this->load->model("m_productos",'',TRUE);
-
+        $this->load->library('cart');
+        
     }
     function index(){
         $lista_productos = $this->m_productos->lista_productos();
@@ -31,7 +33,7 @@ class Productos extends Controlador_general {
                 $array_historial[$key]["fecha_compra"] = $value['fecha_compra']; 
             }
 
-        $this->view('productos', array("productos" =>$array_productos,"historial" =>$array_historial));
+        $this->view('login', array("productos" =>$array_productos,"historial" =>$array_historial));
     }
     public function historial_usuario()
     {
@@ -45,11 +47,48 @@ class Productos extends Controlador_general {
 		$respuesta = $this->m_productos->informacion_producto($id_producto);
 		echo json_encode($respuesta[0]);
     }
-    public function alta_venta()
+    public function agregar_carrito()
     {
-        $datos = $this->input->post("datos");
-        $respuesta = $this->m_productos->alta_venta($datos['id_cliente'],$datos['id_producto'],$datos['cantidad_comprada'],$datos['pago']);
+        /**
+         * @productos_carrito: array de arrays que almacena los valores de los productos
+         * cart almacena los valores de los productos agregardos al arreglo data no en la base de datos
+         */
+        $productos_carrito = $this->input->post("datos");
+        $data = array(
+            'id'      => $productos_carrito["id_producto"],
+            'qty'     => $productos_carrito["cantidad"],
+            'price'   => $productos_carrito["precio"],
+            'name'    => $productos_carrito["modelo"]
+        );
+        $this->cart->insert($data);
+    }
+    public function limpiar_carrito(){
+
+    }
+    public function confirmar_venta()
+    {
+        /**
+         * $datos : arreglo con valores a insertar
+         * $carrito: almacena los productos seleccionados y guardados en el metodo 'cart'
+         * $array_venta: arreglo con valores de productos confirmados por cliente
+         * id_cliente : hereda del control general el id del usuario logeado
+         */
+        $id_cliente = $this->id_user;
+        $carrito = $this->cart->contents();
+
+        foreach ($carrito as $value) {
+            $confimar_venta = array(
+                'id_cliente'  => $id_cliente,
+                'id_producto' 	=> $value['id'],
+                'cantidad_comprada' => $value['qty'],
+                'pago' 		=> $value['price']
+            );
+        }
+        $respuesta = $this->m_productos->alta_venta($confimar_venta['id_cliente'],$confimar_venta['id_producto'],$confimar_venta['cantidad_comprada'],$confimar_venta['pago']);
         echo $respuesta;
+        if ($respuesta == "Nueva Compra Registrado") {
+            $this->cart->destroy();
+        }
     }
     public function alta_producto()
     {

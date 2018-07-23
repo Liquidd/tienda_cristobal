@@ -1,35 +1,17 @@
-<div>
-    <select class="custom-select">
-        <?php foreach($historial as $value){?>
-            <option><?php echo $value['fecha_compra'];?></option>                                                                                                                                   
-        <?php }?>
-    </select>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th>Modelo</th>
-                <th>Marca</th>
-                <th>Categoria</th>
-                <th>Descripcion</th>
-                <th>precio</th>
-                <th>cantidad_existente</th>
-                <th>estado</th>
-                <th>alta_producto</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($productos as $value){?>
-                <tr id="<?php echo $value['id_producto'];?>">
-                    <td><?php echo $value['modelo'];?></td>
-                    <td><?php echo $value['marca'];?></td>   
-                    <td><?php echo $value['categoria'];?></td>                                    
-                    <td><?php echo $value['descripcion'];?></td>
-                    <td><?php echo $value['precio'];?></td>
-                    <td><?php echo $value['cantidad_existente'];?></td>
-                    <td><?php echo $value['estado'];?></td>
-                    <td><?php echo $value['alta_producto'];?></td>
-                </tr>
-            <?php }?>
-        </tbody>
-    </table>
-</div>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="fadeIn first">
+                <img src="<?php echo base_url()?>assets/img/ga_nuevo.png" id="icon" />
+            </div>
+            <!-- Login Form -->
+            <form>
+                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Nombre de usuario">
+                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Contraseña">
+                <input type="submit" class="fadeIn fourth" value="INGRESAR">
+            </form>
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Olvidaste la ContraseñaA?</a>
+            </div>
+        </div>
+    </div>
