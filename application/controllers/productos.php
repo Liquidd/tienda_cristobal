@@ -33,7 +33,7 @@ class Productos extends Controlador_general {
                 $array_historial[$key]["fecha_compra"] = $value['fecha_compra']; 
             }
 
-        $this->view('login', array("productos" =>$array_productos,"historial" =>$array_historial));
+        $this->view('index', array("productos" =>$array_productos,"historial" =>$array_historial));
     }
     public function historial_usuario()
     {
@@ -41,14 +41,12 @@ class Productos extends Controlador_general {
 		$respuesta = $this->m_productos->historial_usuario($id_usuario);
 		echo json_encode($respuesta[0]);
     }
-    public function informacion_producto(Type $var = null)
-    {
+    public function informacion_producto($id_producto){
 		$id_producto = $this->input->post("id_producto");
 		$respuesta = $this->m_productos->informacion_producto($id_producto);
 		echo json_encode($respuesta[0]);
     }
-    public function agregar_carrito()
-    {
+    public function agregar_carrito(){
         /**
          * @productos_carrito: array de arrays que almacena los valores de los productos
          * cart almacena los valores de los productos agregardos al arreglo data no en la base de datos
@@ -90,21 +88,18 @@ class Productos extends Controlador_general {
             $this->cart->destroy();
         }
     }
-    public function alta_producto()
-    {
+    public function alta_producto(){
         $datos = $this->input->post("datos");
         $respuesta = $this->m_productos->alta_producto($datos['modelo'],$datos['marca'],$datos['categoria'],$datos['descripcion'],$datos['cantidad'],$datos['precio']);
         echo $respuesta;
     }
-    public function actualizar_producto()
-    {
+    public function actualizar_producto(){
         $datos = $this->input->post("datos");
         $id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->actualizar_producto($id_producto,$datos);
         echo $respuesta;
     }
-    public function desactivar_producto()
-    {
+    public function desactivar_producto(){
         $datos = $this->input->post("datos");
         $id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->desactivar_producto($id_producto,$datos);

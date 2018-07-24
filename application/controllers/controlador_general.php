@@ -15,17 +15,20 @@ class Controlador_general extends CI_Controller {
          * @param valores que se cargan en la vista (opcional iniciando como nulo)
          * @data['content'] arreglo que se mandara a llamar desde el contendor del layout
          */
+
         $data = array();
         $params["nombre"] = $this->name_user;
         $data['content'] = $this->load->view('vistas/'.$view, $params, true);
-        $this->load->view('layout/head');
-        $this->load->view('layout/nav');
-        $this->load->view('layout/header');
-
-        $this->load->view('layout/main_layout',$data, false);
-
-        $this->load->view('layout/footer');
-
+        if ($view == "login") {
+            $this->load->view('layout/main_layout',$data, false);            
+        }
+        else {
+            $this->load->view('layout/head');
+            $this->load->view('layout/nav');
+            $this->load->view('layout/header');
+            $this->load->view('layout/main_layout',$data, false);
+            $this->load->view('layout/footer');
+        }
     }
  
 }
