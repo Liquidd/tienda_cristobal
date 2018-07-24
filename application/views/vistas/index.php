@@ -80,7 +80,7 @@
                   <img class="d-block img-fluid" src="<?php echo base_url()?>assets/img/banner1.jpg">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block img-fluid" ssrc="<?php echo base_url()?>assets/img/banner4.jpg">
+                  <img class="d-block img-fluid" src="<?php echo base_url()?>assets/img/banner2.jpg">
                 </div>
                 <div class="carousel-item">
                   <img class="d-block img-fluid" src="<?php echo base_url()?>assets/img/banner3.jpg">
@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="separator clear-left clearfix">
                                     <p class="btn-add price-p">
-                                        <a class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span>Agregar</a>
+                                        <a class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span>Agregarr</a>
                                     </p>
                                     <p class="pricetext"><?php echo "$ ".$value['precio'];?></p>
                                 </div>
