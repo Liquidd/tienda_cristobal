@@ -15,7 +15,6 @@ class Productos extends Controlador_general {
         $array_productos = array();
         $array_historial = array();
         $array_productos_principales = array();
-
         if($lista_productos !==FALSE)
             foreach ($lista_productos as $key => $value) {
                 
@@ -34,6 +33,10 @@ class Productos extends Controlador_general {
             }
 
         $this->view('index', array("productos" =>$array_productos,"historial" =>$array_historial));
+    }
+    public function login(Type $var = null)
+    {
+        $this->view('login');
     }
     public function historial_usuario()
     {
