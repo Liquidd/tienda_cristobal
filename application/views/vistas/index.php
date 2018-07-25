@@ -80,7 +80,7 @@
                   <img class="d-block img-fluid" src="<?php echo base_url()?>assets/img/banner1.jpg">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block img-fluid" src="<?php echo base_url()?>assets/img/banner2.jpg">
+                  <img class="d-block img-fluid" src="<?php echo base_url()?>assets/img/banner4.jpg">
                 </div>
                 <div class="carousel-item">
                   <img class="d-block img-fluid" src="<?php echo base_url()?>assets/img/banner3.jpg">
