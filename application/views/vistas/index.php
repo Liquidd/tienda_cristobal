@@ -18,10 +18,10 @@
 
   <body>
 <style>
-  nav{
+  .navbar{
     font-weight: bold;
-    background: white;
-    border:white;
+    background: #FFFFFF;
+    border-bottom: 1px solid #646363;
   }
   a{ color: inherit; }
   .content-page{

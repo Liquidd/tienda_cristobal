@@ -12,3 +12,13 @@
     <script src="<?php echo base_url()?>node_modules/jquery/dist/jquery.min.js"></script> 
     <script src="<?php echo base_url()?>node_modules/boostrap4/js/bootstrap.bundle.min.js"></script>
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.wrapper{
+    padding-top:20px;
+    padding-bottom: 150px;
+}
+</style>

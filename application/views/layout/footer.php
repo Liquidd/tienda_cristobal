@@ -3,31 +3,35 @@
         <div class="container">
             <div class="">
                 <div class="col-lg-4">
-                <h3> GA Hipotecario </h3>
+                <h3>Menu Principal</h3>
                 <ul>
-                    <li><a href="#"> Hermosillo Sonora | Quintero Arce, #32, Col.San Andrés </a></li>
-                    <li><a href="#"> www.gahipotecario.com</a> </li>
-                    <li><a href="#"> gonzalodd@gmail.com</a> </li>
-                    <li><a href="#"> (662) 260 1343 6621890311</a> </li>
+                    <li><a href="#">Inicio</a></li>                           
+                    <li><a href="#">Recompensas</a></li>                           
+                    <li><a href="#">Historials</a></li>                           
+                    <li><a href="#">Ayuda</a></li>
                 </ul>
             </div>
-             <div class="col-lg-4">
-                <h3> Redes Sociales </h3>
-                    <div class="col-md-4">
-                        <div class="container">
-                            <div class="row">
-                                <div class="social">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-lg fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-lg fa-youtube"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-lg fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>                        
-				    </div>
+            <div class="">
+                <div class="col-lg-4">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><p>Hermosillo Sonora | Quintero Arce, #32, Col.San Andrés</p></li>
+                    <li><p>+6622 97 75 42</p></li>
+                    <li><p> www.mactenova.mx </p></li>
+                    <li><p>info.mactenova@gmail.com</p></li>
+                </ul>
+            </div>
+            <div class="">
+                <div class="col-lg-4">
+                <h3>Redes Sociales</h3>
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
             </div>
         <!--/.row--> 
@@ -36,21 +40,20 @@
     </div>
 </footer>
 <style>
-    footer{
-        padding-top: 150px;
-    }
+
     .footer {
-        background: #303436;
+        background: #f5f5f5;
         border-top: 10% solid #DDDDDD;
+        text-decoration: none;    
     }
     .footer h3 {
-        color: #4D95DC;
+        color: #888582;
         font-size: 18px;
         font-weight: 600;
         line-height: 27px;
         padding: 5px 0 10px;
         text-transform: uppercase;
-        border-bottom: 1px solid #656769;
+        border-bottom: 1px solid #888582;
     }
     .footer ul {
         font-size: 13px;
@@ -58,12 +61,16 @@
         margin-left: 0;
         padding-left: 0;
         margin-top: 15px;
-        color: #575859;
+        color: #888582;
+        list-style: none;    
     }
     .footer ul li a {
         padding: 0 0 5px 0;
         display: block;
-        color: #8A8A8A;
+        color: #888582;
+        list-style: none;  
+        text-decoration: none;    
+  
     }
     .social {
         margin: 0;
@@ -75,7 +82,6 @@
     }
     .social ul li {
         margin: 5px;
-        list-style: none outside none;
         display: inline-block;
     }
     .social i {
