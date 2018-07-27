@@ -1,63 +1,59 @@
-<footer class="fixed-bottom">
-    <div class="container">
-       <div class="row">       
-            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                <ul class="adress">
-                    <span>Direccion</span>    
-                    <li>
-                        <p>Hermosillo Sonora | Quintero Arce, #32, Col.San Andrés</p>
-                    </li>
-                </ul>
-                <ul class="social">
-                    <span>Redes Sociales</span>    
-                    <li>
-                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                    </li>                              
-                    <li>
-                        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                    </li>                                
-                    <li>
-                        <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
-                    </li>
-                    <li>
-                    <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                    </li>                                
-                    <li>
-                        <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                    </li>                              
-                </ul>
-            </div>                
-            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                <ul class="contact">
-                    <span>menu principal</span>    
-                    <li>
-                        <a href="#">Inicio</a>
-                    </li>                               
-                    <li>
-                        <a href="#">Recompensas</a>
-                    </li>                               
-                    <li>
-                        <a href="#">Ayuda</a>
-                    </li>                               
-                    <li>
-                        <a href="#">Historial </a>
-                    </li>
-                </ul>
-            </div>                
-            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                <ul class="contact">
-                    <span>Contacto</span>    
-                    <li>
-                        <a href="#">+90 1234 56769</a>
-                    </li>                               
-                    <li>
-                        <a href="#">www.mactenova.mx </a>
-                    </li>                               
-                    <li>
-                        <a href="#">info.mactenova@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
-        </div> 
-    </div>
+<footer class="section-footer bg-secondary">
+	<div class="container">
+		<section class="footer-top padding-top">
+			<div class="row">
+				<aside class="col-sm-3 col-md-3 white">
+					<h5 class="title">Customer Services</h5>
+					<ul class="list-unstyled">
+						<li> <a href="#">Help center</a></li>
+						<li> <a href="#">Money refund</a></li>
+						<li> <a href="#">Terms and Policy</a></li>
+						<li> <a href="#">Open dispute</a></li>
+					</ul>
+				</aside>
+				<aside class="col-sm-3  col-md-3 white">
+					<h5 class="title">Perfil</h5>
+					<ul class="list-unstyled">
+						<li> <a href="#"> User Login </a></li>
+						<li> <a href="#"> User register </a></li>
+						<li> <a href="#"> Account Setting </a></li>
+						<li> <a href="#"> My Orders </a></li>
+						<li> <a href="#"> Lista de Deseos </a></li>
+					</ul>
+				</aside>
+				<aside class="col-sm-3  col-md-3 white">
+					<h5 class="title">Nosotros</h5>
+					<ul class="list-unstyled">
+						<li> <a href="#"> Our history </a></li>
+						<li> <a href="#"> How to buy </a></li>
+						<li> <a href="#"> Delivery and payment </a></li>
+						<li> <a href="#"> Advertice </a></li>
+						<li> <a href="#"> Partnership </a></li>
+					</ul>
+				</aside>
+				<aside class="col-sm-3">
+					<article class="white">
+						<h5 class="title">Contacto</h5>
+						<p>
+							<strong>Telefono: </strong> +123456789 <br> 
+						</p>
+						 <div class="btn-group white">
+						    <a class="btn btn-facebook" title="Facebook" target="_blank" href="#"><i class="fab fa-facebook-f  fa-fw"></i></a>
+						    <a class="btn btn-instagram" title="Instagram" target="_blank" href="#"><i class="fab fa-instagram  fa-fw"></i></a>
+						    <a class="btn btn-youtube" title="Youtube" target="_blank" href="#"><i class="fab fa-youtube  fa-fw"></i></a>
+						    <a class="btn btn-twitter" title="Twitter" target="_blank" href="#"><i class="fab fa-twitter  fa-fw"></i></a>
+						</div>
+					</article>
+				</aside>
+			</div> <!-- row.// -->
+			<br> 
+		</section>
+		<section class="footer-bottom row border-top-white">
+			<div class="col-sm-12">
+				<p class="text-md-center text-white-50">
+					Copyright © 2018 GA Recompensas
+				</p>
+			</div>
+		</section> <!-- //footer-top -->
+	</div><!-- //container -->
 </footer>

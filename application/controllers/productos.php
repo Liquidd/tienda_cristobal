@@ -32,12 +32,29 @@ class Productos extends Controlador_general {
                 $array_historial[$key]["fecha_compra"] = $value['fecha_compra']; 
             }
 
-        $this->view('carrito', array("productos" =>$array_productos,"historial" =>$array_historial));
+        $this->view('productos', array("productos" =>$array_productos,"historial" =>$array_historial));
     }
-    public function login(Type $var = null)
+    public function login()
     {
         $this->view('login');
     }
+    public function inicio()
+    {
+        $this->view('inicio');
+    }
+    public function perfil()
+    {
+        $this->view('perfil');
+    }
+    public function detalles()
+    {
+        $this->view('detalles');
+    }
+    public function carrito()
+    {
+        $this->view('carrito');
+    }
+
     public function historial_usuario()
     {
 		$id_usuario = $this->input->post("id_usuario");

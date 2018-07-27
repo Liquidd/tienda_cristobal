@@ -1,4 +1,4 @@
 <!-- contenido de pagina -->
-<div class="wrapper">
+<div class="principal">
     <?php echo $content;?>  
 </div>
