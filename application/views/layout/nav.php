@@ -31,8 +31,8 @@
 				<div class="widget-header">
 					<small class="title text-muted">Hola Luis Manuel</small>
 					<div> 
-					<a href="#"> Logear</a> <span class="dark-transp"> | </span>
-					<a href="#"> Registrar </a></div>
+					<a href="#"> Salir </a> <span class="dark-transp"> | </span>
+					<a href="#"> Configuracion </a></div>
 				</div>
 				<a href="#" class="widget-header border-left pl-3 ml-3">
 				<div class="icontext">

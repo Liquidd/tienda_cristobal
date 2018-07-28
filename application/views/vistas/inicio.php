@@ -1,5 +1,6 @@
 
 <!-- ========================= SECCION RECOMENDADOS ========================= -->
+<title> GA | Inicio  </title>
 <section class="section-request bg padding-y-sm">
     <div class="container">
         <header class="section-heading heading-line">
@@ -10,7 +11,6 @@
                 <figure class="card card-product">
                     <div class="img-wrap"> 
                         <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
-                        <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
                     </div>
                     <figcaption class="info-wrap">
                         <a href="#" class="title">Good item name</a>
@@ -26,128 +26,188 @@
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/1.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">The name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/5.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/2.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">Name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/6.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">The name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">Good item name</a></h6>
-                        
-                        <div class="price-wrap">
-                            <span class="price-new">$1280</span>
-                            <del class="price-old">$1980</del>
-                        </div> <!-- price-wrap.// -->
-                        
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/5.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">The name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/5.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/6.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">Name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/6.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/7.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">The name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/1.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">Good item name</a></h6>
-                        
-                        <div class="price-wrap">
-                            <span class="price-new">$1280</span>
-                            <del class="price-old">$1980</del>
-                        </div> <!-- price-wrap.// -->
-                        
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/2.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">The name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/5.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">Name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-3">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/6.jpg"></div>
+                    <div class="img-wrap"> 
+                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg">
+                    </div>
                     <figcaption class="info-wrap">
-                        <h6 class="title "><a href="#">The name of product</a></h6>
-                        <div class="price-wrap">
-                            <span class="price-new">$280</span>
-                        </div> <!-- price-wrap.// -->
+                        <a href="#" class="title">Good item name</a>
+                        <div class="action-wrap">
+                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span>
+                                <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- action-wrap -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
@@ -275,7 +335,7 @@
         <div class="row-sm">
             <div class="col-md-4">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/apple-logo.png"></div>
+                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/apple-logo2.png"></div>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
             <div class="col-md-4">

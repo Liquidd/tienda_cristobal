@@ -38,9 +38,9 @@ class Productos extends Controlador_general {
     {
         $this->view('login');
     }
-    public function inicio()
+    public function categorias()
     {
-        $this->view('inicio');
+        $this->view('categorias');
     }
     public function perfil()
     {

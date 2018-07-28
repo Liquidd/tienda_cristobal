@@ -66,6 +66,10 @@ body{
    bottom: 0;
    width: 100%;
 }
+.pago_fila{
+    margin-bottom: 250px;
+    padding-bottom: 250px;
+}
 </style>
 </head>
 <body>
