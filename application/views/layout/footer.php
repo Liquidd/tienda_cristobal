@@ -1,41 +1,38 @@
-<footer class="section-footer bg-secondary">
+<footer class="section-footer bg-dark">
 	<div class="container">
 		<section class="footer-top padding-top">
 			<div class="row">
 				<aside class="col-sm-3 col-md-3 white">
-					<h5 class="title">Customer Services</h5>
-					<ul class="list-unstyled">
-						<li> <a href="#">Help center</a></li>
-						<li> <a href="#">Money refund</a></li>
-						<li> <a href="#">Terms and Policy</a></li>
-						<li> <a href="#">Open dispute</a></li>
-					</ul>
+					<h5 class="title">Direccion</h5>
+					<p>
+						Quintero Arce #32 | Col.San Andrés | Hermosillo Sonora Mexico
+					</p>
 				</aside>
 				<aside class="col-sm-3  col-md-3 white">
 					<h5 class="title">Perfil</h5>
 					<ul class="list-unstyled">
-						<li> <a href="#"> User Login </a></li>
-						<li> <a href="#"> User register </a></li>
-						<li> <a href="#"> Account Setting </a></li>
-						<li> <a href="#"> My Orders </a></li>
+						<li> <a href="#"> Mi Perfil </a></li>
+						<li> <a href="#"> Registrarse </a></li>
+						<li> <a href="#"> Configuracion de Cuenta </a></li>
+						<li> <a href="#"> Mi Carrito </a></li>
 						<li> <a href="#"> Lista de Deseos </a></li>
 					</ul>
 				</aside>
 				<aside class="col-sm-3  col-md-3 white">
 					<h5 class="title">Nosotros</h5>
 					<ul class="list-unstyled">
-						<li> <a href="#"> Our history </a></li>
-						<li> <a href="#"> How to buy </a></li>
-						<li> <a href="#"> Delivery and payment </a></li>
-						<li> <a href="#"> Advertice </a></li>
-						<li> <a href="#"> Partnership </a></li>
+						<li> <a href="#"> Acerca de Nosotros </a></li>
+						<li> <a href="#"> Como Comprar </a></li>
 					</ul>
 				</aside>
 				<aside class="col-sm-3">
 					<article class="white">
 						<h5 class="title">Contacto</h5>
 						<p>
-							<strong>Telefono: </strong> +123456789 <br> 
+							Telefono: +123456789 <br> 
+						</p>
+						<p>
+							www.gahipotecario.com
 						</p>
 						 <div class="btn-group white">
 						    <a class="btn btn-facebook" title="Facebook" target="_blank" href="#"><i class="fab fa-facebook-f  fa-fw"></i></a>

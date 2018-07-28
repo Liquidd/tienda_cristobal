@@ -28,6 +28,16 @@
 <!-- custom javascript -->
 <script src="<?php echo base_url()?>bootstrap_UI/js/script.js" type="text/javascript"></script>
 
+<!-- plugin: fancybox  -->
+<script src="<?php echo base_url()?>bootstrap_UI/plugins/fancybox/fancybox.min.js" type="text/javascript"></script>
+<link href="<?php echo base_url()?>bootstrap_UI/plugins/fancybox/fancybox.min.css" type="text/css" rel="stylesheet">
+
+<!-- plugin: owl carousel  -->
+<link href="<?php echo base_url()?>bootstrap_UI/plugins/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="<?php echo base_url()?>bootstrap_UI/plugins/owlcarousel/assets/owl.theme.default.css" rel="stylesheet">
+<script src="<?php echo base_url()?>bootstrap_UI/plugins/owlcarousel/owl.carousel.min.js"></script>
+
+
 <script type="text/javascript">
 /// some script
 

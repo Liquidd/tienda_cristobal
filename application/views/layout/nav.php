@@ -3,7 +3,7 @@
 	    <div class="row-sm align-items-center">
         <div class="col-lg-4-24 col-sm-3">
           <div class="category-wrap dropdown py-1">
-            <button type="button" class="btn btn-light  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bars"></i> Departamentos </button>
+            <button type="button" class="btn btn-outline-dark  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bars"></i> Departamentos </button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Machinery / Mechanical Parts / Tools </a>
                 <a class="dropdown-item" href="#">Consumer Electronics / Home Appliances </a>
@@ -12,7 +12,7 @@
                 <a class="dropdown-item" href="#">Home & Garden / Construction / Lights </a>
                 <a class="dropdown-item" href="#">Beauty & Personal Care / Health </a> 
               </div>
-            </div> 
+            </div>
           </div>
 		    <div class="col-lg-11-24 col-sm-8">
 				<form action="#" class="py-1">

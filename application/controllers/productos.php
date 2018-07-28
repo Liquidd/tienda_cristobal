@@ -32,7 +32,7 @@ class Productos extends Controlador_general {
                 $array_historial[$key]["fecha_compra"] = $value['fecha_compra']; 
             }
 
-        $this->view('productos', array("productos" =>$array_productos,"historial" =>$array_historial));
+        $this->view('inicio', array("productos" =>$array_productos,"historial" =>$array_historial));
     }
     public function login()
     {
