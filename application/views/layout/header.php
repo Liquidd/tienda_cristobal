@@ -37,7 +37,7 @@
                                     <span class="badge-offer"><b><?php echo $value['descuento'];?></b></span>
                                     <div class="img-wrap"><img src="<?php echo base_url()?>bootstrap_UI/images/items/1.jpg"></div>
                                     <figcaption class="info-wrap text-center">
-                                        <h6 class="title text-truncate"><a onClick="filtro_categoria('<?php echo $value['modelo'];?>')"><?php echo $value['modelo'];?></a></h6>
+                                        <h6 class="title text-truncate"><a><?php echo $value['modelo'];?></a></h6>
                                     </figcaption>
                                 </figure> <!-- card // -->
                             </div>
