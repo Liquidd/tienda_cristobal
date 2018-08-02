@@ -1,332 +1,37 @@
 
 <!-- ========================= SECCION RECOMENDADOS ========================= -->
 <title> GA | Inicio  </title>
+
+
 <section class="section-request bg padding-y-sm">
     <div class="container">
         <header class="section-heading heading-line">
-            <h4 class="title-section bg text-uppercase">Productos Recomendadas</h4>
+            <h4 class="title-section bg text-uppercase">Productos Recomendados</h4>
         </header>
         <div class="row-sm">
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/1.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/2.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/5.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/6.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/7.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/1.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/2.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"> 
-                        <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg">
-                    </div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">Good item name</a>
-                        <div class="action-wrap">
-                            <a href="#" class="btn btn-outline-success btn-sm float-right"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
-                            <div class="price-wrap h5">
-                                <span class="price-new">$1280</span>
-                                <del class="price-old">$1980</del>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- action-wrap -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
-        </div> <!-- row.// -->
-    </div><!-- container // -->
-</section>
-<section class="section-request bg padding-y-sm">
-    <div class="container">
-        <header class="section-heading heading-line">
-            <h4 class="title-section bg text-uppercase">Productos en Ofertas !</h4>
-        </header>
-        <div class="row-sm">
-        <div class="col-md-12">
-                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
-
-                        <ol class="carousel-indicators">
-                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#blogCarousel" data-slide-to="1"></li>
-                        </ol>
-
-                        <!-- Carousel items -->
-                        <div class="carousel-inner">
-
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                </div>
-                                <!--.row-->
-                            </div>
-                            <!--.item-->
-
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                    <div class="col-md-3">
-                                        <figure class="card card-sm card-product">
-                                            <span class="badge-offer"><b> - 50%</b></span>
-                                            <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/items/4.jpg"> </div>
-                                            <figcaption class="info-wrap text-center">
-                                                <h6 class="title text-truncate"><a href="#">The name of product</a></h6>
-                                            </figcaption>
-                                        </figure> <!-- card // -->
-                                    </div> <!-- col // -->
-                                </div>
-                                <!--.row-->
-                            </div>
-                            <!--.item-->
-
+            <?php foreach($principal as $value){?>
+                <div class="col-md-3">
+                    <figure class="card card-product">
+                        <div class="img-wrap"> 
+                            <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
                         </div>
-                        <!--.carousel-inner-->
-                    </div>
-                    <!--.Carousel-->
-
-                </div>
-
+                        <figcaption class="info-wrap">
+                            <a href="#" class="title"><?php echo $value['modelo'];?></a>
+                            <div class="action-wrap">
+                                <a href="#" class="btn btn-outline-success btn-sm float-right" onClick="detalles_productos('<?php echo $value['id_producto'];?>')"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
+                                <div class="price-wrap h5">
+                                    <span class="price-new"><?php echo $value['precio'];?></span>
+                                    <del class="price-old">$1980</del>
+                                </div> <!-- price-wrap.// -->
+                            </div> <!-- action-wrap -->
+                        </figcaption>
+                    </figure> <!-- card // -->
+                </div> <!-- col // -->
+            <?php }?>
         </div> <!-- row.// -->
     </div><!-- container // -->
 </section>
+
 <section class="section-request bg padding-y-sm">
     <div class="container">
         <header class="section-heading heading-line">
@@ -383,6 +88,6 @@
 }
 
 .blog .carousel-indicators .active {
-background: #707070;
+    background: #707070;
 }
 </style>

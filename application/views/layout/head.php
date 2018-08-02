@@ -12,7 +12,10 @@
 <link href="<?php echo base_url()?>bootstrap_UI/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 <!-- jQuery -->
-<script src="<?php echo base_url()?>bootstrap_UI/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+
+<script src="<?php echo base_url()?>assets/js/app.js" type="text/javascript"></script>
 
 <!-- Bootstrap4 files-->
 <script src="<?php echo base_url()?>bootstrap_UI/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -37,17 +40,12 @@
 <link href="<?php echo base_url()?>bootstrap_UI/plugins/owlcarousel/assets/owl.theme.default.css" rel="stylesheet">
 <script src="<?php echo base_url()?>bootstrap_UI/plugins/owlcarousel/owl.carousel.min.js"></script>
 
+<!-- plugin: slickslider -->
+<link href="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick-theme.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick.min.js"></script>
 
-<script type="text/javascript">
-/// some script
 
-// jquery ready start
-$(document).ready(function() {
-	// jQuery code
-
-}); 
-// jquery end
-</script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 body{
