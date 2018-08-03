@@ -14,9 +14,9 @@
 		    	<div class="col-lg-11-24 col-sm-8">
 						<form action="#" class="py-1">
 							<div class="input-group w-100">
-								<input type="text" class="form-control" style="width:50%;" placeholder="Ingresa el Nombre a Buscar">
+								<input type="text" class="form-control" style="width:50%;" id="buscar" placeholder="Ingresa el Nombre a Buscar">
 								<div class="input-group-append">
-								<button class="btn btn-primary" type="submit">
+								<button class="btn btn-primary" type="submit" onClick="imprimir()">
 									<i class="fa fa-search"></i> Buscar
 								</button>
 								</div>
@@ -34,6 +34,12 @@
 								<a href="#" class="widget-header border-left pl-3 ml-3">
 									<div class="icontext">
 										<div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
+									</div>
+									<span class="badge badge-pill badge-danger notify">0</span>
+								</a>
+								<a href="#" class="widget-header border-left pl-3 ml-3">
+									<div class="icontext">
+										<div class="icon-wrap icon-sm round border"><i class="fa fa-heart"></i></div>
 									</div>
 									<span class="badge badge-pill badge-danger notify">0</span>
 								</a>

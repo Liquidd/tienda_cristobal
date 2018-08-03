@@ -44,8 +44,9 @@
 <link href="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick-theme.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick.min.js"></script>
-
-
+<script>
+	var CI_ROOT = "<?php echo base_url();?>";
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 body{

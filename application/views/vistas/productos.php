@@ -125,8 +125,8 @@
                                     <p class="text-success">Free shipping</p>
                                     <br>
                                     <p>
-                                        <a href="#" class="btn btn-success" onClick="agregar_carrito('<?php echo $value['id_producto'];?>')"> Agregar </a>
-                                        <a href="#" class="btn btn-dark" onClick="detalles_producto('<?php echo $value['id_producto'];?>')"> Detalles</a>
+                                        <a href="" class="btn btn-success"> Agregar </a>
+                                        <button type="button" class="detalles btn btn-primary" id="<?php echo $value['id_producto'];?>">DetalleS </button>
                                     </p>
                                     <a href="#"><i class="fa fa-heart"></i>Agregar a Lista de Deseos</a>
                                 </div> <!-- action-wrap.// -->

@@ -42,7 +42,7 @@ class Productos extends Controlador_general {
                 $array_productos[$key]["descripcion"] = $value['descripcion'];
                 $array_productos[$key]["precio"] = $value['precio'];
             }
-        $this->view('productos', array("productos"=>$array_productos,"principal" =>$array_productos_principales,"categoria" =>$array_categorias,"promocion" =>$array_promosiones));
+        $this->view('inicio', array("productos"=>$array_productos,"principal" =>$array_productos_principales,"categoria" =>$array_categorias,"promocion" =>$array_promosiones));
     }
     public function categorias(){
         $categoria = $this->input->get("categoria");
@@ -83,14 +83,18 @@ class Productos extends Controlador_general {
         echo $respuesta;
 
     }
-    public function detalles_productos($id_producto){
+    public function detalles_productos(){
 		$id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->informacion_producto($id_producto);
-        echo $respuesta;
+        echo json_encode($respuesta[0]);
     }
     public function detalles_general(){
         $id_producto = $this->input->get("id_producto");    
         $lista_productos = $this->m_productos->informacion_producto($id_producto);
+        $lista_ofertas = $this->m_productos->lista_promocion();
+
+        $array_promociones = array();
+        $array_productos = array();
             if($lista_productos !== FALSE)
             foreach ($lista_productos as $key => $values) {
                 $array_productos[$key]['id_producto']=$values['id_producto'];
@@ -101,7 +105,13 @@ class Productos extends Controlador_general {
                 $array_productos[$key]['descripcion']=$values['descripcion'];
                 $array_productos[$key]['precio']=$values['precio'];
             }
-        $this->view('detalles',array("datos"=>$array_productos));
+            foreach ($lista_ofertas as $key => $value) {
+                $array_promociones[$key]['id_producto'] = $value['id_producto'];
+                $array_promociones[$key]['modelo'] = $value['modelo'];
+                $array_promociones[$key]['descuento'] = $value['descuento'];
+            }
+
+        $this->view('detalles',array("datos"=>$array_productos,"promocion"=>$array_promociones));
         
     }
     public function perfil_usuario(){
