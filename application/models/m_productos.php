@@ -10,12 +10,23 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}
-
+	
 	function lista_categorias(){
 		$this->db->distinct();
         $this->db->select('categoria');
 		$this->db->from('productos');
 		$this->db->order_by("categoria", "asc");
+		$query=$this->db->get();
+		if ($query->num_rows() > 0){
+			return $query->result_array();
+		}else
+		return FALSE;
+	}
+	function lista_marcas(){
+		$this->db->distinct();
+        $this->db->select('marca');
+		$this->db->from('productos');
+		$this->db->order_by("marca", "asc");
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();

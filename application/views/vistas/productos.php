@@ -26,7 +26,7 @@
                             <h6 class="title">Marcas </h6>
                         </header>
                             <div class="card-body">
-                                <?php foreach($productos as $value){?>
+                                <?php foreach($marca as $value){?>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="Check2">
                                         <label class="custom-control-label" for="Check2"><?php echo $value['marca'];?></label>
@@ -101,7 +101,9 @@
                                     <div class="label-rating">132 reviews</div>
                                     <div class="label-rating">154 orders </div>
                                 </div> <!-- rating-wrap.// -->
-                                    <p><?php echo $value['descripcion'];?></p>
+                                    <p>
+                                        <?php echo substr($value['descripcion'], 0, 213).".......";?>
+                                    </p>
                                 <dl class="dlist-align">
                                 <dt>Marca</dt>
                                     <dd><?php echo $value['marca'];?></dd>
@@ -116,17 +118,17 @@
                                     <dd><?php echo $value['subcategoria'];?></dd>
                                 </dl>  <!-- item-property-hor .// -->                                
                             </article> <!-- col.// -->
-                            <aside class="col-sm-3 border-left">
+                            <aside class="col-sm-2 border-left">
                                 <div class="action-wrap">
                                     <div class="price-wrap h4">
-                                        <span class="price"><?php echo $value['precio'];?></span>	
+                                        <span class="price">$<?php echo $value['precio'];?></span>	
                                         <del class="price-old"> $98</del>
                                     </div> <!-- info-price-detail // -->
                                     <p class="text-success">Free shipping</p>
                                     <br>
                                     <p>
                                         <a href="" class="btn btn-success"> Agregar </a>
-                                        <button type="button" class="detalles btn btn-primary" id="<?php echo $value['id_producto'];?>">DetalleS </button>
+                                        <button type="button" class="detalles btn btn-primary" id="<?php echo $value['id_producto'];?>">Detalles </button>
                                     </p>
                                     <a href="#"><i class="fa fa-heart"></i>Agregar a Lista de Deseos</a>
                                 </div> <!-- action-wrap.// -->
