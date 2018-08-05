@@ -69,9 +69,10 @@ class M_productos extends CI_Model{
 	}
 	function informacion_producto($id_producto){
 
-        $this->db->select('id_producto,modelo,marca,categoria,subcategoria,descripcion,precio');
-		$this->db->from('productos');
-		$this->db->where('id_producto',$id_producto);
+        $this->db->select('productos.id_producto AS id_producto ,productos.modelo AS modelo,productos.marca AS marca,productos.categoria AS categoria,productos.subcategoria AS subcategoria,productos.descripcion AS descripcion, productos.precio AS precio,comentarios.comentario AS comentario,comentarios.nombre_cliente AS cliente ');
+		$this->db->from('comentarios');
+		$this->db->join('productos','productos.id_producto = comentarios.id_producto','INNER');
+		$this->db->where('productos.id_producto',$id_producto);
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
@@ -140,6 +141,18 @@ class M_productos extends CI_Model{
         $this->db->where('id_producto', $id_producto);        
 		return $update = $this->db->update('productos');
 		
-	}	
+	}
+	function comentario_producto($id_producto)
+	{
+        $this->db->select('nombre_cliente,comentario');
+		$this->db->from('comentarios');
+		$this->db->where('id_producto',$id_producto);
+		$this->db->limit(1);
+		$query=$this->db->get();
+		if ($query->num_rows() > 0){
+			return $query->result_array();
+		}else
+		return FALSE;
+	}
 }
 ?>

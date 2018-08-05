@@ -10,7 +10,11 @@
                             <aside class="col-sm-5 border-right">
                                 <article class="gallery-wrap"> 
                                     <div class="img-big-wrap">
-                                        <div> <a href="<?php echo base_url();?>bootstrap_UI/images/items/asus1.jpg" data-fancybox=""><img src="<?php echo base_url();?>bootstrap_UI/images/items/asus1.jpg"></a></div>
+                                        <div>
+                                            <a href="<?php echo base_url();?>bootstrap_UI/images/items/asus1.jpg" data-fancybox="">
+                                                <img src="<?php echo base_url();?>bootstrap_UI/images/items/asus1.jpg">
+                                            </a>
+                                        </div>
                                     </div> <!-- slider-product.// -->
                                     <div class="img-small-wrap">
                                         <div class="item-gallery"> <img src="<?php echo base_url();?>bootstrap_UI/images/items/gtx1.png"></div>
@@ -68,13 +72,12 @@
             <aside class="col-sm-3">
                 <div class="box">
                     <dl class="dlist-align">
-                    <dt>Existencia: </dt>
-                    <dd class="text-right"><span class="text-success">Disponible</span></dd>
+                        <dt>Existencia: </dt>
+                        <dd class="text-right"><span class="text-success">Disponible</span></dd>
                     </dl>
-                    <dt>Precio: </dt>
-                        <dd  class="text-right">
-                            <span class="price">$<?php echo $value['precio'];?></span>
-                        </dd>
+                    <dl class="dlist-align">
+                        <dt>Precio: </dt>
+                        <dd class="text-right h5 b">$<?php echo $value['precio'];?></dd>
                     </dl>
                     <dl class="dlist-align">
                         <dt>
@@ -86,14 +89,18 @@
                         </dt>
                         <dd class="text-right"><button class="btn btn-success">Comprar Ahora</button></dd>
                     </dl>
-                    <dl class="dlist-align">
                 </div> <!-- box.// -->   
                 <hr>             
                 <div class="box">
                     <dl class="dlist-align">
                         <dt>El Mejor Comentario</dt>
-                        <dd class="text-right">
-                            <div class="rating-wrap  mb-2">
+                        <dd class="text-right b"><?php echo $value['cliente'];?></dd>
+                    </dl>
+                </div> <!-- box.// -->
+                <div class="box">
+                    <dl class="">
+                        <dt>
+                            <div class="rating-wrap  mb-1">
                                 <ul class="rating-stars">
                                     <li style="width:80%" class="stars-active"> 
                                         <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
@@ -107,11 +114,11 @@
                                     </li>
                                 </ul>
                             </div> <!-- rating-wrap.// -->
-                        </dd>
+                        </dt>
                     </dl>
-                </div> <!-- box.// -->
+                </div>
                 <div class="box">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <?php echo $value['comentario'];?>
                 </div>
              </aside> <!-- col.// -->
             <?php }?>

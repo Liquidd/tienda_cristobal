@@ -3,11 +3,11 @@
 	    <div class="row-sm align-items-center">
         <div class="col-lg-4-24 col-sm-3">
           <div class="category-wrap dropdown py-1">
-            <button type="button" class="btn btn-outline-dark  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bars"></i> Departamentos </button>
+            <button type="button" class="btn btn-outline-primary  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bars"></i> Categorias </button>
               <div class="dropdown-menu">
-								<?php foreach($categoria as $value){?>
+				<?php foreach($categoria as $value){?>
                 	<a class="dropdown-item" href=""><?php echo $value['categoria'];?></a>
-								<?php }?>
+				<?php }?>
               </div>
             </div>
           </div>
