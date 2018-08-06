@@ -9,14 +9,10 @@ class Productos extends Controlador_general {
         
     }
     function index(){
-        $lista_productos = $this->m_productos->lista_productos();
         $lista_categoria = $this->m_productos->lista_categorias();
-        $lista_ofertas =   $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->lista_promocion();
         $lista_principal = $this->m_productos->productos_principales();
-        $lista_marcas = $this->m_productos->lista_marcas();
 
-        $array_productos = array();
-        $array_marcas = array();
         $array_promosiones = array();
         $array_categorias = array();
         $array_productos_principales = array();
@@ -28,41 +24,38 @@ class Productos extends Controlador_general {
                 $array_productos_principales[$key]["id_producto"] = $value['id_producto'];
             }
             foreach ($lista_categoria as $key => $value) {
-                $array_categorias[$key]["categoria"] = $value['categoria']; 
+                $array_categorias[$key]["id_categoria"] = $value['id_categoria']; 
+                $array_categorias[$key]["nombre"] = $value['nombre']; 
+
             }
             foreach ($lista_ofertas as $key => $value) {
                 $array_promosiones[$key]['id_producto'] = $value['id_producto'];
                 $array_promosiones[$key]['modelo'] = $value['modelo'];
                 $array_promosiones[$key]['descuento'] = $value['descuento'];
             }
-            foreach ($lista_productos as $key => $value) {
-                $array_productos[$key]["id_producto"] = $value['id_producto'];                
-                $array_productos[$key]["modelo"] = $value['modelo'];
-                $array_productos[$key]["marca"] = $value['marca'];
-                $array_productos[$key]["categoria"] = $value['categoria'];  
-                $array_productos[$key]["subcategoria"] = $value['subcategoria'];  
-                $array_productos[$key]["descripcion"] = $value['descripcion'];
-                $array_productos[$key]["precio"] = $value['precio'];
-            }
-            foreach ($lista_marcas as $key => $value) {
-                $array_marcas[$key]["marca"] = $value['marca']; 
-            }
 
-        $this->view('productos', array("productos"=>$array_productos,"marca" => $array_marcas,"principal" =>$array_productos_principales,"categoria" =>$array_categorias,"promocion" =>$array_promosiones));
+        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promosiones,"principal" =>$array_productos_principales));
+
     }
+    
     public function categorias(){
-        $categoria = $this->input->get("categoria");
-        $lista_productos = $this->m_productos->filtro_categorias($categoria);
-        $array_productos = array();
+        $id_categoria = $this->input->get("id_categoria");
 
+        $lista_productos = $this->m_productos->filtro_categorias($id_categoria);
+        $lista_marcas = $this->m_productos->lista_marcas();
         $lista_categorias = $this->m_productos->lista_categorias();
+        $lista_subcategoria = $this->m_productos->lista_subcategoria();
         $lista_ofertas = $this->m_productos->lista_promocion();
-        $array_promociones = array();
+
+
+        $array_productos = array();
+        $array_marcas = array();
         $array_categorias = array();
-
-
-            if($lista_productos !== FALSE)
-            foreach ($lista_productos as $key => $values) {
+        $array_subcategoria = array();
+        $array_promociones = array();
+        
+        if($lista_productos !== FALSE)
+        foreach ($lista_productos as $key => $values) {
                 $array_productos[$key]['id_producto']=$values['id_producto'];
                 $array_productos[$key]['modelo']=$values['modelo'];
                 $array_productos[$key]['marca']=$values['marca'];
@@ -70,17 +63,27 @@ class Productos extends Controlador_general {
                 $array_productos[$key]['subcategoria']=$values['subcategoria'];
                 $array_productos[$key]['descripcion']=$values['descripcion'];
                 $array_productos[$key]['precio']=$values['precio'];
-            }
-            foreach ($lista_categorias as $key => $value) {
-                $array_categorias[$key]["categoria"] = $value['categoria']; 
-            }
-            foreach ($lista_ofertas as $key => $value) {
-                $array_promosiones[$key]['id_producto'] = $value['id_producto'];
-                $array_promosiones[$key]['modelo'] = $value['modelo'];
-                $array_promosiones[$key]['descuento'] = $value['descuento'];
-            }
+        }
+        foreach ($lista_marcas as $key => $value) {
+            $array_marcas[$key]["marca"] = $value['marca']; 
+        }
 
-        $this->view('productos',array("promocion" =>$array_promociones,"categoria" =>$array_categorias,"datos"=>$array_productos));
+        foreach ($lista_categorias as $key => $value) {
+            $array_categorias[$key]["id_categoria"] = $value['id_categoria']; 
+            $array_categorias[$key]["nombre"] = $value['nombre']; 
+        }
+
+        foreach ($lista_subcategoria as $key => $value) {
+            $array_subcategoria[$key]["id_subcategoria"] = $value['id_subcategoria'];
+            $array_subcategoria[$key]["nombre"] = $value['nombre']; 
+        }
+
+        foreach ($lista_ofertas as $key => $value) {
+            $array_promociones[$key]['id_producto'] = $value['id_producto'];
+            $array_promociones[$key]['modelo'] = $value['modelo'];
+            $array_promociones[$key]['descuento'] = $value['descuento'];
+        }
+        $this->view('productos',array("promocion" =>$array_promociones,"productos_categoria" => $array_productos,"marca" => $array_marcas,"categoria" => $array_categorias,"subcategoria" => $array_subcategoria));
 
     } 
     public function detalles_productos(){
@@ -93,10 +96,12 @@ class Productos extends Controlador_general {
         $lista_productos = $this->m_productos->informacion_producto($id_producto);
         $lista_ofertas = $this->m_productos->lista_promocion();
         $lista_categoria = $this->m_productos->lista_categorias();
+        $lista_subcategoria = $this->m_productos->lista_subcategoria();
         $lista_marcas = $this->m_productos->lista_marcas();
 
         $array_marcas = array();
         $array_categorias = array();
+        $array_subcategoria = array();
         $array_promociones = array();
         $array_productos = array();
             if($lista_productos !== FALSE)
@@ -118,12 +123,19 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['descuento'] = $value['descuento'];
             }
             foreach ($lista_categoria as $key => $value) {
-                $array_categorias[$key]["categoria"] = $value['categoria']; 
+                $array_categorias[$key]["id_categoria"] = $value['id_categoria']; 
+                $array_categorias[$key]["nombre"] = $value['nombre']; 
+
+            }
+            foreach ($lista_subcategoria as $key => $value) {
+                $array_subcategoria[$key]["id_subcategoria"] = $value['id_subcategoria']; 
+                $array_subcategoria[$key]["nombre"] = $value['nombre']; 
+
             }
             foreach ($lista_marcas as $key => $value) {
                 $array_marcas[$key]["marca"] = $value['marca']; 
             }
-        $this->view('detalles',array("datos"=>$array_productos,"marca"=>$array_marcas,"promocion"=>$array_promociones,"categoria" =>$array_categorias));
+        $this->view('detalles',array("datos"=>$array_productos,"marca"=>$array_marcas,"promocion"=>$array_promociones,"categoria" =>$array_categorias,"subcategoria" =>$array_subcategoria));
         
     }
     public function perfil_usuario(){

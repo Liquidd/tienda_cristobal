@@ -7,10 +7,11 @@ $(document).ready(function(){
 			let datos = JSON.parse(respuesta);
 			console.log(datos);
             window.location=CI_ROOT+"productos/detalles_general?id_producto="+id;
-		});
+        });
     });
 });
 
-function filtrar_categoria(_nombre) {
-    console.log(_nombre);
+function buscar_categoria(_id_categoria) {
+    console.log(_id_categoria);
+    window.location=CI_ROOT+"productos/categorias?id_categoria="+_id_categoria;
 }

@@ -2,7 +2,7 @@
 <section class="section-content bg padding-y">
     <div class="container">
         <div class="row">
-            <aside class="col-sm-3">
+            <aside class="col-sm-2">
                 <div class="card card-filter">  
                     <article class="card-group-item">
                         <header class="card-header">
@@ -41,8 +41,8 @@
                                 <div class="card-body">
                                     <?php foreach($categoria as $value){?>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Check1">
-                                            <label class="custom-control-label" for="Check1"><?php echo $value['categoria'];?></label>
+                                            <input type="checkbox" class="custom-control-input" id="<?php echo $value['id_categoria'];?>">
+                                            <label class="custom-control-label" for="Check1"><?php echo $value['nombre'];?></label>
                                         </div> <!-- form-check.// -->
                                     <?php }?>
                                 </div> <!-- card-body.// -->
@@ -52,31 +52,18 @@
                             <h6 class="title">Articulos Relacionados </h6>
                         </header>
                             <div class="card-body">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="Check1">
-                                    <label class="custom-control-label" for="Check1">Samsung</label>
-                                </div> <!-- form-check.// -->
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="Check2">
-                                    <label class="custom-control-label" for="Check2">Black berry</label>
-                                </div> <!-- form-check.// -->
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="Check3">
-                                    <label class="custom-control-label" for="Check3">Samsung</label>
-                                </div> <!-- form-check.// -->
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="Check4">
-                                    <label class="custom-control-label" for="Check4">Other Brand</label>
-                                </div> <!-- form-check.// -->
+                                <?php foreach($subcategoria as $value){?>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="<?php echo $value['id_subcategoria'];?>">
+                                        <label class="custom-control-label" for="Check1"><?php echo $value['nombre'];?></label>
+                                    </div> <!-- form-check.// -->
+                                <?php }?>
                             </div> <!-- card-body.// -->
                     </article> <!-- card-group-item.// -->
                 </div> <!-- card.// -->
             </aside> <!-- col.// -->
-            <main class="col-md-9">
-                <?php foreach($productos as $value){?>
+            <main class="col-md-10">
+                <?php foreach($productos_categoria as $value){?>
                     <article class="card card-product">
                         <div class="card-body">
                         <div class="row">
@@ -118,7 +105,7 @@
                                     <dd><?php echo $value['subcategoria'];?></dd>
                                 </dl>  <!-- item-property-hor .// -->                                
                             </article> <!-- col.// -->
-                            <aside class="col-sm-2 border-left">
+                            <aside class="col-sm-3 border-left">
                                 <div class="action-wrap">
                                     <div class="price-wrap h4">
                                         <span class="price">$<?php echo $value['precio'];?></span>	

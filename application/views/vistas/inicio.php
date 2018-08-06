@@ -16,7 +16,7 @@
                             <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
                         </div>
                         <figcaption class="info-wrap">
-                            <a href="#" class="title"><?php echo substr($value['modelo'], 0, 4);?></a>
+                            <a href="#" class="title"><?php echo $value['modelo'];?></a>
                             <div class="action-wrap">
                                 <a href="#" class="btn btn-outline-success btn-sm float-right" onClick="detalles_productos('<?php echo $value['id_producto'];?>')"><i class="fas fa-shopping-cart"></i> AGREGAR </a>
                                 <div class="price-wrap h5">

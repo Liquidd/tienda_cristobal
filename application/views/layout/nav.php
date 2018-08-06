@@ -6,7 +6,7 @@
             <button type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bars"></i> Categorias </button>
               <div class="dropdown-menu">
 				<?php foreach($categoria as $value){?>
-                	<a class="dropdown-item" onClick="filtrar_categoria('ABC')"><?php echo $value['categoria'];?></a>
+                	<a class="dropdown-item" onClick="buscar_categoria('<?php echo $value['id_categoria'];?>')"><?php echo $value['nombre'];?></a>
 				<?php }?>
               </div>
             </div>
@@ -14,9 +14,9 @@
 		    	<div class="col-lg-11-24 col-sm-8">
 						<form action="#" class="py-1">
 							<div class="input-group w-100">
-								<input type="text" class="form-control" style="width:50%;" id="buscar" placeholder="Ingresa el Nombre a Buscar">
+								<input type="text" class="form-control" style="width:50%;" id="nombre_buscar" placeholder="Ingresa el Nombre a Buscar">
 								<div class="input-group-append">
-								<button class="btn btn-primary" type="submit" onClick="imprimir()">
+								<button class="btn btn-primary" type="submit" onClick="buscar_producto()">
 									<i class="fa fa-search"></i> Buscar
 								</button>
 								</div>
