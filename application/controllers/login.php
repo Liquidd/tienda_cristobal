@@ -7,10 +7,24 @@ class Login extends Controlador_general {
 
     } 
     function index(){
+
         $this->view('login');
-        
     }
     function logout(){
         $this->view('login');
+
+    }
+    function valida(){
+        $data = json_decode( file_get_contents('https://api.mercadolibre.com/users/226384143/'), true );
+        $user_name = $data['nickname'];
+        $nombre_login = $this->input->post("nombre");
+
+        echo $nombre;
+        if ($nombre == $user_name) {
+            echo "correcto";
+        }
+        else {
+            echo "incorrecto";
+        }
     }
 }

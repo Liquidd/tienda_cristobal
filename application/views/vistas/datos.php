@@ -29,3 +29,45 @@
               </div> <!-- col // -->
               <?php }?>
             </div>
+            $.post(CI_ROOT+"login/valida",{
+		nombre : _nombre;
+		},function(respuesta){
+			if (respuesta == "correcto") {
+            swal({
+                title: "Good job!",
+                icon: "success",
+                button: "aceptar",
+            });   
+        }
+        else{
+            swal({
+                title: "El usuario no existe",
+                icon: "danger",
+                button: "aceptar",
+            }); 
+        }        
+	});
+
+
+
+
+
+
+      $.post(CI_ROOT+"login/valida",{
+		nombre : _nombre
+		},function(respuesta){
+			if (respuesta == "correcto") {
+            swal({
+                title: "Good job!",
+                icon: "success",
+                button: "aceptar",
+            });   
+        }
+        else{
+            swal({
+                title: "El usuario no existe",
+                icon: "danger",
+                button: "aceptar",
+            }); 
+        }        
+	});

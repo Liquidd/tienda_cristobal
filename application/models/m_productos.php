@@ -87,6 +87,7 @@ class M_productos extends CI_Model{
 		$this->db->where('cantidad_existente >',0);
 		$this->db->where('estado >',0);
 		$this->db->order_by('id_producto','ASC');
+		$this->db->limit(5);
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
@@ -142,8 +143,7 @@ class M_productos extends CI_Model{
 		return $update = $this->db->update('productos');
 		
 	}
-	function comentario_producto($id_producto)
-	{
+	function comentario_producto($id_producto){
         $this->db->select('nombre_cliente,comentario');
 		$this->db->from('comentarios');
 		$this->db->where('id_producto',$id_producto);

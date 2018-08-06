@@ -71,27 +71,3 @@ declare vr_cantidad_restante int;
     	END;
 	commit;
 END
-
-
-		SELECT productos.modelo as modelo,productos.marca as marca,productos.categoria AS categoria,productos.id_producto AS id_producto, 
-		Sum(1) AS veces_comprado 
-		FROM historial
-		INNER JOIN productos ON productos.id_producto = historial.id_producto
-		WHERE productos.estado = 1
-		GROUP BY historial.id_producto 
-		ORDER BY veces_comprado DESC
-		LIMIT 12
-
-		SELECT productos.id_producto AS id_producto,productos.modelo AS modelo,promocion.descuento as descuento,productos.cantidad_existente AS existencia 
-		FROM productos 
-		INNER JOIN promocion ON promocion.id_producto = productos.id_producto
-		WHERE cantidad_existente > 0 AND estado > 0 ORDER BY id_producto ASC
-
-		SELECT productos2.modelo as modelo,productos2.marca as marca,categorias.categoria AS categoria,categorias.subcategoria AS subcategoria FROM productos2 INNER JOIN categorias ON categorias.id_producto = productos2.id_producto
-
-
-
-		SELECT categorias.id_categoria AS id_categoria,categorias.categoria AS categoria,subcategoria.nombre AS Articulos_Relacionados 
-		FROM categorias 
-		INNER JOIN subcategoria ON subcategoria.id_categoria = categorias.id_categoria
-		WHERE categorias.categoria = 'Electronicos'

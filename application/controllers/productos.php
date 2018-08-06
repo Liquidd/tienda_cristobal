@@ -82,13 +82,7 @@ class Productos extends Controlador_general {
 
         $this->view('productos',array("promocion" =>$array_promociones,"categoria" =>$array_categorias,"datos"=>$array_productos));
 
-    }    
-    public function filtro(){
-        $categoria = $this->input->post("categoria");
-        $respuesta = $this->m_productos->filtro_categorias($categoria);
-        echo $respuesta;
-
-    }
+    } 
     public function detalles_productos(){
 		$id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->informacion_producto($id_producto);

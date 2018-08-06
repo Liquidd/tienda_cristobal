@@ -3,10 +3,10 @@
 	    <div class="row-sm align-items-center">
         <div class="col-lg-4-24 col-sm-3">
           <div class="category-wrap dropdown py-1">
-            <button type="button" class="btn btn-outline-primary  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bars"></i> Categorias </button>
+            <button type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bars"></i> Categorias </button>
               <div class="dropdown-menu">
 				<?php foreach($categoria as $value){?>
-                	<a class="dropdown-item" href=""><?php echo $value['categoria'];?></a>
+                	<a class="dropdown-item" onClick="filtrar_categoria('ABC')"><?php echo $value['categoria'];?></a>
 				<?php }?>
               </div>
             </div>
@@ -49,3 +49,5 @@
 			</div> <!-- row.// -->
 		</div> <!-- container.// -->
 	</section> <!-- header-main .// -->
+
+	

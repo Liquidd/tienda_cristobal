@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/login.css">
     <link rel="stylesheet" href="<?php echo base_url()?>node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>node_modules/bootstrap/dist/js/bootstrap.min.js">
+
     <script src="<?php echo base_url()?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>

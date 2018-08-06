@@ -28,23 +28,28 @@
             <header class="section-heading heading-line">
                 <h4 class="title-section bg text-uppercase">Productos en Ofertas !!</h4>
             </header>
-            <div class="row-sm">
-                <div class="col-md-12">
-                    <div class="slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
-                        <?php foreach($promocion as $value){?>
-                            <div class="item-slide p-2">
-                                <figure class="card card-product">
-                                    <span class="badge-offer"><b><?php echo $value['descuento'];?></b></span>
-                                    <div class="img-wrap"><img src="<?php echo base_url()?>bootstrap_UI/images/items/1.jpg"></div>
-                                    <figcaption class="info-wrap text-center">
-                                        <h6 class="title text-truncate"><a><?php echo $value['modelo'];?></a></h6>
-                                    </figcaption>
-                                </figure> <!-- card // -->
+            <div class="owl-carousel owl-init slide-items" data-items="5" data-margin="20" data-dots="true" data-nav="true">
+                <?php foreach($promocion as $value){?>
+                    <div class="item-slide">
+                        <figure class="card card-product">
+                            <span class="badge-offer"><b><?php echo " - ".$value['descuento']."% ";?></b></span>
+                            <div class="img-wrap"> 
+                                <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
                             </div>
-                        <?php }?>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title"><?php echo $value['modelo'];?></a>
+                                <div class="action-wrap">
+                                    <a href="#" class="btn btn-primary btn-sm float-right"> Detalles </a>
+                                    <div class="price-wrap h5">
+                                        <span class="price-new">$1280</span>
+                                        <del class="price-old">$1980</del>
+                                    </div> <!-- price-wrap.// -->
+                                </div> <!-- action-wrap -->
+                            </figcaption>
+                        </figure> <!-- card // -->
                     </div>
-                </div>
-            </div> <!-- row.// -->
+				<?php }?>
+            </div>   
         </div><!-- container // -->
     </section>
 </div>

@@ -10,3 +10,7 @@ $(document).ready(function(){
 		});
     });
 });
+
+function filtrar_categoria(_nombre) {
+    console.log(_nombre);
+}
