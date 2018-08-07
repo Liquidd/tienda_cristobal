@@ -7,6 +7,11 @@ class Productos extends Controlador_general {
         $this->load->model("m_productos",'',TRUE);
         
     }
+    public function lista_productos()
+    {
+        $lista_productos = $this->m_productos->lista_productos();
+        echo json_encode($lista_productos);
+    }
     function index(){
 
         $lista_categoria = $this->m_productos->lista_categorias();
@@ -36,7 +41,7 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['img'] = $value['img'];
             }
 
-        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales));
+        $this->view('cuenta',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales));
 
     }
     public function Carrito(){

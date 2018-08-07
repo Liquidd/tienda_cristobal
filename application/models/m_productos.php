@@ -3,10 +3,11 @@ class M_productos extends CI_Model{
     // funcionando
     function lista_productos(){
 		$this->db->distinct();
-        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca, categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.descripcion AS descripcion,productos.precio AS precio');
-		$this->db->from('subcategoria');
-		$this->db->join('productos','productos.id_subcategoria = subcategoria.id_subcategoria','INNER');
-		$this->db->join('categorias','categorias.id_categoria = subcategoria.id_subcategoria','INNER');
+        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio');
+		$this->db->from('productos');
+		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
+		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
+		$this->db->order_by("id_producto", "asc");
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
