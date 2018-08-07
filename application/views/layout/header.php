@@ -50,6 +50,3 @@
                     </div>
 				<?php }?>
             </div>   
-        </div><!-- container // -->
-    </section>
-</div>
