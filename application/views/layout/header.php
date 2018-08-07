@@ -34,7 +34,7 @@
                         <figure class="card card-product">
                             <span class="badge-offer"><b><?php echo " - ".$value['descuento']."% ";?></b></span>
                             <div class="img-wrap"> 
-                                <img src="<?php echo base_url()?>bootstrap_UI/images/items/3.jpg">
+                                <img src="<?php echo base_url()?><?php echo $value['img'];?>">
                             </div>
                             <figcaption class="info-wrap">
                                 <a href="#" class="title"><?php echo $value['modelo'];?></a>

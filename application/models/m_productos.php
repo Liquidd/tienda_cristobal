@@ -3,9 +3,9 @@ class M_productos extends CI_Model{
     // funcionando
     function lista_productos(){
 		$this->db->distinct();
-        $this->db->select('productos2.id_producto AS id_producto,productos2.modelo AS modelo,productos2.marca AS marca, categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos2.descripcion AS descripcion,productos2.precio AS precio');
+        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca, categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.descripcion AS descripcion,productos.precio AS precio');
 		$this->db->from('subcategoria');
-		$this->db->join('productos2','productos2.id_subcategoria = subcategoria.id_subcategoria','INNER');
+		$this->db->join('productos','productos.id_subcategoria = subcategoria.id_subcategoria','INNER');
 		$this->db->join('categorias','categorias.id_categoria = subcategoria.id_subcategoria','INNER');
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
@@ -49,7 +49,7 @@ class M_productos extends CI_Model{
 	function lista_marcas(){
 		$this->db->distinct();
         $this->db->select('marca');
-		$this->db->from('productos2');
+		$this->db->from('productos');
 		$this->db->order_by("marca", "asc");
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
@@ -59,12 +59,12 @@ class M_productos extends CI_Model{
 	}	
 	function buscador_producto($nombre){
 		$this->db->distinct();
-		$this->db->select('productos2.id_producto AS id_producto,productos2.modelo AS modelo,productos2.marca AS marca, categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos2.descripcion AS descripcion,productos2.precio AS precio');
+		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca, categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.descripcion AS descripcion,productos.precio AS precio');
 		$this->db->from('subcategoria');
-		$this->db->join('productos2','productos2.id_subcategoria = subcategoria.id_subcategoria','INNER');
+		$this->db->join('productos','productos.id_subcategoria = subcategoria.id_subcategoria','INNER');
 		$this->db->join('categorias','categorias.id_categoria = subcategoria.id_subcategoria','INNER');
-		$this->db->like('productos2.modelo',$nombre); 
-		$this->db->or_like('productos2.marca', $nombre);
+		$this->db->like('productos.modelo',$nombre); 
+		$this->db->or_like('productos.marca', $nombre);
 		$this->db->or_like('categorias.nombre', $nombre);
 		$this->db->or_like('subcategoria.nombre', $nombre);
 		$query=$this->db->get();
@@ -76,9 +76,9 @@ class M_productos extends CI_Model{
 	function filtro_categorias($id_categoria){
 
 		$this->db->distinct();
-		$this->db->select('productos2.id_producto AS id_producto,productos2.modelo AS modelo,productos2.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,  productos2.descripcion AS descripcion,productos2.precio AS precio');
+		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,  productos.descripcion AS descripcion,productos.precio AS precio');
 		$this->db->from('subcategoria');
-		$this->db->join('productos2','productos2.id_subcategoria = subcategoria.id_subcategoria','INNER');
+		$this->db->join('productos','productos.id_subcategoria = subcategoria.id_subcategoria','INNER');
 		$this->db->join('categorias','categorias.id_categoria = subcategoria.id_categoria','INNER');
 		$this->db->where('categorias.id_categoria',$id_categoria);
 
@@ -127,7 +127,7 @@ class M_productos extends CI_Model{
 
 	function lista_promocion(){
 
-		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,promocion.descuento as descuento,productos.cantidad_existente AS existencia');
+		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.precio AS precio,promocion.descuento as descuento,productos.cantidad_existente AS existencia,productos.img as img');
 		$this->db->from('productos');
 		$this->db->join('promocion','promocion.id_producto = promocion.id_producto','INNER');
 		$this->db->where('cantidad_existente >',0);
@@ -143,10 +143,11 @@ class M_productos extends CI_Model{
 
 	function productos_principales(){
 
-        $this->db->select('productos.modelo as modelo,productos.marca as marca,productos.categoria AS categoria,productos.precio AS precio,productos.id_producto AS id_producto, 
-		Sum(1) AS veces_comprado');
-		$this->db->from('historial');
-		$this->db->join('productos','productos.id_producto = historial.id_producto','INNER');
+        $this->db->select('productos.modelo as modelo,productos.marca as marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.id_producto AS id_producto, Sum(1) AS veces_comprado');
+		$this->db->from('productos');
+		$this->db->join('historial','historial ON historial.id_producto = productos.id_producto','INNER');
+		$this->db->join('categorias','categorias ON categorias.id_categoria = productos.id_categoria','INNER');
+		$this->db->join('subcategoria','subcategoria ON subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
 		$this->db->where('cantidad_existente >',0);
 		$this->db->where('estado',1);
 		$this->db->group_by('id_producto');

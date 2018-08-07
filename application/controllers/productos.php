@@ -33,6 +33,7 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['modelo'] = $value['modelo'];
                 $array_promociones[$key]['precio'] = $value['precio'];
                 $array_promociones[$key]['descuento'] = $value['descuento'];
+                $array_promociones[$key]['img'] = $value['img'];
             }
 
         $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales));
@@ -48,6 +49,8 @@ class Productos extends Controlador_general {
             $array_promociones[$key]['modelo'] = $value['modelo'];
             $array_promociones[$key]['precio'] = $value['precio'];
             $array_promociones[$key]['descuento'] = $value['descuento'];
+            $array_promociones[$key]['descuento'] = $value['descuento'];
+
         }
         $this->view('carrito',array("promocion" =>$array_promociones));
     }
@@ -96,6 +99,8 @@ class Productos extends Controlador_general {
             $array_promociones[$key]['modelo'] = $value['modelo'];
             $array_promociones[$key]['precio'] = $value['precio'];
             $array_promociones[$key]['descuento'] = $value['descuento'];
+            $array_promociones[$key]['descuento'] = $value['descuento'];
+
         }
         $this->view('productos',array("promocion" =>$array_promociones,"productos_categoria" => $array_productos,"marca" => $array_marcas,"categoria" => $array_categorias,"subcategoria" => $array_subcategoria));
 
@@ -136,6 +141,8 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['modelo'] = $value['modelo'];
                 $array_promociones[$key]['precio'] = $value['precio'];
                 $array_promociones[$key]['descuento'] = $value['descuento'];
+                $array_promociones[$key]['descuento'] = $value['descuento'];
+
             }
             foreach ($lista_categoria as $key => $value) {
                 $array_categorias[$key]["id_categoria"] = $value['id_categoria']; 
