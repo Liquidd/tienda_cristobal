@@ -33,13 +33,17 @@
 								</div>
 								<a href="#" class="widget-header border-left pl-3 ml-3">
 									<div class="icontext">
-										<div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
+										<div class="icon-wrap icon-sm round border">
+											<i href="<?php echo base_url();?>productos/carrito" class="fa fa-shopping-cart"></i>
+										</div>
 									</div>
-									<span class="badge badge-pill badge-danger notify">0</span>
+									<span id="item_cont" class="badge badge-pill badge-danger notify">0</span>
 								</a>
 								<a href="#" class="widget-header border-left pl-3 ml-3">
 									<div class="icontext">
-										<div class="icon-wrap icon-sm round border"><i class="fa fa-heart"></i></div>
+										<div class="icon-wrap icon-sm round border">
+											<i class="fa fa-heart"></i>
+										</div>
 									</div>
 									<span class="badge badge-pill badge-danger notify">0</span>
 								</a>

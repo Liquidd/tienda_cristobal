@@ -11,8 +11,8 @@
                                 <article class="gallery-wrap"> 
                                     <div class="img-big-wrap">
                                         <div>
-                                            <a href="<?php echo base_url();?>bootstrap_UI/images/items/asus1.jpg" data-fancybox="">
-                                                <img src="<?php echo base_url();?>bootstrap_UI/images/items/asus1.jpg">
+                                            <a id="foto_perfil" href="<?php echo base_url();?><?php echo $value['img'];?>" data-fancybox="">
+                                                <img src="<?php echo base_url();?><?php echo $value['img'];?>">
                                             </a>
                                         </div>
                                     </div> <!-- slider-product.// -->
@@ -77,17 +77,17 @@
                     </dl>
                     <dl class="dlist-align">
                         <dt>Precio: </dt>
-                        <dd class="text-right h5 b">$<?php echo $value['precio'];?></dd>
+                        <dd class="text-right h5 b" id="precio_card">$<?php echo $value['precio'];?></dd>
                     </dl>
                     <dl class="dlist-align">
                         <dt>
-                            <select class="form-control form-control-sm" style="width:85px;">
+                            <select id="cantidad_card" class="form-control form-control-sm" style="width:85px;">
                                     <option> 1 </option>
                                     <option> 2 </option>
                                     <option> 3 </option>
                             </select>
                         </dt>
-                        <dd class="text-right"><button class="btn btn-success">Comprar Ahora</button></dd>
+                        <dd class="text-right"><button class="btn btn-success" onClick="agregar_carrito('<?php echo $value['id_producto'];?>')">Agregar Carrito</button></dd>
                     </dl>
                 </div> <!-- box.// -->   
                 <hr>             
