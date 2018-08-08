@@ -61,11 +61,10 @@ class M_productos extends CI_Model{
  
 	function buscador_producto($nombre){
 		$this->db->distinct();
-        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria, 
-		subcategoria.nombre AS subcategoria,productos.descripcion AS descripcion,productos.precio AS precio,productos.img AS img');
+		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,productos.descripcion AS descripcion,productos.precio AS precio,productos.cantidad_existente AS cantidad_existente,productos.estado AS estado,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.img AS img');
 		$this->db->from('productos');
-		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria ','INNER');
-		$this->db->join('subcategoria','subcategoria.subcategoria = productos.id_subcategoria','INNER');
+		$this->db->join('categorias','categorias ON categorias.id_categoria = productos.id_categoria','INNER');
+		$this->db->join('subcategoria','subcategoria ON subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
 		$this->db->like('productos.modelo',$nombre); 
 		$this->db->or_like('productos.marca', $nombre);
 		$this->db->or_like('categorias.nombre', $nombre);

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    console.log(base_url+"desde productos php 6");
+    console.log("desde productos.JS");
 
 });
 // agregar precio,cantidad,modelo de un solo articulo

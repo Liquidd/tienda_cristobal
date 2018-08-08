@@ -12,11 +12,11 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Min</label>
-                                    <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
+                                    <input type="number" class="form-control" id="minimo" placeholder="$0">
                                 </div>
                                 <div class="form-group col-md-6 text-right">
                                     <label>Max</label>
-                                    <input type="number" class="form-control" placeholder="$1,0000">
+                                    <input type="number" class="form-control" id="maximo" placeholder="$1,0000">
                                 </div>
                             </div>
                         </div> <!-- card-body.// -->
@@ -29,7 +29,7 @@
                                 <?php foreach($marca as $value){?>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="Check2">
-                                        <label class="custom-control-label" for="Check2"><?php echo $value['marca'];?></label>
+                                        <label class="custom-control-label" for=""><?php echo $value['marca'];?></label>
                                     </div> <!-- form-check.// -->
                                 <?php }?>
                             </div> <!-- card-body.// -->
@@ -115,7 +115,7 @@
                                         <br>
                                         <p>
                                             <a href="#" class="btn  btn-outline-success"> <i class="fas fa-shopping-cart"></i> Agregar </a>
-                                            <button type="button" class="detalles btn btn-light" id="<?php echo $value['id_producto'];?>">Detalles </button>
+                                            <button type="button" class="detalles btn btn-warning" id="<?php echo $value['id_producto'];?>">Detalles </button>
                                         </p>
                                     </div> <!-- action-wrap.// -->
                                 </aside> <!-- col.// -->

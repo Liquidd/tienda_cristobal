@@ -16,8 +16,8 @@
 							<div class="input-group w-100">
 								<input type="text" class="form-control" style="width:50%;" id="nombre_buscar" placeholder="Ingresa el Nombre a Buscar">
 								<div class="input-group-append">
-								<button class="btn btn-primary" type="submit" onClick="buscar_producto()">
-									<i class="fa fa-search"></i> Buscar
+								<button type="button" class="btn btn-primary" type="submit"  onClick="buscar_producto()">
+									<i class="fa fa-search"></i> Buscarr
 								</button>
 								</div>
 							</div>
@@ -29,7 +29,7 @@
 									<small class="title text-muted">Hola <?= $nombre ?></small>
 									<div> 
 									<a href="<?php echo base_url();?>login/logout"> Salir </a> <span class="dark-transp"> | </span>
-									<a href="#"> Configuracion </a></div>
+									<a href="<?php echo base_url();?>perfil""> Configuracion </a></div>
 								</div>
 								<a href="#" class="widget-header border-left pl-3 ml-3">
 									<div class="icontext">

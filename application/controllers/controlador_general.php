@@ -4,6 +4,7 @@ class Controlador_general extends CI_Controller {
 
     protected $id_user;
     protected $name_user = "Luis Rojo";
+    protected $puntos = 6000;
     
     public function __construct(){
         parent::__construct();
