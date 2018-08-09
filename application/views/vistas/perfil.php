@@ -45,31 +45,7 @@
 						<div class="tab-pane" id="tab_c">
                             <h3>Third tab with soft transitioning effect.</h3>
                             <p>
-                            <form class="mb16">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="system-search" placeholder="Ingresa el Producto a Buscar">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                            </p>
-                            <table class="table table-list-search" id="table_productos">
-                                <thead>
-                                    <tr>
-                                        <th>Foto</th>
-                                        <th>Modelo</th>
-                                        <th>Marca</th>
-                                        <th>Categoria</th>
-                                        <th>Subcategoria</th>
-                                        <th>Precio</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
 
-                                </tbody>
-                            </table>
 						</div>
 					</div>
 			</div>
