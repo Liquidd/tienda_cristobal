@@ -1,87 +1,77 @@
-<<<<<<< HEAD
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-=======
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-<<<<<<< HEAD
-      <img src="">
-=======
-
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
-    </div>
-  </div>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title"></h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="actualizar_form">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label>Modelo</label>
+                                    <input id="nombre_modal" name="nombre" type="text" placeholder="Ingrese el Nombre"
+                                    class="form-control">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Marca</label>
+                                    <input id="correo_modal" type="email" placeholder="Ingrese el Correo"
+                                    class="form-control">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="precio_modal">Precio</label>
+                                    <input type="text" id="precio_modal" class="form-control">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="id_categoria_modal">Categorias</label>
+                                    <select id="id_categoria_modal" class="form-control categoria_modal">
+                                        <option selected>Selecciona Categoria</option>
+                                        <option value="">Laptops</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="id_subcategoria_modal">Subcategorias</label>
+                                    <select id="id_subcategoria_modal" class="form-control subcategoria_modal">
+                                        <option selected>Seleccione Subcategoria</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="cantidad_modal">cantidad</label>
+                                    <input type="text" id="cantidad_modal" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="archivo_modal">Foto Archivo</label>
+                                    <input type="file" id="archivo_modal" class="form-control archivo_modal" value="default.jpg">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="id_promocion_modal">Promociones</label>
+                                    <select id="id_promocion_modal" class="form-control id_promocion_modal">
+                                        <option selected>Selecciona la Promocion</option>
+                                        <option value="">50%</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="descripcion modal">Descripcion Del Producto</label>
+                                    <textarea class="form-control" id="descripcion_modal" rows="6"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type='button' class='btn btn-default' data-dismiss='modal'>CERRAR</button>
+                        <button type="button" class="btn btn-success" id="guardar" onClick="actualizar_producto()">GUARDAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>   
 </div>
 
 <div class="container">
     <div class="tabs">
-<<<<<<< HEAD
-			<div class="row">
-				<div class="col-md-1">
-					<ul class="nav nav-pills nav-stacked flex-column">
-						<li class="active"><a href="#tab_a" data-toggle="pill">TAB 1</a></li>
-						<li><a href="#tab_b" data-toggle="pill">TAB 2</a></li>
-						<li><a href="#tab_c" data-toggle="pill" id="alta">Alta de Productos</a></li>
-					</ul>
-				</div>
-				<div class="col-md-11">
-					<div class="tab-content">
-						<div class="tab-pane active" id="tab_a">
-							<h3>First tab with soft transitioning effect.</h3>
-							<p>American Builders Inc. is your full service general contractor. We have been helping 
-								clients throughout Eastern North Carolina with their construction needs since 1996.
-								We take pride in understanding our clients' needs, making their construction experience 
-								as worry free as possible and only delivering a finished product that will withstand the
-							test of time. </p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-							bibendum laoreet.</p>
-						</div>
-						<div class="tab-pane" id="tab_b">
-							<h3>Second tab with soft transitioning effect.</h3>
-							<p>We maintain a reputation for effective communication and collaboration between our 
-								team and clients to minimize surprises and ensure precise project delivery. Lorem ipsum 
-								dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-								bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
-								justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
-							penatibus et magnis dis parturient montes.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-							bibendum laoreet.</p>
-						</div>
-						<div class="tab-pane" id="tab_c">
-                            <h3>Third tab with soft transitioning effect.</h3>
-                            <p>
-                            <form class="mb16">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="system-search" placeholder="Ingresa el Producto a Buscar">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                            </p>
-                            <table class="table table-list-search" id="table_productos">
-                                <thead>
-                                    <tr>
-                                        <th>Foto</th>
-                                        <th>Modelo</th>
-                                        <th>Marca</th>
-                                        <th>Categoria</th>
-                                        <th>Subcategoria</th>
-                                        <th>Precio</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-						</div>
-					</div>
-			</div>
-=======
 		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked flex-column">
@@ -126,7 +116,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Nuevo Producto</button>
                                 </div>
                             </div>
@@ -145,7 +135,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr class="ids_table">
 
                                             </tr>
                                         </tbody>
@@ -156,7 +146,6 @@
                     </div>
 			    </div>
 		    </div>
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 	    </div>
     </div>
 </div>
@@ -252,23 +241,16 @@
     });
 </script>
 <script>
-<<<<<<< HEAD
-   var base_url = '<?php echo base_url();?>';
-    $(document).ready(function(){
-        console.log("inicio 3");
-
-=======
     $(document).ready(function(){
         console.log("inicio 3");
         console.log(base_url);
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
         $("#alta").click(function(){
             $('#table_productos tbody').html('');
             $.post(base_url+'productos/lista_productos', function(respuesta){
                 console.log(respuesta);
             var datos = JSON.parse(respuesta);
             $.each(datos, function(i, val){
-                $("#table_productos tbody").append('<tr>'+
+                $("#table_productos tbody").append('<tr id="'+val.id_producto+'">'+
                     '<td>'+'<span class="icon-wrap text-primary"><i class="fa-lg fa fa-file"></i> </span>'+
                     '<td>'+ val.modelo+'</td>'+
                     '<td>'+ val.marca +'</td>'+
@@ -276,13 +258,8 @@
                     '<td>'+ val.subcategoria +'</td>'+
                     '<td>'+ val.precio +'</td>'+
                     '<td>'+
-<<<<<<< HEAD
-                    '<button type="button" class="btn btn-primary">EDITAR</button>'+
-                    '<button type="button" class="btn btn-danger">CACELAR</button>'+
-=======
                     '<button type="button" class="btn btn-outline-info"><i class="fas fa-edit"></i></button>'+
-                    '<button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>'+
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
+                    '<button type="button" class="btn btn-outline-danger" onClick="desactivar_producto('+val.id_producto+')"><i class="fas fa-trash-alt"></i></button>'+
                     '</td></tr>');        
                 });        
             });

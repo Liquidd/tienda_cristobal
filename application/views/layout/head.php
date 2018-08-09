@@ -19,6 +19,7 @@
 <!-- jQuery Personal -->
 <script src="<?php echo base_url()?>assets/js/app.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>assets/js/productos.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>node_modules/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>
 
 <!-- Bootstrap4 files-->
 <script src="<?php echo base_url()?>bootstrap_UI/js/bootstrap.bundle.min.js" type="text/javascript"></script>

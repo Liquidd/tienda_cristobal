@@ -77,13 +77,8 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-<<<<<<< HEAD
 	'password' => '',
-	'database' => 'sgh_recompensas',
-=======
-	'password' => 'MLG9393',
 	'database' => 'GA_recompensas',
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

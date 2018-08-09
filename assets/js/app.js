@@ -17,13 +17,10 @@ $(document).ready(function(){
         $.post(base_url+"productos/eliminar_producto",{
             rowid : _rowid
         },function(respuesta){
-            let datos = JSON.parse(respuesta);
-            for (let index = 0; index < array.length; index++) {
-                console.log(datos[index]);
-                
-            }
+           
         });
     });
+    
 });
 
 function buscar_categoria(_id_categoria) {

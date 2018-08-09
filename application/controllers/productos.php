@@ -12,11 +12,7 @@ class Productos extends Controlador_general {
         $lista_productos = $this->m_productos->lista_productos();
         echo json_encode($lista_productos);
     }
-    public function lista_productos()
-    {
-        $lista_productos = $this->m_productos->lista_productos();
-        echo json_encode($lista_productos);
-    }
+
     function index(){
         $lista_categoria = $this->m_productos->lista_categorias();
         $lista_ofertas = $this->m_productos->lista_promocion();
@@ -43,10 +39,6 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['modelo'] = $value['modelo'];
                 $array_promociones[$key]['descuento'] = $value['descuento'];
                 $array_promociones[$key]['img'] = $value['img'];
-<<<<<<< HEAD
-=======
-
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
             }
                 
         $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales));
@@ -118,11 +110,7 @@ class Productos extends Controlador_general {
             $array_promociones[$key]['id_producto'] = $value['id_producto'];
             $array_promociones[$key]['modelo'] = $value['modelo'];
             $array_promociones[$key]['descuento'] = $value['descuento'];
-<<<<<<< HEAD
-            $array_promociones[$key]['descuento'] = $value['descuento'];
-=======
             $array_promociones[$key]['img'] = $value['img'];
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 
         }
         $this->view('productos',array("promocion" =>$array_promociones,"productos_categoria" => $array_productos,"marca" => $array_marcas,"categoria" => $array_categorias,"subcategoria" => $array_subcategoria));
@@ -173,11 +161,7 @@ class Productos extends Controlador_general {
             $array_promociones[$key]['id_producto'] = $value['id_producto'];
             $array_promociones[$key]['modelo'] = $value['modelo'];
             $array_promociones[$key]['descuento'] = $value['descuento'];
-<<<<<<< HEAD
-            $array_promociones[$key]['descuento'] = $value['descuento'];
-=======
             $array_promociones[$key]['img'] = $value['img'];
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 
         }
         $this->view('productos',array("promocion" =>$array_promociones,"productos_categoria" => $array_productos,"marca" => $array_marcas,"categoria" => $array_categorias,"subcategoria" => $array_subcategoria));
@@ -218,11 +202,7 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['id_producto'] = $value['id_producto'];
                 $array_promociones[$key]['modelo'] = $value['modelo'];
                 $array_promociones[$key]['descuento'] = $value['descuento'];
-<<<<<<< HEAD
-                $array_promociones[$key]['descuento'] = $value['descuento'];
-=======
                 $array_promociones[$key]['img'] = $value['img'];
->>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 
             }
             foreach ($lista_categoria as $key => $value) {
@@ -308,10 +288,17 @@ class Productos extends Controlador_general {
             }
         $this->view('carrito',array("promocion" =>$array_promociones,"carrito_productos" =>$array_productos,"categoria" =>$array_categorias));
     }
-    public function desactivar_producto()
-    {
+    public function desactivar_producto(){
+
         $id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->desactivar_producto($id_producto);
+        echo $respuesta;
+    }
+    public function actualizar_producto(){
+        $promocion = $this->input->post("promocion");
+        $datos = $this->input->post("datos");
+        $id_producto = $this->input->post("id_producto");
+        $respuesta = $this->m_productos->actualizar_producto($id_producto,$datos,$promocion);
         echo $respuesta;
     }
 }
