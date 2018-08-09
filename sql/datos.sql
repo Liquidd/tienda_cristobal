@@ -7,6 +7,14 @@ FROM subcategoria
 INNER JOIN productos2 ON productos2.id_subcategoria = subcategoria.id_subcategoria 
 INNER JOIN categorias ON categorias.id_categoria = subcategoria.id_categoria
 
+-- alternativa
+SELECT DISTINCT productos3.id_producto AS id_producto,productos3.modelo AS modelo,productos3.marca AS marca,categorias.nombre AS categoria, 
+subcategoria.nombre AS subcategoria,productos3.descripcion AS descripcion,productos3.precio AS precio 
+FROM productos3 
+INNER JOIN categorias ON categorias.id_categoria = productos3.id_categoria 
+INNER JOIN subcategoria ON subcategoria.id_subcategoria = productos3.id_subcategoria 
+ORDER BY id_producto
+
 -------------------------------------------------------------------------------
 --categorias / subcategorias
 

@@ -15,7 +15,10 @@
 <script src="<?php echo base_url()?>node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
 
+
+<!-- jQuery Personal -->
 <script src="<?php echo base_url()?>assets/js/app.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>assets/js/productos.js" type="text/javascript"></script>
 
 <!-- Bootstrap4 files-->
 <script src="<?php echo base_url()?>bootstrap_UI/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -45,10 +48,14 @@
 <link href="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick-theme.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick.min.js"></script>
 <script>
-	var CI_ROOT = "<?php echo base_url();?>";
+    var base_url = "<?php echo base_url();?>";
+    var cont = 0;
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+.detalles:hover{
+    font-weight: bold;
+}
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -68,6 +75,28 @@ body{
 .pago_fila{
     margin-bottom: 250px;
     padding-bottom: 250px;
+}
+.btn-light{
+    border-color:   black;
+    font-weight: bold;
+}
+.blog .carousel-indicators {
+    left: 0;
+    top: auto;
+    bottom: -40px;
+
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.blog .carousel-indicators .active {
+    background: #707070;
 }
 </style>
 </head>

@@ -7,7 +7,22 @@ class M_productos extends CI_Model{
 		$this->db->from('productos');
 		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
 		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
+<<<<<<< HEAD
 		$this->db->order_by("id_producto", "asc");
+=======
+		$this->db->order_by("productos.id_producto", "asc");
+		$query=$this->db->get();
+		if ($query->num_rows() > 0){
+			return $query->result_array();
+		}else
+		return FALSE;
+	}
+	function buscar_id($id)
+	{
+		$this->db->select('id_producto,modelo,precio');
+		$this->db->from('productos');
+		$this->db->where('id_producto',$id);
+>>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
@@ -58,12 +73,20 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}	
+ 
 	function buscador_producto($nombre){
 		$this->db->distinct();
+<<<<<<< HEAD
 		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca, categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.descripcion AS descripcion,productos.precio AS precio');
 		$this->db->from('subcategoria');
 		$this->db->join('productos','productos.id_subcategoria = subcategoria.id_subcategoria','INNER');
 		$this->db->join('categorias','categorias.id_categoria = subcategoria.id_subcategoria','INNER');
+=======
+		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,productos.descripcion AS descripcion,productos.precio AS precio,productos.cantidad_existente AS cantidad_existente,productos.estado AS estado,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.img AS img');
+		$this->db->from('productos');
+		$this->db->join('categorias','categorias ON categorias.id_categoria = productos.id_categoria','INNER');
+		$this->db->join('subcategoria','subcategoria ON subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
+>>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 		$this->db->like('productos.modelo',$nombre); 
 		$this->db->or_like('productos.marca', $nombre);
 		$this->db->or_like('categorias.nombre', $nombre);
@@ -77,10 +100,17 @@ class M_productos extends CI_Model{
 	function filtro_categorias($id_categoria){
 
 		$this->db->distinct();
+<<<<<<< HEAD
 		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,  productos.descripcion AS descripcion,productos.precio AS precio');
 		$this->db->from('subcategoria');
 		$this->db->join('productos','productos.id_subcategoria = subcategoria.id_subcategoria','INNER');
 		$this->db->join('categorias','categorias.id_categoria = subcategoria.id_categoria','INNER');
+=======
+		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria, productos.descripcion AS descripcion,productos.precio AS precio,productos.img AS img');
+		$this->db->from('productos');
+		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
+		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
+>>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 		$this->db->where('categorias.id_categoria',$id_categoria);
 
 		$query=$this->db->get();
@@ -103,10 +133,14 @@ class M_productos extends CI_Model{
 	}
 	function informacion_producto($id_producto){
 
-        $this->db->select('productos.id_producto AS id_producto ,productos.modelo AS modelo,productos.marca AS marca,productos.categoria AS categoria,productos.subcategoria AS subcategoria,productos.descripcion AS descripcion, productos.precio AS precio,comentarios.comentario AS comentario,comentarios.nombre_cliente AS cliente ');
-		$this->db->from('comentarios');
-		$this->db->join('productos','productos.id_producto = comentarios.id_producto','INNER');
+        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.descripcion AS descripcion,productos.img AS img,comentarios.comentario AS comentario,comentarios.nombre_cliente AS cliente');
+		$this->db->from('productos');
+		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
+		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
+		$this->db->join('comentarios','comentarios.id_producto = productos.id_producto','INNER');
 		$this->db->where('productos.id_producto',$id_producto);
+		$this->db->order_by('comentarios.id_comentario','DESC');
+		$this->db->limit(1);
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
@@ -127,14 +161,17 @@ class M_productos extends CI_Model{
 	}
 
 	function lista_promocion(){
+<<<<<<< HEAD
 
 		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.precio AS precio,promocion.descuento as descuento,productos.cantidad_existente AS existencia,productos.img as img');
+=======
+		$this->db->select('promocion.id_promosion AS id_promosion,productos.id_producto as id_producto,productos.modelo as modelo,productos.precio as precio,promocion.descuento AS descuento,productos.img AS img');
+>>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 		$this->db->from('productos');
-		$this->db->join('promocion','promocion.id_producto = promocion.id_producto','INNER');
-		$this->db->where('cantidad_existente >',0);
-		$this->db->where('estado >',0);
-		$this->db->order_by('id_producto','ASC');
-		$this->db->limit(5);
+		$this->db->join('promocion','promocion.id_producto = productos.id_producto','INNER');
+		$this->db->where('productos.cantidad_existente >',0);
+		$this->db->where('productos.estado >',0);
+		$this->db->order_by('promocion.id_promosion','ASC');
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
@@ -144,14 +181,18 @@ class M_productos extends CI_Model{
 
 	function productos_principales(){
 
+<<<<<<< HEAD
         $this->db->select('productos.modelo as modelo,productos.marca as marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.id_producto AS id_producto, Sum(1) AS veces_comprado');
+=======
+        $this->db->select('productos.modelo as modelo,productos.marca as marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.id_producto AS id_producto, Sum(1) AS veces_comprado,productos.img AS img');
+>>>>>>> a15e3b5f3483bdd526a733a0d6785d0279345103
 		$this->db->from('productos');
 		$this->db->join('historial','historial ON historial.id_producto = productos.id_producto','INNER');
 		$this->db->join('categorias','categorias ON categorias.id_categoria = productos.id_categoria','INNER');
 		$this->db->join('subcategoria','subcategoria ON subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
 		$this->db->where('cantidad_existente >',0);
 		$this->db->where('estado',1);
-		$this->db->group_by('id_producto');
+		$this->db->group_by('productos.id_producto');
 		$this->db->order_by('veces_comprado','DESC');
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
@@ -159,9 +200,10 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 		
+		
 	}
 
-	// sin probar
+	//
 	function alta_venta($id_cliente,$id_producto,$cantidad_comprada,$pago){
 
         $this->db->trans_start();
@@ -173,10 +215,10 @@ class M_productos extends CI_Model{
 
         return $query->row()->out_param;
 	}
-	function alta_producto($modelo,$marca,$categoria,$descripcion,$cantidad,$precio){
+	function alta_producto($modelo,$marca,$id_categoria,$id_descripcion,$descripcion,$precio,$cantidad,$foto){
 
         $this->db->trans_start();
-        $success = $this->db->query("call alta_producto('$modelo','$marca','$categoria','$descripcion','$cantidad','$precio',1,@respuesta)");
+        $success = $this->db->query("call alta_producto('$modelo','$marca','$id_categoria','$id_descripcion','$descripcion,'$precio','$cantidad','$foto',@respuesta)");
         $success->next_result();
         $success->free_result();
         $query = $this->db->query('select @respuesta as out_param');
