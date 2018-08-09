@@ -14,6 +14,17 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}
+	function buscar_id($id)
+	{
+		$this->db->select('id_producto,modelo,precio');
+		$this->db->from('productos');
+		$this->db->where('id_producto',$id);
+		$query=$this->db->get();
+		if ($query->num_rows() > 0){
+			return $query->result_array();
+		}else
+		return FALSE;
+	}
 	function lista_categorias($id_categoria = null){
 		if ($id_categoria != null) {
 			$this->db->distinct();
@@ -110,6 +121,8 @@ class M_productos extends CI_Model{
 		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
 		$this->db->join('comentarios','comentarios.id_producto = productos.id_producto','INNER');
 		$this->db->where('productos.id_producto',$id_producto);
+		$this->db->order_by('comentarios.id_comentario','DESC');
+		$this->db->limit(1);
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
@@ -175,10 +188,10 @@ class M_productos extends CI_Model{
 
         return $query->row()->out_param;
 	}
-	function alta_producto($modelo,$marca,$categoria,$descripcion,$cantidad,$precio){
+	function alta_producto($modelo,$marca,$id_categoria,$id_descripcion,$descripcion,$precio,$cantidad,$foto){
 
         $this->db->trans_start();
-        $success = $this->db->query("call alta_producto('$modelo','$marca','$categoria','$descripcion','$cantidad','$precio',1,@respuesta)");
+        $success = $this->db->query("call alta_producto('$modelo','$marca','$id_categoria','$id_descripcion','$descripcion,'$precio','$cantidad','$foto',@respuesta)");
         $success->next_result();
         $success->free_result();
         $query = $this->db->query('select @respuesta as out_param');

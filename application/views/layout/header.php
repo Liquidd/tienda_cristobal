@@ -9,7 +9,7 @@
                             <img src="<?php echo base_url()?>assets/img/banner1.jpg">
                         </div>
                         <div class="item-slide rounded">
-                            <img src="<?php echo base_url()?>assets/img/banner2.jpg">
+                            <img src="<?php echo base_url()?>assets/img/sale1.png">
                         </div>
                         <div class="item-slide rounded">
                             <img src="<?php echo base_url()?>assets/img/banner3.jpg">

@@ -29,17 +29,17 @@
 									<small class="title text-muted">Hola <?= $nombre ?></small>
 									<div> 
 									<a href="<?php echo base_url();?>login/logout"> Salir </a> <span class="dark-transp"> | </span>
-									<a href="<?php echo base_url();?>perfil""> Configuracion </a></div>
+									<a href="<?php echo base_url();?>perfil"> Configuracion </a></div>
 								</div>
-								<a href="#" class="widget-header border-left pl-3 ml-3">
+								<a href="<?php echo base_url();?>productos/carrito_ventas" class="widget-header border-left pl-3 ml-3">
 									<div class="icontext">
 										<div class="icon-wrap icon-sm round border">
-											<i href="<?php echo base_url();?>productos/carrito" class="fa fa-shopping-cart"></i>
+											<i href="<?php echo base_url();?>productos/carrito_ventas" class="fa fa-shopping-cart"></i>
 										</div>
 									</div>
-									<span id="item_cont" class="badge badge-pill badge-danger notify">0</span>
+									<span id="item_cont" class="badge badge-pill badge-danger notify cn_carrito">0</span>
 								</a>
-								<a href="#" class="widget-header border-left pl-3 ml-3">
+								<a href="" class="widget-header border-left pl-3 ml-3">
 									<div class="icontext">
 										<div class="icon-wrap icon-sm round border">
 											<i class="fa fa-heart"></i>

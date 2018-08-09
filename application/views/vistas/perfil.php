@@ -1,27 +1,16 @@
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <img src="">
-    </div>
-  </div>
-</div>
-
 <div class="container">
     <div class="tabs">
-			<div class="row">
-				<div class="col-md-1">
-					<ul class="nav nav-pills nav-stacked flex-column">
-						<li class="active"><a href="#tab_a" data-toggle="pill">TAB 1</a></li>
-						<li><a href="#tab_b" data-toggle="pill">TAB 2</a></li>
-						<li><a href="#tab_c" data-toggle="pill" id="alta">Alta de Productos</a></li>
-					</ul>
-				</div>
-				<div class="col-md-11">
-					<div class="tab-content">
-						<div class="tab-pane active" id="tab_a">
+		<div class="row">
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked flex-column">
+					<li class="active"><a href="#tab_a" data-toggle="pill">TAB 1</a></li>
+					<li><a href="#tab_b" data-toggle="pill">TAB 2</a></li>
+					<li><a href="#tab_c" data-toggle="pill" id="alta">Alta de Productos</a></li>
+				</ul>
+			</div>
+			<div class="col-md-10">
+				<div class="tab-content">
+					<div class="tab-pane active" id="tab_a">
 							<h3>First tab with soft transitioning effect.</h3>
 							<p>American Builders Inc. is your full service general contractor. We have been helping 
 								clients throughout Eastern North Carolina with their construction needs since 1996.
@@ -30,8 +19,8 @@
 							test of time. </p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
 							bibendum laoreet.</p>
-						</div>
-						<div class="tab-pane" id="tab_b">
+					</div>
+					<div class="tab-pane" id="tab_b">
 							<h3>Second tab with soft transitioning effect.</h3>
 							<p>We maintain a reputation for effective communication and collaboration between our 
 								team and clients to minimize surprises and ensure precise project delivery. Lorem ipsum 
@@ -41,14 +30,43 @@
 							penatibus et magnis dis parturient montes.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
 							bibendum laoreet.</p>
-						</div>
-						<div class="tab-pane" id="tab_c">
-                            <h3>Third tab with soft transitioning effect.</h3>
-                            <p>
-
-						</div>
 					</div>
-			</div>
+					<div class="tab-pane" id="tab_c">
+                        <h3>Third tab with soft transitioning effect.</h3>
+                        <p>
+                            <div class="col-md-3">
+                                <form>
+                                    <div class="input-group">
+                                        <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+                                        <input type="text" class="form-control" id="system-search" placeholder="Search for" required>
+                                        <span class="input-group-append">
+                                            <button type="button" class="btn btn-light"><i class="fas fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </p>
+                        <div class="col-md-10">
+                            <table class="table table-list-search" id="table_productos">
+                                <thead>
+                                    <tr>
+                                        <th>Foto</th>
+                                        <th>Nombre</th>
+                                        <th>Marca</th>
+                                        <th>Categoria</th>
+                                        <th>Subcategoria</th>
+                                        <th>Precio</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+					</div>
+				</div>
+            </div>
 	    </div>
     </div>
 </div>
@@ -154,15 +172,15 @@
             var datos = JSON.parse(respuesta);
             $.each(datos, function(i, val){
                 $("#table_productos tbody").append('<tr>'+
-                    '<td>'+'<span class="icon-wrap text-primary"><i class="fa-lg fa fa-file"></i> </span>'+
+                    '<td>'+'<span class="icon-wrap text-primary"><i class="far fa-file-image"></i></span>'+
                     '<td>'+ val.modelo+'</td>'+
                     '<td>'+ val.marca +'</td>'+
                     '<td>'+ val.categoria +'</td>'+
                     '<td>'+ val.subcategoria +'</td>'+
                     '<td>'+ val.precio +'</td>'+
                     '<td>'+
-                    '<button type="button" class="btn btn-primary">EDITAR</button>'+
-                    '<button type="button" class="btn btn-danger">CACELAR</button>'+
+                    '<button type="button" class="btn btn-outline-primary"><i class="fas fa-edit"></i></button>'+
+                    '<button type="button" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>'+
                     '</td></tr>');        
                 });        
             });

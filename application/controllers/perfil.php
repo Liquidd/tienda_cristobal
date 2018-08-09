@@ -37,6 +37,6 @@ class Perfil extends Controlador_general {
                 $array_promociones[$key]['img'] = $value['img'];
 
             }
-        $this->view('perfil',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,$id_cliente,$puntaje_cliente));
+        $this->view('cuenta',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,$id_cliente,$puntaje_cliente));
     }
 }

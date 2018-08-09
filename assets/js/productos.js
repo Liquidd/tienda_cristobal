@@ -1,18 +1,27 @@
-$(document).ready(function(){
-    console.log("desde productos.JS");
 
+$(document).ready(function(){
+    console.log("test E'");
 });
 // agregar precio,cantidad,modelo de un solo articulo
 function agregar_carrito(_id_producto) {
     let datos = {
-        "id_producto" : _id_producto,
-        "modelo_detalle" : $("#modelo_card").text(),
-        "precio_detalle" : $("#precio_card").text(),
-        "cantidad_card" : $("#cantidad_card").val(),
-        "foto_perfil" : $("#foto_perfil").attr("href")
-
+        "id" : _id_producto,
+        "qty" : $("#cantidad_card").val(),
+        "price" : $("#precio_card").text(),
+        "name" : $("#modelo_card").text(),
     }
     console.log(datos);
+    $.post(base_url+"productos/agregar_carrito",{
+        datos : datos
+    },function(respuesta){
+        console.log(respuesta);
+        window.location=base_url+"productos/carrito_ventas";
+    });
+}
+function limpiar_carrito() {
+    $.post(base_url+"productos/limpiar_carrito",function(respuesta){
+        location.reload();
+    });
 }
 function alta_producto(){
 
@@ -88,8 +97,9 @@ function desactivar_producto() {
     $.post(base_url+"productos/desactivar_producto",{
         id_producto : id_producto
     },function(respuesta){
-        console.log(respuesta);
-        if(respuesta != 1){
+        let datos = JSON.parse(respuesta);
+        console.log(datos);
+        if(datos != 1){
             swal({
                 title: "Error al Desactivar",
                 icon: "danger",

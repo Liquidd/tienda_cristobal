@@ -49,7 +49,7 @@
 <script src="<?php echo base_url()?>bootstrap_UI/plugins/slickslider/slick.min.js"></script>
 <script>
     var base_url = "<?php echo base_url();?>";
-    var item_cont = 0;
+    var cont = 0;
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');

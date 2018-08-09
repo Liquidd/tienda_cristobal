@@ -5,10 +5,10 @@ class Productos extends Controlador_general {
     public function __construct(){
         parent::__construct();
         $this->load->model("m_productos",'',TRUE);
-        
+        $this->load->library('cart');
+
     }
-    public function lista_productos()
-    {
+    public function lista_productos(){
         $lista_productos = $this->m_productos->lista_productos();
         echo json_encode($lista_productos);
     }
@@ -221,10 +221,77 @@ class Productos extends Controlador_general {
         $this->view('detalles',array("datos"=>$array_productos,"marca"=>$array_marcas,"promocion"=>$array_promociones,"categoria" =>$array_categorias,"subcategoria" =>$array_subcategoria));
         
     }
-    public function perfil_usuario(){
-        $id_cliente = $this->name_user;
-        $puntaje_cliente = $this->puntos;
 
-        $this->view('perfil',$puntaje_cliente);
+    public function agregar_carrito(){
+        $datos= $this->input->post('datos');
+        $data=array( 
+            'id'  =>  $datos['id'], 
+            'qty'  =>  $datos['qty'], 
+            'price' =>  $datos['price'], 
+            'name' =>  $datos['name']
+        );
+        $this->cart->insert($data);
+        $respuesta = $this->cart->contents();
+        echo $respuesta;
+    }
+    public function eliminar_producto(){
+            $rowid = $this->input->post('rowid');
+            // Check rowid value.
+            if ($rowid==="all"){
+            // Destroy data which store in session.
+            $this->cart->destroy();
+            redirect('inicio');
+            }else{
+            // Destroy selected rowid in session.
+            $data = array(
+            'rowid' => $rowid,
+            'qty' => 0
+            );
+            // Update cart data, after cancel.
+            $this->cart->update($data);
+        }
+        echo json_encode($respuesta);
+    }
+    public function limpiar_carrito(){
+        $this->cart->destroy();
+    }
+    public function confirmar_pago(){
+        $carrito_productos = $this->cart->contents();
+    
+    }
+    public function carrito_ventas(){
+        $lista_carrito = $this->cart->contents();
+        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_categoria = $this->m_productos->lista_categorias();
+        $array_productos = array();
+        $array_promociones = array();
+        $array_categorias = array();
+        if($lista_carrito !==FALSE)
+            foreach ($lista_carrito as $key => $value) {
+                $array_productos[$key]['id'] = $value['id'];
+                $array_productos[$key]['qty'] = $value['qty'];
+                $array_productos[$key]['price'] = $value['price'];
+                $array_productos[$key]['name'] = $value['name'];
+    
+            }
+            foreach ($lista_ofertas as $key => $value) {
+                $array_promociones[$key]['id_producto'] = $value['id_producto'];
+                $array_promociones[$key]['modelo'] = $value['modelo'];
+                $array_promociones[$key]['descuento'] = $value['descuento'];
+                $array_promociones[$key]['img'] = $value['img'];
+    
+            }
+            foreach ($lista_categoria as $key => $value) {
+                $array_categorias[$key]["id_categoria"] = $value['id_categoria']; 
+                $array_categorias[$key]["nombre"] = $value['nombre']; 
+    
+            }
+        $this->view('carrito',array("promocion" =>$array_promociones,"carrito_productos" =>$array_productos,"categoria" =>$array_categorias));
+    }
+    public function desactivar_producto()
+    {
+        $id_producto = $this->input->post("id_producto");
+        $respuesta = $this->m_productos->desactivar_producto($id_producto);
+        echo $respuesta;
     }
 }

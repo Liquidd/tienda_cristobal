@@ -12,7 +12,7 @@
                                     <div class="img-big-wrap">
                                         <div>
                                             <a id="foto_perfil" href="<?php echo base_url();?><?php echo $value['img'];?>" data-fancybox="">
-                                                <img src="<?php echo base_url();?><?php echo $value['img'];?>">
+                                                <img id="imagen" src="<?php echo base_url();?><?php echo $value['img'];?>">
                                             </a>
                                         </div>
                                     </div> <!-- slider-product.// -->
@@ -25,7 +25,7 @@
                             </aside>
                             <aside class="col-sm-7">
                                 <article class="p-5">
-                                    <h3 class="title mb-3"><?php echo $value['modelo'];?></h3>
+                                    <h3 class="title mb-3" id="modelo_card"><?php echo $value['modelo'];?></h3>
                                     <div class="rating-wrap">
                                         <ul class="rating-stars">
                                             <li style="width:80%" class="stars-active"> 
@@ -98,7 +98,7 @@
                     </dl>
                 </div> <!-- box.// -->
                 <div class="box">
-                    <dl class="">
+                    <dl class="dlist-align">
                         <dt>
                             <div class="rating-wrap  mb-1">
                                 <ul class="rating-stars">

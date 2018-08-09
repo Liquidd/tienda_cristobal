@@ -1,14 +1,27 @@
+
 $(document).ready(function(){
-    console.log("desde APP JS");
+    console.log("desde S");
     $(".detalles").click(function(){
         var id = $(this).attr('id');
         console.log(id);
         $.post(base_url+"productos/detalles_productos",{
 			id_producto : id
 		},function(respuesta){
-			let datos = JSON.parse(respuesta);
-			console.log(datos);
+
             window.location=base_url+"productos/detalles_general?id_producto="+id;
+        });
+    });
+    $(".eliminar_producto").click(function(){
+        var _rowid = $(this).attr('id');
+        console.log(_rowid);
+        $.post(base_url+"productos/eliminar_producto",{
+            rowid : _rowid
+        },function(respuesta){
+            let datos = JSON.parse(respuesta);
+            for (let index = 0; index < array.length; index++) {
+                console.log(datos[index]);
+                
+            }
         });
     });
 });

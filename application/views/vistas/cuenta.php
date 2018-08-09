@@ -1,78 +1,88 @@
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <img src="">
+
     </div>
   </div>
 </div>
 
 <div class="container">
     <div class="tabs">
-			<div class="row">
-				<div class="col-md-1">
-					<ul class="nav nav-pills nav-stacked flex-column">
-						<li class="active"><a href="#tab_a" data-toggle="pill">TAB 1</a></li>
-						<li><a href="#tab_b" data-toggle="pill">TAB 2</a></li>
-						<li><a href="#tab_c" data-toggle="pill" id="alta">Alta de Productos</a></li>
-					</ul>
-				</div>
-				<div class="col-md-11">
-					<div class="tab-content">
-						<div class="tab-pane active" id="tab_a">
-							<h3>First tab with soft transitioning effect.</h3>
-							<p>American Builders Inc. is your full service general contractor. We have been helping 
-								clients throughout Eastern North Carolina with their construction needs since 1996.
-								We take pride in understanding our clients' needs, making their construction experience 
-								as worry free as possible and only delivering a finished product that will withstand the
-							test of time. </p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-							bibendum laoreet.</p>
-						</div>
-						<div class="tab-pane" id="tab_b">
-							<h3>Second tab with soft transitioning effect.</h3>
-							<p>We maintain a reputation for effective communication and collaboration between our 
-								team and clients to minimize surprises and ensure precise project delivery. Lorem ipsum 
-								dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-								bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
-								justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
-							penatibus et magnis dis parturient montes.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-							bibendum laoreet.</p>
-						</div>
-						<div class="tab-pane" id="tab_c">
-                            <h3>Third tab with soft transitioning effect.</h3>
-                            <p>
-                            <form class="mb16">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="system-search" placeholder="Ingresa el Producto a Buscar">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                            </p>
-                            <table class="table table-list-search" id="table_productos">
-                                <thead>
-                                    <tr>
-                                        <th>Foto</th>
-                                        <th>Modelo</th>
-                                        <th>Marca</th>
-                                        <th>Categoria</th>
-                                        <th>Subcategoria</th>
-                                        <th>Precio</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-						</div>
-					</div>
+		<div class="row">
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked flex-column">
+					<li class="active"><a href="#tab_a" data-toggle="pill">TAB 1</a></li>
+					<li><a href="#tab_b" data-toggle="pill">TAB 2</a></li>
+					<li><a href="#tab_c" data-toggle="pill" id="alta">Alta de Productos</a></li>
+				</ul>
 			</div>
+			<div class="col-md-10">
+				<div class="tab-content">
+				    <div class="tab-pane active" id="tab_a">
+                        <h3>First tab with soft transitioning effect.</h3>
+                        <p>American Builders Inc. is your full service general contractor. We have been helping 
+                            clients throughout Eastern North Carolina with their construction needs since 1996.
+                            We take pride in understanding our clients' needs, making their construction experience 
+                            as worry free as possible and only delivering a finished product that will withstand the
+                            test of time. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                            bibendum laoreet.</p>
+					</div>
+					<div class="tab-pane" id="tab_b">
+						<h3>Second tab with soft transitioning effect.</h3>
+						<p>We maintain a reputation for effective communication and collaboration between our 
+							team and clients to minimize surprises and ensure precise project delivery. Lorem ipsum 
+							dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+							bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
+							justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
+						penatibus et magnis dis parturient montes.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+						bibendum laoreet.</p>
+					</div>
+					<div class="tab-pane" id="tab_c">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <form>
+                                        <div class="input-group">
+                                            <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-light"><i class="fas fa-search"></i></button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Nuevo Producto</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-list-search" id="table_productos">
+                                        <thead>
+                                            <tr>
+                                                <th>Foto</th>
+                                                <th>Modelo</th>
+                                                <th>Marca</th>
+                                                <th>Categoria</th>
+                                                <th>Subcategoria</th>
+                                                <th>Precio</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+			    </div>
+		    </div>
 	    </div>
     </div>
 </div>
@@ -185,8 +195,8 @@
                     '<td>'+ val.subcategoria +'</td>'+
                     '<td>'+ val.precio +'</td>'+
                     '<td>'+
-                    '<button type="button" class="btn btn-primary">EDITAR</button>'+
-                    '<button type="button" class="btn btn-danger">CACELAR</button>'+
+                    '<button type="button" class="btn btn-outline-info"><i class="fas fa-edit"></i></button>'+
+                    '<button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>'+
                     '</td></tr>');        
                 });        
             });
