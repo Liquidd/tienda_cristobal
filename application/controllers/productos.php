@@ -40,8 +40,8 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['descuento'] = $value['descuento'];
                 $array_promociones[$key]['img'] = $value['img'];
             }
-
-        $this->view('cuenta',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales));
+                
+        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales));
 
     }
     public function Carrito(){
