@@ -3,7 +3,7 @@ class M_productos extends CI_Model{
     // funcionando
     function lista_productos(){
 		$this->db->distinct();
-        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio');
+        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.estado AS estado');
 		$this->db->from('productos');
 		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
 		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
@@ -14,8 +14,7 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}
-	function buscar_id($id)
-	{
+	function buscar_id($id){
 		$this->db->select('id_producto,modelo,precio');
 		$this->db->from('productos');
 		$this->db->where('id_producto',$id);
@@ -69,7 +68,6 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}	
- 
 	function buscador_producto($nombre){
 		$this->db->distinct();
 		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,productos.descripcion AS descripcion,productos.precio AS precio,productos.cantidad_existente AS cantidad_existente,productos.estado AS estado,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.img AS img');
@@ -87,7 +85,6 @@ class M_productos extends CI_Model{
 		return FALSE;
 	}
 	function filtro_categorias($id_categoria){
-
 		$this->db->distinct();
 		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria, productos.descripcion AS descripcion,productos.precio AS precio,productos.img AS img');
 		$this->db->from('productos');
@@ -148,6 +145,7 @@ class M_productos extends CI_Model{
 		$this->db->join('promocion','promocion.id_producto = productos.id_producto','INNER');
 		$this->db->where('productos.cantidad_existente >',0);
 		$this->db->where('productos.estado >',0);
+		$this->db->where('promocion.descuento >',0);
 		$this->db->order_by('promocion.id_promosion','ASC');
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
@@ -188,17 +186,15 @@ class M_productos extends CI_Model{
 
         return $query->row()->out_param;
 	}
-	function alta_producto($modelo,$marca,$id_categoria,$id_descripcion,$descripcion,$precio,$cantidad,$foto){
+	function alta_producto($modelo,$marca,$id_categoria,$id_subcategoria,$descripcion,$precio,$cantidad,$foto,$descuento){
 
-        $this->db->trans_start();
-        $success = $this->db->query("call alta_producto('$modelo','$marca','$id_categoria','$id_descripcion','$descripcion,'$precio','$cantidad','$foto',@respuesta)");
-        $success->next_result();
+		$this->db->trans_start();
+        $success = $this->db->query("call alta_producto('$modelo','$marca','$id_categoria','$id_subcategoria','$descripcion','$precio','$cantidad','$foto','$descuento',@respuesta)");
         $success->free_result();
         $query = $this->db->query('select @respuesta as out_param');
         $this->db->trans_complete();
 
         return $query->row()->out_param;
-
 	}
 	function actualizar_producto($id_producto,$datos){
 
@@ -218,6 +214,22 @@ class M_productos extends CI_Model{
         $this->db->where('id_producto', $id_producto);        
 		return $update = $this->db->update('productos');
 		
+	}
+	function activar_producto($id_producto){		
+		$this->db->set('estado',1);
+        $this->db->where('id_producto', $id_producto);        
+		return $update = $this->db->update('productos');
+	}
+	function estado_producto($id_producto,$estado){
+		if ($estado == 1) {
+			$this->db->set('estado',$estado);
+			$this->db->where('id_producto', $id_producto);
+		}	
+		$this->db->set('estado',$estado);
+		$this->db->where('id_producto', $id_producto);   
+		
+		
+		return $update = $this->db->update('productos');
 	}
 }
 ?>

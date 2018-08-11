@@ -1,5 +1,5 @@
 
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="modal_id" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -13,44 +13,45 @@
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label>Modelo</label>
-                                    <input id="nombre_modal" name="nombre" type="text" placeholder="Ingrese el Nombre"
+                                    <input id="modelo_modal" type="text" placeholder="Ingrese el Nombre"
                                     class="form-control">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Marca</label>
-                                    <input id="correo_modal" type="email" placeholder="Ingrese el Correo"
+                                    <input id="marca_modal" type="text" placeholder="Ingrese la Marca"
                                     class="form-control">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="precio_modal">Precio</label>
-                                    <input type="text" id="precio_modal" class="form-control">
+                                    <input type="number" id="precio_modal" class="form-control" min="0">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="id_categoria_modal">Categorias</label>
-                                    <select id="id_categoria_modal" class="form-control categoria_modal">
+                                    <select id="id_categoria_modal" class="form-control">
                                         <option selected>Selecciona Categoria</option>
-                                        <option value="">Laptops</option>
+                                        <option value="7">Electronicos</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="id_subcategoria_modal">Subcategorias</label>
-                                    <select id="id_subcategoria_modal" class="form-control subcategoria_modal">
+                                    <select id="id_subcategoria_modal" class="form-control">
                                         <option selected>Seleccione Subcategoria</option>
+                                        <option value="6">Laptops</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="cantidad_modal">cantidad</label>
-                                    <input type="text" id="cantidad_modal" class="form-control">
+                                    <input type="number" id="cantidad_modal" class="form-control" min="0">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="archivo_modal">Foto Archivo</label>
-                                    <input type="file" id="archivo_modal" class="form-control archivo_modal" value="default.jpg">
+                                    <input type="file" id="archivo_modal" class="form-control">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="id_promocion_modal">Promociones</label>
-                                    <select id="id_promocion_modal" class="form-control id_promocion_modal">
+                                    <select id="id_promocion_modal" class="form-control">
                                         <option selected>Selecciona la Promocion</option>
-                                        <option value="">50%</option>
+                                        <option value="1">50%</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -63,11 +64,11 @@
                     </div>
                     <div class="modal-footer">
                         <button type='button' class='btn btn-default' data-dismiss='modal'>CERRAR</button>
-                        <button type="button" class="btn btn-success" id="guardar" onClick="actualizar_producto()">GUARDAR</button>
+                        <button type="button" class="btn btn-success" id="guardar" onClick="nuevo_producto()">GUARDAR</button>
                     </div>
                 </div>
             </div>
-        </div>   
+    </div>   
 </div>
 
 <div class="container">
@@ -82,7 +83,7 @@
 			</div>
 			<div class="col-md-10">
 				<div class="tab-content">
-				    <div class="tab-pane active" id="tab_a">
+				    <div class="tab-pane active editar" id="tab_a">
                         <h3>First tab with soft transitioning effect.</h3>
                         <p>American Builders Inc. is your full service general contractor. We have been helping 
                             clients throughout Eastern North Carolina with their construction needs since 1996.
@@ -134,8 +135,8 @@
                                                 <th>Opciones</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr class="ids_table">
+                                        <tbody id="tbody_datos">
+                                            <tr>
 
                                             </tr>
                                         </tbody>
@@ -237,32 +238,6 @@
             {
                 tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
             }
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        console.log("inicio 3");
-        console.log(base_url);
-        $("#alta").click(function(){
-            $('#table_productos tbody').html('');
-            $.post(base_url+'productos/lista_productos', function(respuesta){
-                console.log(respuesta);
-            var datos = JSON.parse(respuesta);
-            $.each(datos, function(i, val){
-                $("#table_productos tbody").append('<tr id="'+val.id_producto+'">'+
-                    '<td>'+'<span class="icon-wrap text-primary"><i class="fa-lg fa fa-file"></i> </span>'+
-                    '<td>'+ val.modelo+'</td>'+
-                    '<td>'+ val.marca +'</td>'+
-                    '<td>'+ val.categoria +'</td>'+
-                    '<td>'+ val.subcategoria +'</td>'+
-                    '<td>'+ val.precio +'</td>'+
-                    '<td>'+
-                    '<button type="button" class="btn btn-outline-info"><i class="fas fa-edit"></i></button>'+
-                    '<button type="button" class="btn btn-outline-danger" onClick="desactivar_producto('+val.id_producto+')"><i class="fas fa-trash-alt"></i></button>'+
-                    '</td></tr>');        
-                });        
-            });
         });
     });
 </script>

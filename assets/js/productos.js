@@ -1,10 +1,3 @@
-$(document).ready(function(){
-    console.log("test E'");
-});
-
-
-
-// agregar precio,cantidad,modelo de un solo articulo
 function agregar_carrito(_id_producto) {
     let datos = {
         "id" : _id_producto,
@@ -25,75 +18,48 @@ function limpiar_carrito() {
         location.reload();
     });
 }
-function alta_producto(){
+//----------------------
+
+function nuevo_producto(){
+
+    var file = $("#archivo_modal")[0].files[0];
     let datos = {
-        "modelo" : $("#modelo").val(),
-        "marca" : $("#marca").val(),
-        "categoria" : $("#categoria").val(),
-        "subcategoria" : $("#subcategoria").val(),
-        "descripcion" : $("#descripcion").val(),
-        "precio" : $("#precio").val(),
-        "cantidad_existente" : $("#cantidad_existente").val(),
-        "estado" : $("#estado").val()
+        "modelo" : $("#modelo_modal").val(),
+        "marca" : $("#marca_modal").val(),
+        "categoria" : $("#id_categoria_modal").val(),
+        "subcategoria" : $("#id_subcategoria_modal").val(),
+        "descripcion" : $("#descripcion_modal").val(),
+        "precio" : $("#precio_modal").val(),
+        "cantidad" : $("#cantidad_modal").val(),
+        "foto" : file.name,
+        "descuento" : $("#id_promocion_modal").val()
     }
     console.log(datos);
-    $.post(base_url+"productos/alta_producto",{
+    $.post(base_url+"productos/nuevo_producto",{
         datos : datos
     },function(respuesta){
         console.log(respuesta);
-        if(respuesta != 1){
+        if(respuesta == "Nuevo Producto Registrado"){
             swal({
-                title: "Error al Ingresar Producto",
-                icon: "danger",
+                title: respuesta,
+                icon: "success",
                 button: "ACEPTAR",
+            }).then((value) => {
+                console.log(value);
+                location.reload();
             });
         }
         else{
             swal({
-                title: "Nuevo Producto Registrado",
-                icon: "success",
+                title: respuesta,
+                icon: "error",
                 button: "ACEPTAR",
-            }).then((value) => {
-                location.reload();
             });
         }
     });
 }
-function actualizar_producto(){
-    var nombre_foto = $("#archivo_modal")[0].files[0];
-    let datos = {
-        "modelo_modal" : $("#modelo_modal").val(),
-        "marca_modal" : $("#marca_modal").val(),
-        "id_categoria_modal" : $("#id_categoria_modal").val(),
-        "id_subcategoria_modal" : $("#id_subcategoria_modal").val(),
-        "descripcion_modal" : $("#descripcion_modal").val(),
-        "precio_modal" : $("#precio_modal").val(),
-        "cantidad_modal" : $("#cantidad_modal").val(),
-        "id_promocion_modal" : $("#id_promocion_modal").val(),
-        "archivo_modal" : nombre_foto.name
-        }
+function actualizar_productoM(_id){
 
-    $.post(base_url+"productos/actualizar_producto",{
-        datos : datos,
-        id_producto : _id
-    },function(respuesta){
-        console.log(respuesta);
-        if(respuesta != 1){
-            swal({
-                title: "Error al Actualizar",
-                icon: "danger",
-                button: "aceptar",
-            });
-        }else{
-            swal({
-                title: "Producto Actualizado",
-                icon: "success",
-                button: "ACEPTAR",
-            }).then((value) => {
-                location.reload();
-            });
-        }
-    });
 }
 function desactivar_producto(_id) {
     console.log(_id);
@@ -102,20 +68,20 @@ function desactivar_producto(_id) {
     },function(respuesta){
         let datos = JSON.parse(respuesta);
         console.log(datos);
-        if(datos != 1){
-            swal({
-                title: datos,
-                icon: "danger",
-                button: "aceptar",
-            });
-        }else{
-            swal({
-                title: datos,
-                icon: "success",
-                button: "ACEPTAR",
-            }).then((value) => {
-                location.reload();
-            });
-        }
+        swal({title: "Producto Desactivado",icon: "warning",}).then((value) => {
+            if(value)location.reload();
+        });
+    });
+}
+function activar_producto(_id){
+    console.log(_id);
+    $.post(base_url+"productos/activar_producto",{
+        id_producto : _id
+    },function(respuesta){
+        let datos = JSON.parse(respuesta);
+        console.log(datos);
+        swal({title: "Producto Activado",icon: "success",}).then((value) => {
+            if(value)location.reload();
+        });
     });
 }

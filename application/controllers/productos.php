@@ -116,7 +116,7 @@ class Productos extends Controlador_general {
         $this->view('productos',array("promocion" =>$array_promociones,"productos_categoria" => $array_productos,"marca" => $array_marcas,"categoria" => $array_categorias,"subcategoria" => $array_subcategoria));
     }
 
-    public function categorias($nombre = null){
+    public function categorias(){
 
         $id_categoria = $this->input->get("id_categoria");
         $lista_productos = $this->m_productos->filtro_categorias($id_categoria);
@@ -288,10 +288,16 @@ class Productos extends Controlador_general {
             }
         $this->view('carrito',array("promocion" =>$array_promociones,"carrito_productos" =>$array_productos,"categoria" =>$array_categorias));
     }
-    public function desactivar_producto(){
 
+    //-------------
+    public function desactivar_producto(){
         $id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->desactivar_producto($id_producto);
+        echo $respuesta;
+    }
+    public function activar_producto(){
+        $id_producto = $this->input->post("id_producto");
+        $respuesta = $this->m_productos->activar_producto($id_producto);
         echo $respuesta;
     }
     public function actualizar_producto(){
@@ -299,6 +305,11 @@ class Productos extends Controlador_general {
         $datos = $this->input->post("datos");
         $id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->actualizar_producto($id_producto,$datos,$promocion);
+        echo $respuesta;
+    }
+    public function nuevo_producto(){
+        $datos = $this->input->post("datos");
+        $respuesta = $this->m_productos->alta_producto($datos["modelo"],$datos["marca"],$datos["categoria"],$datos["subcategoria"],$datos["descripcion"],$datos["precio"],$datos["cantidad"],$datos["foto"],$datos["descuento"]);
         echo $respuesta;
     }
 }
