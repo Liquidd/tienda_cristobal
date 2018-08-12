@@ -1,75 +1,79 @@
-
 <div id="modal_id" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title"></h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="actualizar_form">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Modelo</label>
+                            <input id="modelo_modal" type="text" placeholder="Ingrese el Nombre"
+                            class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label>Marca</label>
+                        <input id="marca_modal" type="text" placeholder="Ingrese la Marca" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="precio_modal">Precio</label>
+                            <input type="number" id="precio_modal" class="form-control" min="0">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="id_categoria_modal">Categorias</label>
+                            <select id="id_categoria_modal" class="form-control">
+                                <option value="0">Selecciona Categoria</option>
+                                <!-- se cargan datos json -->
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="id_subcategoria_modal">Subcategoria</label>
+                            <select id="id_subcategoria_modal" class="form-control">
+                                <option value="0">Selecciona Subcategoria</option>
+                                <!-- se cargan datos json -->
+
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cantidad_modal">cantidad</label>
+                            <input type="number" id="cantidad_modal" class="form-control" min="0">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="archivo_modal">Foto Archivo</label>
+                            <input type="file" id="archivo_modal" name="" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="id_promocion_modal">Promociones</label>
+                            <select id="id_promocion_modal" class="form-control">
+                                <option value="0">Selecciona Promocion</option>
+                                <!-- se cargan datos json -->
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="descripcion modal">Descripcion Del Producto</label>
+                            <textarea class="form-control" id="descripcion_modal" rows="6"></textarea>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <form id="actualizar_form">
-                            <div class="row">
-                                <div class="form-group col-md-4">
-                                    <label>Modelo</label>
-                                    <input id="modelo_modal" type="text" placeholder="Ingrese el Nombre"
-                                    class="form-control">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label>Marca</label>
-                                    <input id="marca_modal" type="text" placeholder="Ingrese la Marca"
-                                    class="form-control">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="precio_modal">Precio</label>
-                                    <input type="number" id="precio_modal" class="form-control" min="0">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="id_categoria_modal">Categorias</label>
-                                    <select id="id_categoria_modal" class="form-control">
-                                        <option selected>Selecciona Categoria</option>
-                                        <option value="7">Electronicos</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="id_subcategoria_modal">Subcategorias</label>
-                                    <select id="id_subcategoria_modal" class="form-control">
-                                        <option selected>Seleccione Subcategoria</option>
-                                        <option value="6">Laptops</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="cantidad_modal">cantidad</label>
-                                    <input type="number" id="cantidad_modal" class="form-control" min="0">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="archivo_modal">Foto Archivo</label>
-                                    <input type="file" id="archivo_modal" class="form-control">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="id_promocion_modal">Promociones</label>
-                                    <select id="id_promocion_modal" class="form-control">
-                                        <option selected>Selecciona la Promocion</option>
-                                        <option value="1">50%</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="descripcion modal">Descripcion Del Producto</label>
-                                    <textarea class="form-control" id="descripcion_modal" rows="6"></textarea>
-                                </div>
-                            </div>
-                        </form>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type='button' class='btn btn-default' data-dismiss='modal'>CERRAR</button>
-                        <button type="button" class="btn btn-success" id="guardar" onClick="nuevo_producto()">GUARDAR</button>
-                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type='button' class='btn btn-default' data-dismiss='modal'>CERRAR</button>
+                    <button type="button" class="btn btn-success btn_guardar" id="" onClick="nuevo_producto()">GUARDAR</button>
+                    <button type="button" class="btn btn-info btn_editar" id="0" onClick="actualizar_producto(this.id)">ACTUALIZAR</button>
                 </div>
             </div>
+        </div>
     </div>   
 </div>
+
+
 
 <div class="container">
     <div class="tabs">
@@ -118,7 +122,7 @@
                                     </form>
                                 </div>
                                 <div class="col-md-8">
-                                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Nuevo Producto</button>
+                                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal_id">Nuevo Producto</button>
                                 </div>
                             </div>
                             <div class="row">

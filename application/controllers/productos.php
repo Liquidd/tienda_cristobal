@@ -12,10 +12,24 @@ class Productos extends Controlador_general {
         $lista_productos = $this->m_productos->lista_productos();
         echo json_encode($lista_productos);
     }
+    public function lista_categorias(){
+        $lista_categorias = $this->m_productos->lista_categorias();
+        echo json_encode($lista_categorias);
+    }
+    public function lista_subcategoria(){
+        $id_categoria = $this->input->post("id_categoria");
+        $lista_subcategoria = $this->m_productos->lista_subcategoria($id_categoria);
+        echo json_encode($lista_subcategoria);
+    }
+    public function lista_promocion(){
+        $productos_promocion = $this->m_productos->lista_promocion();
+        echo json_encode($productos_promocion);
+
+    }
 
     function index(){
         $lista_categoria = $this->m_productos->lista_categorias();
-        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->productos_promocion();
         $lista_principal = $this->m_productos->productos_principales();
 
         $array_promociones = array();
@@ -46,7 +60,7 @@ class Productos extends Controlador_general {
     }
     public function usuario_cuenta(){
         $lista_categoria = $this->m_productos->lista_categorias();
-        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->productos_promocion();
 
         $array_promociones = array();
         $array_categorias = array();
@@ -72,7 +86,7 @@ class Productos extends Controlador_general {
         $lista_marcas = $this->m_productos->lista_marcas();
         $lista_categorias = $this->m_productos->lista_categorias();
         $lista_subcategoria = $this->m_productos->lista_subcategoria();
-        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->productos_promocion();
 
         $array_productos = array();
         $array_marcas = array();
@@ -123,7 +137,7 @@ class Productos extends Controlador_general {
         $lista_marcas = $this->m_productos->lista_marcas();
         $lista_categorias = $this->m_productos->lista_categorias();
         $lista_subcategoria = $this->m_productos->lista_subcategoria();
-        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->productos_promocion();
 
         $array_productos = array();
         $array_marcas = array();
@@ -174,7 +188,7 @@ class Productos extends Controlador_general {
     public function detalles_general(){
         $id_producto = $this->input->get("id_producto");    
         $lista_productos = $this->m_productos->informacion_producto($id_producto);
-        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->productos_promocion();
         $lista_categoria = $this->m_productos->lista_categorias();
         $lista_subcategoria = $this->m_productos->lista_subcategoria();
         $lista_marcas = $this->m_productos->lista_marcas();
@@ -222,6 +236,7 @@ class Productos extends Controlador_general {
         
     }
 
+    //-------------------------------------------
     public function agregar_carrito(){
         $datos= $this->input->post('datos');
         $data=array( 
@@ -261,7 +276,7 @@ class Productos extends Controlador_general {
     }
     public function carrito_ventas(){
         $lista_carrito = $this->cart->contents();
-        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->productos_promocion();
         $lista_categoria = $this->m_productos->lista_categorias();
         $array_productos = array();
         $array_promociones = array();
@@ -289,7 +304,8 @@ class Productos extends Controlador_general {
         $this->view('carrito',array("promocion" =>$array_promociones,"carrito_productos" =>$array_productos,"categoria" =>$array_categorias));
     }
 
-    //-------------
+
+    //--------------------------------------------
     public function desactivar_producto(){
         $id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->desactivar_producto($id_producto);

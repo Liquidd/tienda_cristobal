@@ -58,8 +58,8 @@ function nuevo_producto(){
         }
     });
 }
-function actualizar_productoM(_id){
-
+function actualizar_producto(_id){
+    console.log("ID PRODUCTO: "+_id);
 }
 function desactivar_producto(_id) {
     console.log(_id);

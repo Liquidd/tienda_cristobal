@@ -24,18 +24,8 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}
-	function lista_categorias($id_categoria = null){
-		if ($id_categoria != null) {
-			$this->db->distinct();
-			$this->db->select('id_categoria,nombre');
-			$this->db->from('categorias');
-			$this->db->order_by("id_categoria", "asc");
-			$query=$this->db->get();
-			if ($query->num_rows() > 0){
-				return $query->result_array();
-			}else
-			return FALSE;
-		}
+	function lista_categorias(){
+		
 		$this->db->distinct();
         $this->db->select('id_categoria,nombre');
 		$this->db->from('categorias');
@@ -46,7 +36,19 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}
-	function lista_subcategoria(){
+	function lista_subcategoria($id_categoria = null){
+		if ($id_categoria != null) {
+			$this->db->distinct();
+			$this->db->select('id_subcategoria,id_categoria,nombre');
+			$this->db->from('subcategoria');
+			$this->db->where("id_categoria",$id_categoria);
+			$this->db->order_by("id_subcategoria", "asc");
+			$query=$this->db->get();
+			if ($query->num_rows() > 0){
+				return $query->result_array();
+			}else
+			return FALSE;
+		}
 		$this->db->distinct();
         $this->db->select('id_subcategoria,nombre');
 		$this->db->from('subcategoria');
@@ -112,11 +114,11 @@ class M_productos extends CI_Model{
 	}
 	function informacion_producto($id_producto){
 
-        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.descripcion AS descripcion,productos.img AS img,comentarios.comentario AS comentario,comentarios.nombre_cliente AS cliente');
+        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.cantidad_existente AS existencia,productos.descripcion AS descripcion,productos.img AS img,comentarios.comentario AS comentario,comentarios.nombre_cliente AS cliente');
 		$this->db->from('productos');
-		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
-		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
-		$this->db->join('comentarios','comentarios.id_producto = productos.id_producto','INNER');
+		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','LEFT');
+		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','LEFT');
+		$this->db->join('comentarios','comentarios.id_producto = productos.id_producto','LEFT');
 		$this->db->where('productos.id_producto',$id_producto);
 		$this->db->order_by('comentarios.id_comentario','DESC');
 		$this->db->limit(1);
@@ -138,15 +140,26 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}
-
 	function lista_promocion(){
-		$this->db->select('promocion.id_promosion AS id_promosion,productos.id_producto as id_producto,productos.modelo as modelo,productos.precio as precio,promocion.descuento AS descuento,productos.img AS img');
+		$this->db->distinct();
+		$this->db->select('id_promocion,descuento');
+		$this->db->from('promociones');
+		$this->db->order_by('id_promocion','ASC');
+		$query=$this->db->get();
+		if ($query->num_rows() > 0){
+			return $query->result_array();
+		}else
+		return FALSE;
+	}
+
+	function productos_promocion(){
+		$this->db->select('promociones.id_promocion AS id_promocion,productos.id_producto as id_producto,productos.modelo as modelo,productos.precio as precio,promociones.descuento AS descuento,productos.img AS img');
 		$this->db->from('productos');
-		$this->db->join('promocion','promocion.id_producto = productos.id_producto','INNER');
+		$this->db->join('promociones','promociones.id_promocion = productos.id_promocion','INNER');
 		$this->db->where('productos.cantidad_existente >',0);
 		$this->db->where('productos.estado >',0);
-		$this->db->where('promocion.descuento >',0);
-		$this->db->order_by('promocion.id_promosion','ASC');
+		$this->db->where('promociones.descuento >',0);
+		$this->db->order_by('promociones.id_promocion','ASC');
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();

@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-
+    // muestra detalles de producto seleccionado
     $(".detalles").click(function(){
         var id = $(this).attr('id');
         console.log(id);
@@ -11,6 +11,8 @@ $(document).ready(function(){
             window.location=base_url+"productos/detalles_general?id_producto="+id;
         });
     });
+
+
     $(".eliminar_producto").click(function(){
         var _rowid = $(this).attr('id');
         console.log(_rowid);
@@ -20,6 +22,8 @@ $(document).ready(function(){
            
         });
     });
+
+    // carga todos los productos en una tabla
     $("#alta").click(function(){
         $('#table_productos tbody').html('');
         $.post(base_url+'productos/lista_productos', function(respuesta){
@@ -40,8 +44,20 @@ $(document).ready(function(){
             });        
         });
     });
+
+    // abre modal y envio datos a modal
+    /**
+     * abre modal y envio datos a modal
+     * se guarda el id que corresponde a la clase .editaM 
+     * el id del producto seleccionado se lo asignamos al id de la clase .btn_editar
+     * ahora la funcion actualizar_producto ya puede tomar el id  del producto a actualizar que llega atraves de su parametro
+     */
     $("body").on("click", ".editaM", function(event){
+        $( ".btn_guardar").hide();
+        $( ".btn_editar").show();
         var id = $(this).attr('id');
+        console.log(id);
+
         $.post(base_url+"productos/detalles_productos",{
 			id_producto : id
 		},function(respuesta){
@@ -49,13 +65,49 @@ $(document).ready(function(){
             console.log(datos);
             $("#modelo_modal").val(datos.modelo);
             $("#marca_modal").val(datos.marca);
-            $("#id_categoria_modal").text(datos.categoria);
-            $("#id_subcategoria_modal").text(datos.subcategoria);
-            $("#descripcion_modal").val(datos.descripcion);
             $("#precio_modal").val(datos.precio);
-            $("#cantidad_modal").val(datos.cantidad);
-            $("#archivo_modal").val(datos.img);
-            $("#id_promocion_modal").text(datos.promocion);
+            $("#cantidad_modal").val(datos.existencia);
+            $(".btn_editar").attr('id',id);
+        });        
+    });
+    // muestra una lista de categorias al momento de que se abre el modal de captura de datos
+    $("#modal_id").on('show.bs.modal', function () {
+        $.post(base_url+"productos/lista_categorias",{},function(respuesta){
+            let datos = JSON.parse(respuesta);
+            let option = "";            
+            $.each(datos, function(i, val){
+               option += "<option value="+val.id_categoria+">"+val.nombre+"</option>";                                 
+            });
+            $('#id_categoria_modal').html('<option selected>Selecciona Categoria</option>'+option);
+        });
+    });
+    // muestra lista de subcategorias relacionadas con la categoria seleccionado
+    $("#id_categoria_modal").change(function () {
+        $.post(base_url+"productos/lista_subcategoria",{
+            id_categoria : $(this).val()
+        },function(respuesta){
+            let datos = JSON.parse(respuesta);
+            console.log(datos);
+            var option = "";
+            $.each(datos, function(i, val){    
+                option += "<option value="+datos[i].id_subcategoria+">"+datos[i].nombre+"</option>";
+            });
+            $('#id_subcategoria_modal').html('<option value="0">Selecciona Subcategoria</option>'+option);
+        });
+    });
+    // limpia modal
+    $('#modal_id').on('hidden.bs.modal', function(e) {
+        $(this).find('#actualizar_form')[0].reset();
+    });
+    // muestra una lista de promociones
+    $("#modal_id").on('show.bs.modal', function () {
+        $.post(base_url+"productos/lista_promocion",{},function(respuesta){
+            let datos = JSON.parse(respuesta);
+            let option = "";            
+            $.each(datos, function(i, val){
+               option += "<option value="+val.id_promocion+">"+val.descuento+"% de Descuento</option>";                                 
+            });
+            $('#id_promocion_modal').html('<option value="0">Selecciona Promocion </option>'+option);
         });
     });
 });
@@ -63,8 +115,11 @@ $(document).ready(function(){
 function buscar_categoria(_id_categoria) {
     console.log(_id_categoria);
     window.location=base_url+"productos/categorias?id_categoria="+_id_categoria;
+
 }
+
 function buscar_producto() {
     var filtro = $("#nombre_buscar").val();
     window.location=base_url+"productos/filtro_bucador?filtro="+filtro;
+
 }
