@@ -332,4 +332,10 @@ class Productos extends Controlador_general {
         $respuesta = $this->m_productos->alta_producto($datos["modelo"],$datos["marca"],$datos["categoria"],$datos["subcategoria"],$datos["descripcion"],$datos["precio"],$datos["cantidad"],$datos["foto"],$datos["descuento"]);
         echo $respuesta;
     }
+    public function historial_usuario()
+    {
+		$id_cliente = $this->id_user;
+        $respuesta = $this->m_productos->historial_usuario($id_cliente);
+        echo json_encode($respuesta);
+    }
 }

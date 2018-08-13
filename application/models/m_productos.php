@@ -107,10 +107,10 @@ class M_productos extends CI_Model{
 	}
 		
 	function historial_usuario($id_cliente){
-        $this->db->select('productos.modelo as modelo,productos.marca as marca,productos.descripcion as descripcion,productos.precio as precio,historial.cantidad_comprada as cantidad_comprada,historial.total_pagado as pago_total,historial.id_cliente as id_cliente');
+        $this->db->select('productos.modelo as modelo,productos.marca as marca,productos.descripcion as descripcion,productos.precio as precio,historial.cantidad_comprada as cantidad_comprada,historial.total_pagado as pago_total,historial.id_cliente as id_client');
 		$this->db->from('historial');
 		$this->db->join('productos','productos.id_producto = historial.id_producto','INNER');
-        $this->db->where('id_cliente',$id_cliente);
+        $this->db->where('historial.id_cliente',$id_cliente);
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
@@ -193,7 +193,7 @@ class M_productos extends CI_Model{
 		
 		
 	}
-
+	
 	//
 	function alta_venta($id_cliente,$id_producto,$cantidad_comprada,$pago){
 
@@ -206,6 +206,7 @@ class M_productos extends CI_Model{
 
         return $query->row()->out_param;
 	}
+
 	function alta_producto($modelo,$marca,$id_categoria,$id_subcategoria,$descripcion,$precio,$cantidad,$foto,$descuento){
 
 		$this->db->trans_start();
@@ -216,9 +217,10 @@ class M_productos extends CI_Model{
 
         return $query->row()->out_param;
 	}
+
 	function actualizar_producto($id_producto,$datos,$foto){
 
-		$ruta = "bootstrap_UI/images/items/";
+		$ruta = "bootstrap_UI/images/items/".$foto;
 
         $data = array(
             'modelo' => $datos["modelo"],
@@ -228,24 +230,27 @@ class M_productos extends CI_Model{
 			'descripcion' => $datos["descripcion"],
 			'cantidad_existente' => $datos["cantidad"],
 			'precio' => $datos["precio"],
-			'img' => $foto,
+			'img' => $ruta,
 			'id_promocion' => $datos["descuento"],
         );
 		$this->db->where('id_producto', $id_producto);
 		return $update = $this->db->update('productos',$data);
 		
 	}
+
 	function desactivar_producto($id_producto){		
 		$this->db->set('estado',0);
         $this->db->where('id_producto', $id_producto);        
 		return $update = $this->db->update('productos');
 		
 	}
+
 	function activar_producto($id_producto){		
 		$this->db->set('estado',1);
         $this->db->where('id_producto', $id_producto);        
 		return $update = $this->db->update('productos');
 	}
+
 	function estado_producto($id_producto,$estado){
 		if ($estado == 1) {
 			$this->db->set('estado',$estado);
@@ -257,5 +262,6 @@ class M_productos extends CI_Model{
 		
 		return $update = $this->db->update('productos');
 	}
+
 }
 ?>

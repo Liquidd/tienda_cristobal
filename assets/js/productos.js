@@ -35,31 +35,39 @@ function nuevo_producto(){
         "descuento" : $("#id_promocion_modal").val()
     }
     console.log(datos);
-    $.post(base_url+"productos/nuevo_producto",{
-        datos : datos
-    },function(respuesta){
-        console.log(respuesta);
-        if(respuesta == "Nuevo Producto Registrado"){
-            swal({
-                title: respuesta,
-                icon: "success",
-                button: "ACEPTAR",
-            }).then((value) => {
-                console.log(value);
-                location.reload();
-            });
-        }
-        else{
-            swal({
-                title: respuesta,
-                icon: "error",
-                button: "ACEPTAR",
-            });
-        }
-    });
+    if ($("#id_categoria_modal")[0].selectedIndex == 0) {
+        swal({title: "Debes Seleccionar una Categoria",icon: "warning",});
+    }
+    else if($("#id_subcategoria_modal")[0].selectedIndex == 0){
+        swal({title: "Debes Seleccionar una Subcategoria",icon: "warning",});
+    }
+    else{
+        $.post(base_url+"productos/nuevo_producto",{
+            datos : datos
+        },function(respuesta){
+            console.log(respuesta);
+            if(respuesta == "Nuevo Producto Registrado"){
+                swal({
+                    title: respuesta,
+                    icon: "success",
+                    button: "ACEPTAR",
+                }).then((value) => {
+                    console.log(value);
+                    location.reload();
+                });
+            }
+            else{
+                swal({
+                    title: respuesta,
+                    icon: "error",
+                    button: "ACEPTAR",
+                });
+            }
+        });
+    }
 }
 function actualizar_producto(_id){
-    //var file = $("#file_modal")[0].files[0];
+    var file = $("#file_modal")[0].files[0];
     let datos = {
         "modelo" : $("#modelo_modal").val(),
         "marca" : $("#marca_modal").val(),
@@ -68,10 +76,28 @@ function actualizar_producto(_id){
         "descripcion" : $("#descripcion_modal").val(),
         "precio" : $("#precio_modal").val(),
         "cantidad" : $("#cantidad_modal").val(),
-        "descuento" : $("#id_promocion_modal").val()
+        "descuento" : $("#id_promocion_modal").val(),
     }
     console.log(datos);
     console.log(_id);
+    if ($("#id_categoria_modal")[0].selectedIndex == 0) {
+        swal({title: "Debes Seleccionar una Categoria",icon: "warning",});
+    }
+    else if($("#id_subcategoria_modal")[0].selectedIndex == 0){
+        swal({title: "Debes Seleccionar una Subcategoria",icon: "warning",});
+    }
+    else{
+        $.post(base_url+"productos/actualizar_producto",{
+            datos : datos,
+            id_producto : _id,
+            foto : file.name
+        },function(respuesta){
+            console.log(respuesta);
+            swal({title: "Producto Activado",icon: "success",}).then((value) => {
+                if(value)location.reload();
+            });
+        });
+    }
 }
 function desactivar_producto(_id) {
     console.log(_id);
