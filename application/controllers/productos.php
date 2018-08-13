@@ -6,11 +6,18 @@ class Productos extends Controlador_general {
         parent::__construct();
         $this->load->model("m_productos",'',TRUE);
         $this->load->library('cart');
+        
 
     }
+    public function detalles_productos(){
+		$id_producto = $this->input->post("id_producto");
+        $respuesta = $this->m_productos->detalle_producto($id_producto);
+        echo json_encode($respuesta[0]);
+    }
     public function lista_productos(){
-        $lista_productos = $this->m_productos->lista_productos();
-        echo json_encode($lista_productos);
+		$id_producto = $this->input->post("id_producto");
+        $respuesta = $this->m_productos->lista_productos();
+        echo json_encode($respuesta);
     }
     public function lista_categorias(){
         $lista_categorias = $this->m_productos->lista_categorias();
@@ -26,7 +33,7 @@ class Productos extends Controlador_general {
         echo json_encode($productos_promocion);
 
     }
-
+    //------------------------------------------------------------------
     function index(){
         $lista_categoria = $this->m_productos->lista_categorias();
         $lista_ofertas = $this->m_productos->productos_promocion();
@@ -179,15 +186,11 @@ class Productos extends Controlador_general {
 
         }
         $this->view('productos',array("promocion" =>$array_promociones,"productos_categoria" => $array_productos,"marca" => $array_marcas,"categoria" => $array_categorias,"subcategoria" => $array_subcategoria));
-    } 
-    public function detalles_productos(){
-		$id_producto = $this->input->post("id_producto");
-        $respuesta = $this->m_productos->informacion_producto($id_producto);
-        echo json_encode($respuesta[0]);
     }
+    
     public function detalles_general(){
         $id_producto = $this->input->get("id_producto");    
-        $lista_productos = $this->m_productos->informacion_producto($id_producto);
+        $lista_productos = $this->m_productos->detalle_producto($id_producto);
         $lista_ofertas = $this->m_productos->productos_promocion();
         $lista_categoria = $this->m_productos->lista_categorias();
         $lista_subcategoria = $this->m_productos->lista_subcategoria();
@@ -317,10 +320,11 @@ class Productos extends Controlador_general {
         echo $respuesta;
     }
     public function actualizar_producto(){
-        $promocion = $this->input->post("promocion");
+
         $datos = $this->input->post("datos");
+        $foto = $this->input->post("foto");
         $id_producto = $this->input->post("id_producto");
-        $respuesta = $this->m_productos->actualizar_producto($id_producto,$datos,$promocion);
+        $respuesta = $this->m_productos->actualizar_producto($id_producto,$datos,$foto);
         echo $respuesta;
     }
     public function nuevo_producto(){

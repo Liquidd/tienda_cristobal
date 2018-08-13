@@ -22,7 +22,7 @@ function limpiar_carrito() {
 
 function nuevo_producto(){
 
-    var file = $("#archivo_modal")[0].files[0];
+    var file = $("#file_modal")[0].files[0];
     let datos = {
         "modelo" : $("#modelo_modal").val(),
         "marca" : $("#marca_modal").val(),
@@ -59,7 +59,19 @@ function nuevo_producto(){
     });
 }
 function actualizar_producto(_id){
-    console.log("ID PRODUCTO: "+_id);
+    //var file = $("#file_modal")[0].files[0];
+    let datos = {
+        "modelo" : $("#modelo_modal").val(),
+        "marca" : $("#marca_modal").val(),
+        "categoria" : $("#id_categoria_modal").val(),
+        "subcategoria" : $("#id_subcategoria_modal").val(),
+        "descripcion" : $("#descripcion_modal").val(),
+        "precio" : $("#precio_modal").val(),
+        "cantidad" : $("#cantidad_modal").val(),
+        "descuento" : $("#id_promocion_modal").val()
+    }
+    console.log(datos);
+    console.log(_id);
 }
 function desactivar_producto(_id) {
     console.log(_id);

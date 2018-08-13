@@ -16,8 +16,8 @@
                             class="form-control">
                         </div>
                         <div class="form-group col-md-4">
-                        <label>Marca</label>
-                        <input id="marca_modal" type="text" placeholder="Ingrese la Marca" class="form-control">
+                            <label>Marca</label>
+                            <input id="marca_modal" type="text" placeholder="Ingrese la Marca" class="form-control">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="precio_modal">Precio</label>
@@ -45,8 +45,8 @@
                             <input type="number" id="cantidad_modal" class="form-control" min="0">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="archivo_modal">Foto Archivo</label>
-                            <input type="file" id="archivo_modal" name="" class="form-control">
+                            <label id="label_foto" for="file_modal">Foto Archivo</label>
+                            <input type="file" id="file_modal" class="form-control" accept="image/.jpg,.png">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="id_promocion_modal">Promociones</label>
