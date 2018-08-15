@@ -115,7 +115,7 @@ class M_productos extends CI_Model{
 	}
 	function informacion_producto($id_producto){
 
-        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.descripcion AS descripcion,productos.img AS img,comentarios.comentario AS comentario,comentarios.nombre_cliente AS cliente');
+        $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.descripcion AS descripcion,productos.img AS img,comentarios.comentario AS comentario,comentarios.nombre_cliente AS cliente,productos.estado AS estado');
 		$this->db->from('productos');
 		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
 		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');

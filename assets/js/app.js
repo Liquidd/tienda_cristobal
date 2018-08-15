@@ -7,7 +7,6 @@ $(document).ready(function(){
         $.post(base_url+"productos/detalles_productos",{
 			id_producto : id
 		},function(respuesta){
-
             window.location=base_url+"productos/detalles_general?id_producto="+id;
         });
     });
@@ -17,7 +16,7 @@ $(document).ready(function(){
         $.post(base_url+"productos/eliminar_producto",{
             rowid : _rowid
         },function(respuesta){
-           
+            
         });
     });
     

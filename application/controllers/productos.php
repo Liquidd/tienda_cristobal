@@ -196,6 +196,7 @@ class Productos extends Controlador_general {
                 $array_productos[$key]['cliente']=$values['cliente'];
                 $array_productos[$key]['comentario']=$values['comentario'];
                 $array_productos[$key]['img']=$values['img'];
+                $array_productos[$key]['estado']=$values['estado'];
 
             }
             foreach ($lista_ofertas as $key => $value) {
