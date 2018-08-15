@@ -242,41 +242,39 @@ class Productos extends Controlador_general {
     //-------------------------------------------
     public function agregar_carrito(){
         $datos= $this->input->post('datos');
-        $data=array( 
-            'id'  =>  $datos['id'], 
-            'qty'  =>  $datos['qty'], 
-            'price' =>  $datos['price'], 
-            'name' =>  $datos['name']
+        $data = array(
+            'id'      => $datos["id"],
+            'qty'     => $datos["cantidad"],
+            'price'   => $datos["precio"],
+            'name'    => $datos["modelo"],
+            'foto'    => $datos["foto_carrito"]
         );
+
         $this->cart->insert($data);
         $respuesta = $this->cart->contents();
-        echo $respuesta;
+        echo json_encode($respuesta);
     }
     public function eliminar_producto(){
-            $rowid = $this->input->post('rowid');
-            // Check rowid value.
-            if ($rowid==="all"){
-            // Destroy data which store in session.
-            $this->cart->destroy();
-            redirect('inicio');
-            }else{
-            // Destroy selected rowid in session.
-            $data = array(
-            'rowid' => $rowid,
-            'qty' => 0
-            );
-            // Update cart data, after cancel.
-            $this->cart->update($data);
-        }
+        $data = array(
+            'rowid' => $this->input->post('rowid'),
+            'qty' => 0, 
+        );
+        $respuesta = $this->cart->update($data);
         echo json_encode($respuesta);
+    }
+    public function actualizar_carrito(){
+
     }
     public function limpiar_carrito(){
         $this->cart->destroy();
     }
+
     public function confirmar_pago(){
         $carrito_productos = $this->cart->contents();
-    
+        echo json_encode($carrito_productos);
+        
     }
+    
     public function carrito_ventas(){
         $lista_carrito = $this->cart->contents();
         $lista_ofertas = $this->m_productos->productos_promocion();
@@ -290,7 +288,9 @@ class Productos extends Controlador_general {
                 $array_productos[$key]['qty'] = $value['qty'];
                 $array_productos[$key]['price'] = $value['price'];
                 $array_productos[$key]['name'] = $value['name'];
-    
+                $array_productos[$key]['foto'] = $value['foto'];
+                $array_productos[$key]['rowid'] = $value['rowid'];    
+
             }
             foreach ($lista_ofertas as $key => $value) {
                 $array_promociones[$key]['id_producto'] = $value['id_producto'];
@@ -332,8 +332,7 @@ class Productos extends Controlador_general {
         $respuesta = $this->m_productos->alta_producto($datos["modelo"],$datos["marca"],$datos["categoria"],$datos["subcategoria"],$datos["descripcion"],$datos["precio"],$datos["cantidad"],$datos["foto"],$datos["descuento"]);
         echo $respuesta;
     }
-    public function historial_usuario()
-    {
+    public function historial_usuario(){
 		$id_cliente = $this->id_user;
         $respuesta = $this->m_productos->historial_usuario($id_cliente);
         echo json_encode($respuesta);

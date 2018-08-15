@@ -18,7 +18,7 @@ $(document).ready(function(){
         $.post(base_url+"productos/eliminar_producto",{
             rowid : _rowid
         },function(respuesta){
-           
+            location.reload();
         });
     });
     // carga historial
@@ -131,7 +131,7 @@ $(document).ready(function(){
             $.each(datos, function(i, val){
                option += "<option value="+val.id_promocion+">"+val.descuento+"% de Descuento</option>";                                 
             });
-            $('#id_promocion_modal').html('<option value="0">Selecciona Promocion </option>'+option);
+            $('#id_promocion_modal').html('<option value="1">Selecciona Promocion </option>'+option);
         });
     });
 
@@ -140,15 +140,3 @@ $(document).ready(function(){
         $(this).find('#actualizar_form')[0].reset();
     });
 });
-
-function buscar_categoria(_id_categoria) {
-    console.log(_id_categoria);
-    window.location=base_url+"productos/categorias?id_categoria="+_id_categoria;
-
-}
-
-function buscar_producto() {
-    var filtro = $("#nombre_buscar").val();
-    window.location=base_url+"productos/filtro_bucador?filtro="+filtro;
-
-}

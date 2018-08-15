@@ -51,7 +51,7 @@
                         <div class="form-group col-md-6">
                             <label for="id_promocion_modal">Promociones</label>
                             <select id="id_promocion_modal" class="form-control">
-                                <option value="0">Selecciona Promocion</option>
+                                <option value="1">Selecciona Promocion</option>
                                 <!-- se cargan datos json -->
 
                             </select>

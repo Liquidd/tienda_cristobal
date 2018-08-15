@@ -1,20 +1,37 @@
 function agregar_carrito(_id_producto) {
     let datos = {
         "id" : _id_producto,
-        "qty" : $("#cantidad_card").val(),
-        "price" : $("#precio_card").text(),
-        "name" : $("#modelo_card").text(),
+        "cantidad" : $("#cantidad_card").val(),
+        "precio" : parseInt($("#precio_card").text()),
+        "modelo" : $("#modelo_card").text(),
+        "foto_carrito" : $("#imagen").attr('src')
     }
     console.log(datos);
     $.post(base_url+"productos/agregar_carrito",{
         datos : datos
     },function(respuesta){
+        let datos = JSON.parse(respuesta);
         console.log(respuesta);
+        console.log(datos);
         window.location=base_url+"productos/carrito_ventas";
     });
 }
 function limpiar_carrito() {
     $.post(base_url+"productos/limpiar_carrito",function(respuesta){
+        location.reload();
+    });
+}
+function actualizar_carrito() {
+    console.log($(".eliminar_producto").attr('id'));
+    console.log(parseInt($("#cantidad").val()));
+    
+    $.post(base_url+"productos/actualizar_carrito",{
+        cantidad : parseInt($("#cantidad").val()),
+        rowid : $(".eliminar_producto").attr('id')
+    },function(respuesta){
+        let datos = JSON.parse(respuesta);
+        console.log(respuesta);
+        console.log(datos);
         location.reload();
     });
 }
@@ -118,8 +135,29 @@ function activar_producto(_id){
     },function(respuesta){
         let datos = JSON.parse(respuesta);
         console.log(datos);
-        swal({title: "Producto Activado",icon: "success",}).then((value) => {
+        swal({title: "Su Pago ha Sido Confirmado",icon: "success",}).then((value) => {
             if(value)location.reload();
         });
     });
+}
+
+function carrito_contenido() {
+    console.log("------------------------------------------------------------- NIVELL 2");
+    $.post(base_url+"productos/limpiar_carrito",function(respuesta){
+        console.log(respuesta);
+        var datos = JSON.parse(respuesta);
+        console.log(datos);
+    });
+}
+
+function buscar_categoria(_id_categoria) {
+    console.log(_id_categoria);
+    window.location=base_url+"productos/categorias?id_categoria="+_id_categoria;
+
+}
+
+function buscar_producto() {
+    var filtro = $("#nombre_buscar").val();
+    window.location=base_url+"productos/filtro_bucador?filtro="+filtro;
+
 }

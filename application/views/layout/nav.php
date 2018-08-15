@@ -12,7 +12,7 @@
             </div>
           </div>
 		    	<div class="col-lg-11-24 col-sm-8">
-						<form action="#" class="py-1">
+						<form class="py-1">
 							<div class="input-group w-100">
 								<input type="text" class="form-control" style="width:50%;" id="nombre_buscar" placeholder="Ingresa el Nombre a Buscar">
 								<div class="input-group-append">
@@ -37,7 +37,7 @@
 											<i href="<?php echo base_url();?>productos/carrito_ventas" class="fa fa-shopping-cart"></i>
 										</div>
 									</div>
-									<span id="item_cont" class="badge badge-pill badge-danger notify cn_carrito">0</span>
+									<span id="item_cont" class="badge badge-pill badge-danger notify cn_carrito"><?php echo $this->cart->total_items();?></span>
 								</a>
 								<a href="" class="widget-header border-left pl-3 ml-3">
 									<div class="icontext">

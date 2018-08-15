@@ -77,7 +77,7 @@
                     </dl>
                     <dl class="dlist-align">
                         <dt>Precio: </dt>
-                        <dd class="text-right h5 b" id="precio_card">$<?php echo $value['precio'];?></dd>
+                        <dd class="text-right h5 b" id="precio_card"><?php echo $value['precio'];?></dd>
                     </dl>
                     <dl class="dlist-align">
                         <dt>
