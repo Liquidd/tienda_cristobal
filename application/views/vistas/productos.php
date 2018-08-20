@@ -114,8 +114,7 @@
                                             <p class="text-success">Free shipping</p>
                                         <br>
                                         <p>
-                                            <a href="#" class="btn  btn-outline-success" onClick="test_carrito()"> <i class="fas fa-shopping-cart"></i> Agregar </a>
-                                            <button type="button" class="detalles btn btn-warning" id="<?php echo $value['id_producto'];?>">Detalles </button>
+                                            <button type="button" class="detalles btn btn-light" id="<?php echo $value['id_producto'];?>">Detalles </button>
                                         </p>
                                     </div> <!-- action-wrap.// -->
                                 </aside> <!-- col.// -->

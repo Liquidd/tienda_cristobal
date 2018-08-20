@@ -263,7 +263,13 @@ class Productos extends Controlador_general {
         echo json_encode($respuesta);
     }
     public function actualizar_carrito(){
-
+        $data = array(
+            'rowid' => $this->input->post('rowid'),
+            'qty' => $this->input->post('cantidad'), 
+        );
+        $this->cart->update($data);
+        $respuesta = $this->cart->total();
+        echo $respuesta; 
     }
     public function limpiar_carrito(){
         $this->cart->destroy();
