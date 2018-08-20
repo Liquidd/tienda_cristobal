@@ -9,7 +9,7 @@ class Perfil extends Controlador_general {
     }
     function index(){
         $lista_categoria = $this->m_productos->lista_categorias();
-        $lista_ofertas = $this->m_productos->lista_promocion();
+        $lista_ofertas = $this->m_productos->productos_promocion();
         $lista_principal = $this->m_productos->productos_principales();
         $id_cliente = $this->name_user;
         $puntaje_cliente = $this->puntos;
@@ -35,7 +35,7 @@ class Perfil extends Controlador_general {
                 $array_promociones[$key]['modelo'] = $value['modelo'];
                 $array_promociones[$key]['descuento'] = $value['descuento'];
                 $array_promociones[$key]['img'] = $value['img'];
-
+                
             }
         $this->view('cuenta',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,$id_cliente,$puntaje_cliente));
     }

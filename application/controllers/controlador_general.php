@@ -2,7 +2,7 @@
  
 class Controlador_general extends CI_Controller {
 
-    protected $id_user;
+    protected $id_user = 78;
     protected $name_user = "Luis Rojo";
     protected $puntos = 6000;
     
@@ -21,6 +21,7 @@ class Controlador_general extends CI_Controller {
 
         $data = array();
         $params["nombre"] = $this->name_user;
+        $params["puntos"] = $this->puntos;
         $data['content'] = $this->load->view('vistas/'.$view, $params, true);
         if ($view == "login") {
             $this->load->view('layout/main_layout',$data, false);            

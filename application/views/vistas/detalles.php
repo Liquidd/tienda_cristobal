@@ -7,9 +7,9 @@
             <main class="col-sm-9">
                     <div class="card">
                         <div class="row no-gutters">
-                            <aside class="col-sm-5 border-right">
+                            <aside class="col-md-6 border-right">
                                 <article class="gallery-wrap"> 
-                                    <div class="img-big-wrap">
+                                    <div class="img-small-wrap">
                                         <div>
                                             <a id="foto_perfil" href="<?php echo base_url();?><?php echo $value['img'];?>" data-fancybox="">
                                                 <img id="imagen" src="<?php echo base_url();?><?php echo $value['img'];?>">
@@ -23,7 +23,7 @@
                                     </div> <!-- slider-nav.// -->
                                 </article> <!-- gallery-wrap .end// -->
                             </aside>
-                            <aside class="col-sm-7">
+                            <aside class="col-sm-6">
                                 <article class="p-5">
                                     <h3 class="title mb-3" id="modelo_card"><?php echo $value['modelo'];?></h3>
                                     <div class="rating-wrap">
@@ -61,7 +61,7 @@
                                         <dt class="col-sm-3">Categoria</dt>
                                         <dd class="col-sm-9"><?php echo $value['categoria'];?></dd>
 
-                                        <dt class="col-sm-3">Subcategoria</dt>
+                                        <dt class="col-sm-4">Subcategoria</dt>
                                         <dd class="col-sm-9"><?php echo $value['subcategoria'];?></dd>
                                     </dl>
                                 </article> <!-- card-body.// -->
@@ -77,7 +77,7 @@
                     </dl>
                     <dl class="dlist-align">
                         <dt>Precio: </dt>
-                        <dd class="text-right h5 b" id="precio_card">$<?php echo $value['precio'];?></dd>
+                        <dd class="text-right h5 b" id="precio_card"><?php echo $value['precio'];?></dd>
                     </dl>
                     <dl class="dlist-align">
                         <dt>

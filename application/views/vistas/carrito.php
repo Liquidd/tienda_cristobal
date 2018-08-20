@@ -17,13 +17,13 @@
 							<tr>
 								<td>
 									<figure class="media">
-										<div class="img-wrap"><img class="img-thumbnail img-sm" src="<?php echo base_url()?>"></div>
+										<div class="img-wrap"><img class="img-thumbnail img-sm" src="<?php echo $value['foto'];?>"></div>
 										<figcaption class="media-body">
 												<h6 class="title text-truncate"><?php echo $value['name'];?></h6>
 												<dl class="dlist-inline small">
 												<dt class="text-success">Disponible</dt>
 											</dl>
-											<a href="" class="eliminar_producto" id="<?php echo $value['id'];?>">Eliminar del Carrito</a>
+											<a href="" class="eliminar_producto" id="<?php echo $value['rowid'];?>">Eliminar del Carrito</a>
 											<a href="" class="border-left pl-2 ml-2">Guardar Favorito</a>
 										</figcaption>
 									</figure> 
@@ -49,10 +49,11 @@
 			<aside class="col-sm-3">
 				<dl class="dlist-align h4">
 					<dt>Total :</dt>
-					<dd class="text-right"><strong>$1000</strong></dd>
+					<dd class="text-right total"><strong><?php echo "$".$this->cart->total();?></strong></dd>
 				</dl>
 				<hr>
-				<button type="button" class="btn btn-lg btn-success" onClick="limpiar_carrito()">Confirmar Pago</button>
+				<button type="button" class="btn btn-lg btn-success" onClick="actualizar_carrito()">Confirmar Pago</button>
+
 			</aside> <!-- col.// -->
 		</div>
 	</div> <!-- container .//  -->

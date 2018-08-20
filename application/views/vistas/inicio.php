@@ -29,7 +29,7 @@
                         </div> <!-- rating-wrap.// -->
                 </figcaption>
                 <div class="bottom-wrap">
-                    <a  class="detalles btn btn-warning btn-sm float-right" id="<?php echo $value['id_producto'];?>" >DETALLES </a>
+                    <a  class="detalles btn btn-light btn-sm float-right" id="<?php echo $value['id_producto'];?>" >DETALLES <i class="fas fa-caret-right"></i></a>
                     <div class="price-wrap h5">
                         <span class="price-new">$<?php echo $value['precio'];?></span> <del class="price-old">$1980</del>
                     </div> <!-- price-wrap.// -->
