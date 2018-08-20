@@ -33,10 +33,22 @@
 										<label class="text-right h5 b"><?php echo $value['price'];?></label>
 									</div>
 								</td>
-								<td class="text-right"> 
-									<div class="form-group col-md-6 text-right">
-										<input type="number" class="form-control text-right" id="cantidad" min="0" value="<?php echo $value['qty'];?>">
-									</div>
+								<td> 
+									<select class="form-control cantidad" name="cantidad" id="<?php echo $value['rowid'];?>">
+										<?php
+											echo "<option value="$value['qty'];" set_select('cantidad', $value['qty']);">". $value['qty'];";
+										?>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+									</select>
 								</td>
 							</tr>
 							<?php }}else {
@@ -49,11 +61,12 @@
 			<aside class="col-sm-3">
 				<dl class="dlist-align h4">
 					<dt>Total :</dt>
-					<dd class="text-right total"><strong><?php echo "$".$this->cart->total();?></strong></dd>
+					<dd class="text-right" id="total">
+						<?php echo "$".$this->cart->total();?>
+					</dd>
 				</dl>
 				<hr>
-				<button type="button" class="btn btn-lg btn-success" onClick="actualizar_carrito()">Confirmar Pago</button>
-
+				<button type="button" class="btn btn-lg btn-success" onClick="carrito_contenido()">Confirmar Pago</button>
 			</aside> <!-- col.// -->
 		</div>
 	</div> <!-- container .//  -->

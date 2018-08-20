@@ -1,6 +1,8 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
-    console.log("cc");
+    console.log("AS");
+
+
     $(".detalles").click(function(){
         var id = $(this).attr('id');
         console.log(id);
@@ -61,12 +63,7 @@ $(document).ready(function(){
             });        
         });
     });
-    $("#cantidad").keydown(function(){
-        console.log("prencione cantidad");
-    }); 
-    $("#cantidad").keyup(function(){
-        console.log("solte la cantidad");
-    }); 
+    
     /**
      * abre modal y envio datos a modal
      * se guarda el id que corresponde a la clase .editaM 
@@ -95,10 +92,10 @@ $(document).ready(function(){
             $("#precio_modal").val(datos.precio);
             $("#cantidad_modal").val(datos.existencia);
             $("#descripcion_modal").val(datos.descripcion);
+            $("#id_promocion_modal").val(datos.id_promocion);
+            $("#id_categoria_modal").val(datos.id_categoria);
             $(".btn_editar").attr('id',id);
             $("#label_foto").text('Foto Actual');
-            $("id_promocion_modal").prop('selectedIndex',datos.id_promocion);
-            $("id_categoria_modal").prop('selectedIndex',datos.id_categoria);
         });
     });
 
@@ -144,5 +141,14 @@ $(document).ready(function(){
     // limpia modal
     $('#modal_id').on('hidden.bs.modal', function(e) {
         $(this).find('#actualizar_form')[0].reset();
+    });
+
+    $(".cantidad").change(function () {
+        $.post(base_url+"productos/actualizar_carrito",{
+            cantidad : parseInt($(this).val()),
+            rowid : $(this).attr('id')
+        },function(respuesta){
+            $("#total").html("$"+respuesta);
+        });
     });
 });

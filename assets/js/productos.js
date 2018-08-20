@@ -16,22 +16,10 @@ function agregar_carrito(_id_producto) {
         window.location=base_url+"productos/carrito_ventas";
     });
 }
+
 function limpiar_carrito() {
     $.post(base_url+"productos/limpiar_carrito",function(respuesta){
         location.reload();
-    });
-}
-function actualizar_carrito() {
-    console.log($(".eliminar_producto").attr('id'));
-    console.log(parseInt($("#cantidad").val()));
-    
-    $.post(base_url+"productos/actualizar_carrito",{
-        cantidad : parseInt($("#cantidad").val()),
-        rowid : $(".eliminar_producto").attr('id')
-    },function(respuesta){
-        let datos = JSON.parse(respuesta);
-        console.log(datos);
-        
     });
 }
 
@@ -145,8 +133,7 @@ function carrito_contenido() {
     console.log("------------------------------------------------------------- NIVELL 2");
     $.post(base_url+"productos/limpiar_carrito",function(respuesta){
         console.log(respuesta);
-        var datos = JSON.parse(respuesta);
-        console.log(datos);
+        location.reload();
     });
 }
 

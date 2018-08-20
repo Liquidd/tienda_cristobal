@@ -114,7 +114,7 @@
                                             <p class="text-success" data-ennviot="textoo">Free shipping</p>
                                         <br>
                                         <p>
-                                            <pre><button type="button" class="detalles btn btn-light" id="<?php echo $value['id_producto'];?>">Detalles <i class="fas fa-caret-right"></i></button></pre>
+                                            <button type="button" class="detalles btn btn-light" id="<?php echo $value['id_producto'];?>">Detalles </button>
                                         </p>
                                     </div> <!-- action-wrap.// -->
                                 </aside> <!-- col.// -->
