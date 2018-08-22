@@ -185,6 +185,7 @@ class M_productos extends CI_Model{
 		$this->db->where('estado',1);
 		$this->db->group_by('productos.id_producto');
 		$this->db->order_by('veces_comprado','DESC');
+		$this->db->limit(12);
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();

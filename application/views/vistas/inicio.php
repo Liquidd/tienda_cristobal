@@ -47,37 +47,38 @@
         <header class="section-heading heading-line">
             <h4 class="title-section bg text-uppercase">Las Mejores Marcas</h4>
         </header>
-        <div class="row-sm">
-            <div class="col-md-4">
+        <div class="slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+            <div class="item-slide p-2">
                 <figure class="card card-product">
-                    <div class="img-wrap"><img src="<?php echo base_url()?>bootstrap_UI/images/logos/apple-logo2.png"></div>
+                    <span class="badge-new">  </span>
+                    <div class="img-wrap" style="height:150px;"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/LG-Logo.png"> </div>
                 </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-4">
+            </div>
+            <div class="item-slide p-2">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/logo4.png"></div>
+                    <div class="img-wrap" style="height:150px;"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/samsung_logo.png"></div>
                 </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-4">
+            </div>
+            <div class="item-slide p-2">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/netflix-logo.png"></div>
+                    <div class="img-wrap" style="height:150px;"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/asus_logo.jpg"> </div>
                 </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-4">
+            </div>
+            <div class="item-slide p-2">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/asus_logo.jpg"></div>
+                    <div class="img-wrap" style="height:150px;"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/netflix-logo.png"> </div>
                 </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-4">
+            </div>
+            <div class="item-slide p-2">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/samsung_logo.png"></div>
+                    <div class="img-wrap" style="height:150px;"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/logo4.png"> </div>
                 </figure> <!-- card // -->
-            </div> <!-- col // -->
-            <div class="col-md-4">
+             </div>
+            <div class="item-slide p-2">
                 <figure class="card card-product">
-                    <div class="img-wrap"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/LG-Logo.png"></div>
+                    <div class="img-wrap" style="height:150px;"> <img src="<?php echo base_url()?>bootstrap_UI/images/logos/apple-logo2.png"></div>
                 </figure> <!-- card // -->
-            </div> <!-- col // -->
-        </div> <!-- row.// -->
+            </div>
+        </div>
     </div><!-- container // -->
 </section>
