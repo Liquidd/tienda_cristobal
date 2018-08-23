@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="cantidad_modal">cantidad</label>
-                            <input type="number" id="cantidad_modal" class="form-control" min="0">
+                            <input type="number" id="cantidad_modal" class="form-control" min="0" max="0">
                         </div>
                         <div class="form-group col-md-6">
                             <label id="label_foto" for="file_modal">Foto Archivo</label>
