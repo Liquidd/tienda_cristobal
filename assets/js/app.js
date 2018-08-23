@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
-    console.log("AS");
+    console.log("MM");
 
 
     $(".detalles").click(function(){
@@ -57,7 +57,7 @@ $(document).ready(function(){
                 '<td>'+ val.categoria +'</td>'+
                 '<td>'+ val.subcategoria +'</td>'+
                 '<td>'+ val.precio +'</td>'+
-                '<td>'+"<button type='button' id="+val.id_producto+" class='btn btn-info editaM' data-toggle='modal' data-target='#modal_id'><i class='fas fa-edit'></i></button>"+cambiar_estado+"</td>"+
+                '<td>'+"<button type='button' id="+val.id_producto+" class='btn btn-info editar_m' data-toggle='modal' data-target='#modal_id'><i class='fas fa-edit'></i></button>"+cambiar_estado+"</td>"+
                 '</tr>');        
             });        
         });
@@ -75,7 +75,7 @@ $(document).ready(function(){
         $( ".btn_editar").hide();
     });
 
-    $("body").on("click", ".editaM", function(event){
+    $("#tbody_datos").on("click", ".editar_m", function(){
         $( ".btn_guardar").hide();
         $( ".btn_editar").show();        
         var id = $(this).attr('id');
@@ -91,10 +91,10 @@ $(document).ready(function(){
             $("#precio_modal").val(datos.precio);
             $("#cantidad_modal").val(datos.existencia);
             $("#descripcion_modal").val(datos.descripcion);
-            $("#id_promocion_modal").val(datos.id_promocion);
-            $("#id_categoria_modal").val(datos.id_categoria);
             $(".btn_editar").attr('id',id);
-            $("#label_foto").text('Foto Actual');
+            $("#label_foto").text(datos.img);
+            $("#id_categoria_modal").prop("selectedIndex",datos.id_categoria);
+            $("#id_promocion_modal").prop("selectedIndex",datos.id_promocion);
         });
     });
 

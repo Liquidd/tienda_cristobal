@@ -148,3 +148,13 @@ function buscar_producto() {
     window.location=base_url+"productos/filtro_bucador?filtro="+filtro;
 
 }
+function categoria_modal() {
+    $.post(base_url+"productos/lista_categorias",{},function(respuesta){
+        var datos = JSON.parse(respuesta);
+        var option = "";            
+        $.each(datos, function(i, val){
+           option += "<option value="+val.id_categoria+">"+val.nombre+"</option>";                                 
+        });
+        $('#id_categoria_modal').html('<option value="0">Selecciona Categoria</option>'+option);
+    });
+}
