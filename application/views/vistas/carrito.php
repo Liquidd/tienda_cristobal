@@ -35,9 +35,6 @@
 								</td>
 								<td> 
 									<select class="form-control cantidad" name="cantidad" id="<?php echo $value['rowid'];?>">
-										<?php
-											echo "<option value="$value['qty'];" set_select('cantidad', $value['qty']);">". $value['qty'];";
-										?>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
