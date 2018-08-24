@@ -54,6 +54,3 @@
 		</section> <!-- //footer-top -->
 	</div><!-- //container -->
 </footer>
-<script>
-
-</script>
