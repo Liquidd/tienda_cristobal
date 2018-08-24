@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
-    console.log("MM");
+    console.log("AA");
 
 
     $(".detalles").click(function(){
@@ -94,8 +94,8 @@ $(document).ready(function(){
             $("#descripcion_modal").val(datos.descripcion);
             $(".btn_editar").attr('id',id);
             $("#label_foto").text(datos.img);
-            $("#id_categoria_modal").prop("selectedIndex",datos.id_categoria);
-            $("#id_promocion_modal").prop("selectedIndex",datos.id_promocion);
+            $("#id_categoria_modal").val(datos.id_categoria).change();
+            $("#id_promocion_modal").val(datos.id_promocion).change();
         });
     });
 

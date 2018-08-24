@@ -34,6 +34,7 @@ class Productos extends Controlador_general {
 
     }
     //------------------------------------------------------------------
+    
     function index(){
         $lista_categoria = $this->m_productos->lista_categorias();
         $lista_ofertas = $this->m_productos->productos_promocion();
