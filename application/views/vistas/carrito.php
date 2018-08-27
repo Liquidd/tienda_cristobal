@@ -46,10 +46,7 @@
 										<option value="9">9</option>
 										<option value="10">10</option>
 									</select>
-<<<<<<< HEAD
-=======
 									
->>>>>>> 755c5ae2e2a1c15a1edb61c774fe63202f574925
 								</td>
 							</tr>
 							<?php }}else {

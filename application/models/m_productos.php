@@ -251,8 +251,8 @@ class M_productos extends CI_Model{
 			$this->db->where('id_producto', $id_producto);
 		}	
 		$this->db->set('estado',$estado);
-		$this->db->where('id_producto', $id_producto);   
-		
+		$this->db->where('id_producto', $id_producto);
+
 		
 		return $update = $this->db->update('productos');
 	}
