@@ -1,20 +1,42 @@
-function agregar_carrito(_id_producto) {
-    let datos = {
-        "id" : _id_producto,
-        "cantidad" : $("#cantidad_card").val(),
-        "precio" : parseInt($("#precio_card").text()),
-        "modelo" : $("#modelo_card").text(),
-        "foto_carrito" : $("#imagen").attr('src')
+function agregar_carrito(_id_producto,md_cantidad = undefined) {
+    console.log("cantidad: "+md_cantidad+" entro con el id: "+ _id_producto);
+    if (md_cantidad != undefined) {
+        let datos = {
+            "id" : _id_producto,
+            "cantidad" : md_cantidad,
+            "precio" : parseInt($("#precio_card").text()),
+            "modelo" : $("#modelo_card").text(),
+            "foto_carrito" : $("#imagen").attr('src')
+        }
+
+        $.post(base_url+"productos/agregar_carrito",{
+            datos : datos
+        },function(respuesta){
+            let datos = JSON.parse(respuesta);
+            console.log(respuesta);
+            console.log(datos);
+           window.location=base_url+"productos/carrito_ventas";
+        });
     }
-    console.log(datos);
-    $.post(base_url+"productos/agregar_carrito",{
-        datos : datos
-    },function(respuesta){
-        let datos = JSON.parse(respuesta);
-        console.log(respuesta);
+    else{
+        let datos = {
+            "id" : _id_producto,
+            "cantidad" : $("#cantidad_card").val(),
+            "precio" : parseInt($("#precio_card").text()),
+            "modelo" : $("#modelo_card").text(),
+            "foto_carrito" : $("#imagen").attr('src')
+        }
         console.log(datos);
-        window.location=base_url+"productos/carrito_ventas";
-    });
+    
+        $.post(base_url+"productos/agregar_carrito",{
+            datos : datos
+        },function(respuesta){
+            let datos = JSON.parse(respuesta);
+            console.log(respuesta);
+            console.log(datos);
+            window.location=base_url+"productos/carrito_ventas";
+        });
+    }
 }
 
 function limpiar_carrito() {

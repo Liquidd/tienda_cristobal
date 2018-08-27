@@ -30,7 +30,7 @@
                                     <img class="img-sm zoom-in" height="90" src="<?php echo base_url()?>bootstrap_UI/images/items/amazon1.jpg">
                                     <figcaption class="card-body">
                                         <h6 class="title">Amazon Prime</h6>
-                                        <a href="#">Detalles</a>
+                                        <a id="2" class="vista_rapida">Detalles</a>
                                     </figcaption>
                                 </figure>
                             </div> <!-- card.// -->
@@ -64,54 +64,16 @@
                                 <h6 class="title-section bg text-uppercase">Los más vendidos en Electronicos</h6>
                             </header>
                             <div class="slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/lenovo.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/lenovo.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/tv.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/tv.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img  class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/alexa.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/alexa.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/viva_book.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/viva_book.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/headphone.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/headphone.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/goPRO.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/goPRO.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
+                                <?php foreach($electronicos as $value){?>
+                                    <div class="item-slide p-2">
+                                        <figure class="card card-product">
+                                            <div class="img-wrap"> 
+                                                <img class="zoom-in" src="<?php echo base_url()?><?php echo $value['img'];?>">
+                                                <a class="btn-overlay vista_rapida" id="<?php echo $value['id_producto'];?>" ><i class="fa fa-search-plus"></i>Vista Rapida</a>
+                                            </div>
+                                        </figure> <!-- card // -->
+                                    </div>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -256,3 +218,73 @@
         </div> <!-- row.// -->
     </div><!-- container // -->
 </section>
+
+<div class="modal fade bd-example-modal-lg" id="modal_inicio"aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="container">
+                <div class="row">
+
+                <main class="col-md-12">
+                    <article class="card card-product">
+                        <div class="card-body">
+                            <div class="row">
+                                <aside class="col-sm-3">
+                                    <div class="img-wrap"><img id="imagen" src=""> <!--JSON--> </div>
+                                </aside> <!-- col.// -->
+                                <article class="col-sm-6">
+                                    <h5 class="title" id="modelo_card">  <!--JSON-->     </h5>
+                                    <div class="rating-wrap  mb-2">
+                                        <ul class="rating-stars">
+                                            <li style="width:80%" class="stars-active"> 
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                <i class="fa fa-star"></i> 
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                <i class="fa fa-star"></i> 
+                                            </li>
+                                        </ul>
+                                        <div class="label-rating">132 reviews</div>
+                                        <div class="label-rating">154 orders </div>
+                                    </div> <!-- rating-wrap.// -->
+                                    <dl class="dlist-align">
+                                    <dt>Marca</dt>
+                                        <dd id="marca_card">    </dd>
+                                    </dl>  <!-- item-property-hor .// -->    
+
+                                    <dl class="dlist-align">
+                                    <dt>Categoria</dt>
+                                        <dd id="categoria_card">      </dd>
+                                    </dl>  <!-- item-property-hor .// -->
+                                    <dl class="dlist-align">
+                                    <dt>Subcategoria</dt>
+                                        <dd id="sb_card">     </dd>
+                                    </dl>  <!-- item-property-hor .// -->
+
+                                </article> <!-- col.// -->
+                                <aside class="col-sm-3 border-right">
+                                    <div class="action-wrap">
+                                        <div class="price-wrap h4">
+                                            <span class="price" id="precio_card"> <!--JSON--> </span>	
+                                        </div> <!-- info-price-detail // -->
+                                        <br>
+                                        <p>
+                                            <button class="btn btn-success agregar_inicio">Agregar Carrito</button>
+                                        </p>
+                                    </div> <!-- action-wrap.// -->
+                                </aside> <!-- col.// -->
+                            </div> <!-- row.// -->
+                        </div> <!-- card-body .// -->
+                    </article> <!-- card product .// -->
+                </main> <!-- col.// -->
+                   
+                </div>
+            </div>
+
+        </div><!-- cierracontenido modal -->
+    </div>
+</div>
