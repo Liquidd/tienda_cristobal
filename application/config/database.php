@@ -77,8 +77,13 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
+<<<<<<< HEAD
 	'password' => '',
 	'database' => 'recompensas_ga',
+=======
+	'password' => 'MLG9393',
+	'database' => 'test_recompensas',
+>>>>>>> c950741086b8193d0b8748851d49730b88c895af
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -39,9 +39,17 @@ class Productos extends Controlador_general {
         $lista_categoria = $this->m_productos->lista_categorias();
         $lista_ofertas = $this->m_productos->productos_promocion();
         $lista_principal = $this->m_productos->productos_principales();
+        $lista_principal_1 = $this->m_productos->productos_principales(6);
+        $lista_principal_2 = $this->m_productos->productos_principales(2);
+        $lista_principal_3 = $this->m_productos->productos_principales(3,4);
 
         $array_promociones = array();
         $array_categorias = array();
+
+        $array_categoria_1 = array();
+        $array_categoria_2 = array();
+        $array_categoria_3 = array();
+
         $array_productos_principales = array();
         if($lista_principal !==FALSE)
             foreach ($lista_principal as $key => $value) {
@@ -62,8 +70,23 @@ class Productos extends Controlador_general {
                 $array_promociones[$key]['descuento'] = $value['descuento'];
                 $array_promociones[$key]['img'] = $value['img'];
             }
+            foreach ($lista_principal_1 as $key => $value) {
                 
-        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales));
+                $array_categoria_1[$key]["id_producto"] = $value['id_producto'];
+                $array_categoria_1[$key]["img"] = $value['img'];  
+            }
+            foreach ($lista_principal_2 as $key => $value) {
+                
+                $array_categoria_2[$key]["id_producto"] = $value['id_producto'];
+                $array_categoria_2[$key]["img"] = $value['img'];  
+            }
+            foreach ($lista_principal_3 as $key => $value) {
+                
+                $array_categoria_3[$key]["id_producto"] = $value['id_producto'];
+                $array_categoria_3[$key]["img"] = $value['img'];  
+            }
+
+        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,"electronicos"=>$array_categoria_1,"muebe_hogar"=>$array_categoria_2,"multimedia"=>$array_categoria_3));
 
     }
     public function usuario_cuenta(){

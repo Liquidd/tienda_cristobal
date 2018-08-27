@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
-    console.log("AA");
+    console.log("AAA");
 
 
     $(".detalles").click(function(){
@@ -151,4 +151,29 @@ $(document).ready(function(){
             $("#total").html("$"+respuesta);
         });
     });
+
+    $(".vista_rapida").on("click", function(){
+        var id = $(this).attr('id');
+        console.log(id);
+        $.post(base_url+"productos/detalles_productos",{
+			id_producto : id
+		},function(respuesta){
+            let datos = JSON.parse(respuesta);
+            $("#modelo_card").text(datos.modelo);
+            $("#precio_card").text(datos.precio);
+            $("#marca_card").text(datos.marca);
+            $("#categoria_card").text(datos.categoria);
+            $("#sb_card").text(datos.subcategoria);
+            $("#imagen").attr('src',base_url+datos.img);
+            $("#descripcion_inicio").text(datos.descripcion);
+            $(".agregar_inicio").attr('onClick','agregar_carrito('+datos.id_producto+',1)');
+            $('#modal_inicio').modal('show');
+        });
+    });
+    $(".detalle_subcategoria").on("click", function(){
+        var id_categoria = $(this).attr('id');
+        console.log(id);   
+        $(".detalle_subcategoria").attr('onClick','buscar_categoria('+id_categoria+')');
+    });
+    
 });
