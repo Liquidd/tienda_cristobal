@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
-    console.log("AAA");
+    console.log("AA");
 
 
     $(".detalles").click(function(){

@@ -4,6 +4,7 @@ class Login extends Controlador_general {
     public function __construct(){
         parent::__construct();
         $this->load->model("m_productos",'',TRUE);
+        $this->load->library('session');
 
     } 
     function index(){
@@ -11,20 +12,49 @@ class Login extends Controlador_general {
         $this->view('login');
     }
     function logout(){
-        $this->view('login');
-
+        $this->session->sess_destroy();
+        redirect("/login");
     }
-    function valida(){
-        $data = json_decode( file_get_contents('https://api.mercadolibre.com/users/226384143/'), true );
-        $user_name = $data['nickname'];
-        $nombre_login = $this->input->post("nombre");
+    function log_in(){
+        $data = $this->input->post("datos_api");
+        $arraydata = array(
+            'nombre'  => $data["nombre"],
+            'correo'     =>  $data["correo"],
+            'telefono' =>  $data["telefono"],
+            'foto' =>  $data["foto"],
+            'fecha_registrado' =>  $data["fecha_registrado"],
+        );
+        $this->session->set_userdata($arraydata);
+        redirect("/productos");
+    }
+    public function prueba(){
+        header('Content-Type: application/json');
 
-        echo $nombre;
-        if ($nombre == $user_name) {
-            echo "correcto";
-        }
-        else {
-            echo "incorrecto";
-        }
+        $correo = $this->input->post('correo');
+        $clave  = $this->input->post('clave');
+        
+        $datos_enviar = array(
+            'correo' => $correo,
+            'clave' => $clave 
+        );
+        
+        $json = json_encode($datos_enviar);
+        
+        $url = "https://inmo-carloalejandrosalas.c9users.io/login/log_me_reco";
+        
+        $request_headers = array();
+        $request_headers[] = 'Content-Type: application/json';
+        $request_headers[] = 'X-Requested-With: XMLHttpRequest';
+        
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
+        curl_setopt($ch,CURLOPT_POST,true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+
+        $response_body = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any)
+    
+        curl_close($ch);
+        echo json_encode($response_body);
     }
 }
