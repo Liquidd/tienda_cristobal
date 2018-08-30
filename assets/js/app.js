@@ -1,8 +1,6 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
     console.log("AAA");
-
-
     $(".detalles").click(function(){
         var id = $(this).attr('id');
         console.log(id);
@@ -160,7 +158,7 @@ $(document).ready(function(){
 		},function(respuesta){
             let datos = JSON.parse(respuesta);
             $("#modelo_card").text(datos.modelo);
-            $("#precio_card").text(datos.precio);
+            $("#precio_card").text("$"+datos.precio);
             $("#marca_card").text(datos.marca);
             $("#categoria_card").text(datos.categoria);
             $("#sb_card").text(datos.subcategoria);

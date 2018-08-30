@@ -63,13 +63,13 @@
                             <header class="section-heading heading-line">
                                 <h6 class="title-section bg text-uppercase">Los más vendidos en Electronicos</h6>
                             </header>
-                            <div class="slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+                            <div class="slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}' data-dots="true" data-nav="true">
                                 <?php foreach($electronicos as $value){?>
                                     <div class="item-slide p-2">
                                         <figure class="card card-product">
                                             <div class="img-wrap"> 
                                                 <img class="zoom-in" src="<?php echo base_url()?><?php echo $value['img'];?>">
-                                                <a class="btn-overlay vista_rapida" id="<?php echo $value['id_producto'];?>" ><i class="fa fa-search-plus"></i>Vista Rapida</a>
+                                                <a class="btn-overlay vista_rapida" id='<?php echo $value['id_producto'];?>' ><i class="fa fa-search-plus"></i>Vista Rapida</a>
                                             </div>
                                         </figure> <!-- card // -->
                                     </div>
@@ -218,7 +218,6 @@
         </div> <!-- row.// -->
     </div><!-- container // -->
 </section>
-<<<<<<< HEAD
 <!-- categorias -->
 <section class="section-content padding-y-sm bg">
     <div class="container">
@@ -301,10 +300,9 @@
         </div> <!-- card.// -->
     </div> <!-- container .//  -->
 </section>
-=======
 
 <div class="modal fade bd-example-modal-lg" id="modal_inicio"aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
 
             <div class="container">
@@ -318,7 +316,7 @@
                                     <div class="img-wrap"><img id="imagen" src=""> <!--JSON--> </div>
                                 </aside> <!-- col.// -->
                                 <article class="col-sm-6">
-                                    <h5 class="title" id="modelo_card">  <!--JSON-->     </h5>
+                                    <h5 class="title" id="modelo_card">  <!--JSON-->   </h5>
                                     <div class="rating-wrap  mb-2">
                                         <ul class="rating-stars">
                                             <li style="width:80%" class="stars-active"> 
@@ -353,9 +351,9 @@
                                 <aside class="col-sm-3 border-right">
                                     <div class="action-wrap">
                                         <div class="price-wrap h4">
-                                            <span class="price" id="precio_card"> <!--JSON--> </span>	
+                                            <span class="price" id="precio_card"><!--JSON--> </span>	
                                         </div> <!-- info-price-detail // -->
-                                        <br>
+                                        <hr>
                                         <p>
                                             <button class="btn btn-success agregar_inicio">Agregar Carrito</button>
                                         </p>
@@ -372,4 +370,3 @@
         </div><!-- cierracontenido modal -->
     </div>
 </div>
->>>>>>> c950741086b8193d0b8748851d49730b88c895af

@@ -3,12 +3,14 @@
 class Controlador_general extends CI_Controller {
 
     protected $id_user = 78;
-    protected $name_user = "Luis Rojo";
+    protected $name_user = "";
     protected $puntos = 6000;
     
     public function __construct(){
         parent::__construct();
-        
+        $this->load->library('session');
+        $session_datos = $this->session->userdata('session_datos');
+        $this->name_user = $session_datos["nombre"];
     }
     public function view($view, $params = null)
     {

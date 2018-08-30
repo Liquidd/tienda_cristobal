@@ -1,10 +1,12 @@
 function agregar_carrito(_id_producto,md_cantidad = undefined) {
-    console.log("cantidad: "+md_cantidad+" entro con el id: "+ _id_producto);
+
+    var substr =  $("#precio_card").text();
+    var precio = substr.substring(1);
     if (md_cantidad != undefined) {
         let datos = {
             "id" : _id_producto,
             "cantidad" : md_cantidad,
-            "precio" : parseInt($("#precio_card").text()),
+            "precio" : parseInt(precio),
             "modelo" : $("#modelo_card").text(),
             "foto_carrito" : $("#imagen").attr('src')
         }
@@ -22,7 +24,7 @@ function agregar_carrito(_id_producto,md_cantidad = undefined) {
         let datos = {
             "id" : _id_producto,
             "cantidad" : $("#cantidad_card").val(),
-            "precio" : parseInt($("#precio_card").text()),
+            "precio" : parseInt(precio),
             "modelo" : $("#modelo_card").text(),
             "foto_carrito" : $("#imagen").attr('src')
         }
