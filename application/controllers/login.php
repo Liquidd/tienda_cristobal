@@ -1,6 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-include_once('controlador_general.php');
-class Login extends Controlador_general {
+class Login extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model("m_productos",'',TRUE);
@@ -8,8 +7,8 @@ class Login extends Controlador_general {
 
     } 
     function index(){
+        $this->load->view('vistas/login');
 
-        $this->view('login');
     }
     function logout(){
         $this->session->sess_destroy();
@@ -24,6 +23,7 @@ class Login extends Controlador_general {
             'telefono' =>  $datos["telefono"],
             'foto' =>  $datos["foto"],
             'fecha_registrado' =>  $datos["fecha_registrado"],
+            "estado_session" => true,
         );
         $respuesta = $this->session->set_userdata("session_datos",$arraydata);
         echo json_encode($respuesta);
