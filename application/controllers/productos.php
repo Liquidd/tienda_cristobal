@@ -368,7 +368,11 @@ class Productos extends Controlador_general {
         $respuesta = $this->m_productos->historial_usuario($id_cliente);
         echo json_encode($respuesta);
     }
+<<<<<<< HEAD
     public function prueba(){
+=======
+    function prueba(){
+>>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
         header('Content-Type: application/json');
 
         $correo = $this->input->post('correo');
@@ -389,6 +393,7 @@ class Productos extends Controlador_general {
         
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
+<<<<<<< HEAD
         curl_setopt($ch,CURLOPT_POST,true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
@@ -397,5 +402,11 @@ class Productos extends Controlador_general {
     
         curl_close($ch);
         echo json_encode($response_body);
+=======
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+        echo $response_body = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any)
+
+        curl_close($ch);
+>>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
     }
 }

@@ -34,19 +34,19 @@
                                 <?php }?>
                             </div> <!-- card-body.// -->
                     </article> <!-- card-group-item.// -->
-                        <article class="card-group-item">
-                            <header class="card-header">
-                                <h6 class="title">Categorias </h6>
-                            </header>
-                                <div class="card-body">
-                                    <?php foreach($categoria as $value){?>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="<?php echo $value['id_categoria'];?>">
-                                            <label class="custom-control-label" for="Check1"><?php echo $value['nombre'];?></label>
-                                        </div> <!-- form-check.// -->
-                                    <?php }?>
-                                </div> <!-- card-body.// -->
-                        </article> <!-- card-group-item.// -->
+                    <article class="card-group-item">
+                        <header class="card-header">
+                            <h6 class="title">Categorias </h6>
+                        </header>
+                        <div class="card-body">
+                            <?php foreach($categoria as $value){?>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="<?php echo $value['id_categoria'];?>">
+                                    <label class="custom-control-label" for="Check1"><?php echo $value['nombre'];?></label>
+                                </div> <!-- form-check.// -->
+                            <?php }?>
+                        </div> <!-- card-body.// -->
+                    </article> <!-- card-group-item.// -->
                     <article class="card-group-item">
                         <header class="card-header">
                             <h6 class="title">Articulos Relacionados </h6>
@@ -65,10 +65,10 @@
             <main class="col-md-10">
                 <?php foreach($productos_categoria as $value){?>
                     <article class="card card-product">
-                        <div class="card-body">
+                        <div class="card-body box_test">
                             <div class="row">
                                 <aside class="col-sm-3">
-                                    <div class="img-wrap"><img src="<?php echo base_url();?><?php echo $value['img'];?>"></div>
+                                    <div class="img-wrap"><img id="imagen" src="<?php echo base_url();?><?php echo $value['img'];?>"></div>
                                 </aside> <!-- col.// -->
                                 <article class="col-sm-6">
                                     <h5 class="title"><?php echo $value['modelo'];?></h5>
@@ -97,7 +97,7 @@
                                     </dl>  <!-- item-property-hor .// -->    
 
                                     <dl class="dlist-align">
-                                    <dt>Categoria</dt>
+                                    <dt data-testid="199" >Categoria</dt>
                                         <dd><?php echo $value['categoria'];?></dd>
                                     </dl>  <!-- item-property-hor .// -->
                                     <dl class="dlist-align">
@@ -108,10 +108,10 @@
                                 <aside class="col-sm-3 border-left">
                                     <div class="action-wrap">
                                         <div class="price-wrap h4">
-                                            <span class="price">$<?php echo $value['precio'];?></span>	
+                                            <span class="price" id="precio" data-precio="aaaaaa">$<?php echo $value['precio'];?></span>	
                                             <del class="price-old"> $98</del>
                                         </div> <!-- info-price-detail // -->
-                                            <p class="text-success">Free shipping</p>
+                                            <p class="text-success" data-ennviot="textoo">Free shipping</p>
                                         <br>
                                         <p>
                                             <button type="button" class="detalles btn btn-light" id="<?php echo $value['id_producto'];?>">Detalles </button>

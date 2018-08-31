@@ -1,11 +1,6 @@
 <?php
 class M_productos extends CI_Model{
 
-	// funcionando
-	function informacion_producto(){
-		
-	
-	}
     function lista_productos(){
 		$this->db->distinct();
         $this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria,productos.precio AS precio,productos.estado AS estado');
@@ -289,8 +284,8 @@ class M_productos extends CI_Model{
 			$this->db->where('id_producto', $id_producto);
 		}	
 		$this->db->set('estado',$estado);
-		$this->db->where('id_producto', $id_producto);   
-		
+		$this->db->where('id_producto', $id_producto);
+
 		
 		return $update = $this->db->update('productos');
 	}

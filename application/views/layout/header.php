@@ -33,7 +33,7 @@
                     <div class="item-slide">
                         <figure class="card card-product">
                             <span class="badge-offer"><b><?php echo " - ".$value['descuento']."% ";?></b></span>
-                            <img src="<?php echo base_url()?><?php echo $value['img'];?>">
+                            <img class="img-md" src="<?php echo base_url()?><?php echo $value['img'];?>">
                             <figcaption class="info-wrap">
                                 <h5 class="card-title"><?php echo substr($value['modelo'], 0, 21);?></h4>
                                 <div class="rating-wrap">

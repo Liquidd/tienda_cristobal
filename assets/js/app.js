@@ -1,8 +1,12 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
+<<<<<<< HEAD
     console.log("AA");
 
 
+=======
+    console.log("AAA");
+>>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
     $(".detalles").click(function(){
         var id = $(this).attr('id');
         console.log(id);
@@ -13,7 +17,7 @@ $(document).ready(function(){
             window.location=base_url+"productos/detalles_general?id_producto="+id;
         });
     });
-    
+
     $(".eliminar_producto").click(function(){
         var _rowid = $(this).attr('id');
         console.log(_rowid);
@@ -23,6 +27,7 @@ $(document).ready(function(){
             location.reload();
         });
     });
+
     // carga historial
     $("#historial").click(function(){
         $('#table_historial tbody').html(' ');
@@ -50,7 +55,7 @@ $(document).ready(function(){
         $.each(datos, function(i, val){
             var cambiar_estado = val.estado != 1 ? "<button type='button' class='btn btn-success activar' onClick='activar_producto("+val.id_producto+")'><i class='far fa-check-square'></button>" : "<button type='button' class='btn btn-danger desactivar' onClick='desactivar_producto("+val.id_producto+")'></i><i class='fas fa-trash-alt'></i></button>";
 
-            $("#table_productos tbody").append('<tr>'+
+            $("#table_productos tbody").append('<tr class="test_tr">'+
                 '<td>'+ '<span class="icon-wrap text-primary"><i class="fa-lg fa fa-file"></i> </span>' + '</td>'+
                 '<td>'+ val.modelo+'</td>'+
                 '<td>'+ val.marca +'</td>'+
@@ -159,7 +164,7 @@ $(document).ready(function(){
 		},function(respuesta){
             let datos = JSON.parse(respuesta);
             $("#modelo_card").text(datos.modelo);
-            $("#precio_card").text(datos.precio);
+            $("#precio_card").text("$"+datos.precio);
             $("#marca_card").text(datos.marca);
             $("#categoria_card").text(datos.categoria);
             $("#sb_card").text(datos.subcategoria);

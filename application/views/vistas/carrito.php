@@ -34,7 +34,7 @@
 									</div>
 								</td>
 								<td> 
-									<select class="form-control cantidad" id="<?php echo $value['rowid'];?>">
+									<select class="form-control cantidad" name="cantidad" id="<?php echo $value['rowid'];?>">
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>

@@ -8,8 +8,8 @@
 <meta name="author" content="Bootstrap-ecommerce by Vosidiy">
 
 <!-- cambios personales -->
-
 <link href="<?php echo base_url()?>bootstrap_UI/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="<?php echo base_url()?>assets/css/personal.css" rel="stylesheet" type="text/css"/>
 
 <!-- jQuery -->
 <script src="<?php echo base_url()?>node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
@@ -19,6 +19,7 @@
 <!-- jQuery Personal -->
 <script src="<?php echo base_url()?>assets/js/app.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>assets/js/productos.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>assets/js/personal.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>node_modules/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>
 
 <!-- Bootstrap4 files-->

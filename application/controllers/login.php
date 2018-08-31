@@ -15,6 +15,7 @@ class Login extends Controlador_general {
         $this->session->sess_destroy();
         redirect("/login");
     }
+<<<<<<< HEAD
     function log_in(){
         $data = $this->input->post("datos_api");
         $arraydata = array(
@@ -28,6 +29,22 @@ class Login extends Controlador_general {
         redirect("/productos");
     }
     public function prueba(){
+=======
+    function login_success(){
+        $datos = $this->input->post("datos");
+        $arraydata = array(
+            'id_inmmo'  => $datos["id_inmmo"],
+            'nombre'  => $datos["nombre"],
+            'correo'     =>  $datos["correo"],
+            'telefono' =>  $datos["telefono"],
+            'foto' =>  $datos["foto"],
+            'fecha_registrado' =>  $datos["fecha_registrado"],
+        );
+        $respuesta = $this->session->set_userdata("session_datos",$arraydata);
+        echo json_encode($respuesta);
+    }
+    public function api_immo(){
+>>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
         header('Content-Type: application/json');
 
         $correo = $this->input->post('correo');
