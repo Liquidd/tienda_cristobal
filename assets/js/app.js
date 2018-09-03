@@ -170,9 +170,9 @@ $(document).ready(function(){
         });
     });
     $(".detalle_subcategoria").on("click", function(){
-        var id_categoria = $(this).attr('id');
-        console.log(id);   
-        $(".detalle_subcategoria").attr('onClick','buscar_categoria('+id_categoria+')');
+        var id_subcategoria = $(this).attr('data-id');
+        console.log(id_subcategoria);   
+        window.location=base_url+"productos/categorias?id_subcategoria="+id_subcategoria;
     });
     
 });

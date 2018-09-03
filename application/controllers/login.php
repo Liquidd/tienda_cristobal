@@ -8,7 +8,6 @@ class Login extends CI_Controller {
     } 
     function index(){
         $this->load->view('vistas/login');
-
     }
     function logout(){
         $this->session->sess_destroy();
