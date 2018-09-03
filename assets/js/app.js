@@ -23,7 +23,7 @@ $(document).ready(function(){
     });
 
     // carga historial
-    $("#historial").click(function(){
+    $("#v-pills-messages-tab").click(function(){
         $('#table_historial tbody').html(' ');
         $.post(base_url+'productos/historial_usuario',{},function(respuesta){
         console.log(respuesta);
@@ -42,7 +42,7 @@ $(document).ready(function(){
         });
     });
     // carga todos los productos en una tabla
-    $("#alta").click(function(){
+    $("#v-pills-settings-tab").click(function(){
         $.post(base_url+'productos/lista_productos', function(respuesta){
         console.log(respuesta);
         var datos = JSON.parse(respuesta);
@@ -151,12 +151,13 @@ $(document).ready(function(){
     });
 
     $(".vista_rapida").on("click", function(){
-        var id = $(this).attr('id');
+        var id = $(this).attr('data-id');
         console.log(id);
         $.post(base_url+"productos/detalles_productos",{
 			id_producto : id
 		},function(respuesta){
             let datos = JSON.parse(respuesta);
+            console.log(datos);
             $("#modelo_card").text(datos.modelo);
             $("#precio_card").text("$"+datos.precio);
             $("#marca_card").text(datos.marca);

@@ -172,7 +172,7 @@ class M_productos extends CI_Model{
 	function productos_principales($id_categoria = null,$limite = null){
 		if ($id_categoria != null) {
 
-			$this->db->select('productos.modelo as modelo,productos.precio AS precio,productos.id_producto AS id_producto, Sum(1) AS veces_comprado,productos.img AS img');
+			$this->db->select('productos.modelo as modelo,productos.id_producto AS id_producto, Sum(1) AS veces_comprado,productos.img AS img');
 			$this->db->from('productos');
 			$this->db->join('historial','historial ON historial.id_producto = productos.id_producto','INNER');
 			$this->db->where('cantidad_existente >',0);
@@ -188,7 +188,7 @@ class M_productos extends CI_Model{
 			return FALSE;
 		}
 		else if($id_categoria != null && $limite != null){
-			$this->db->select('productos.modelo as modelo,productos.precio AS precio,productos.id_producto AS id_producto, Sum(1) AS veces_comprado,productos.img AS img');
+			$this->db->select('productos.modelo as modelo,productos.id_producto AS id_producto, Sum(1) AS veces_comprado,productos.img AS img');
 			$this->db->from('productos');
 			$this->db->join('historial','historial ON historial.id_producto = productos.id_producto','INNER');
 			$this->db->where('cantidad_existente >',0);
@@ -212,7 +212,6 @@ class M_productos extends CI_Model{
 			$this->db->where('estado',1);
 			$this->db->group_by('productos.id_producto');
 			$this->db->order_by('veces_comprado','DESC');
-			$this->db->limit(12);
 			$query=$this->db->get();
 			if ($query->num_rows() > 0){
 				return $query->result_array();

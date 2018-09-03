@@ -16,9 +16,9 @@
 							<div class="input-group w-100">
 								<input type="text" class="form-control" style="width:50%;" id="nombre_buscar" placeholder="Ingresa el Nombre a Buscar">
 								<div class="input-group-append">
-								<button type="button" class="btn btn-primary" type="submit"  onClick="buscar_producto()">
-									<i class="fa fa-search"></i> Buscarr
-								</button>
+									<button type="button" class="btn btn-primary" type="submit"  onClick="buscar_producto()">
+										<i class="fa fa-search"></i> Buscar
+									</button>
 								</div>
 							</div>
 						</form> <!-- search-wrap .end// -->

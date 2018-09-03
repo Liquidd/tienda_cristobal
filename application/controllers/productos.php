@@ -40,8 +40,9 @@ class Productos extends Controlador_general {
         $lista_ofertas = $this->m_productos->productos_promocion();
         $lista_principal = $this->m_productos->productos_principales();
         $lista_principal_1 = $this->m_productos->productos_principales(6);
-        $lista_principal_2 = $this->m_productos->productos_principales(2);
-        $lista_principal_3 = $this->m_productos->productos_principales(3,4);
+        $lista_principal_2 = $this->m_productos->productos_principales(3);
+        $lista_principal_3 = $this->m_productos->productos_principales(8,4);
+
 
         $array_promociones = array();
         $array_categorias = array();
@@ -83,10 +84,11 @@ class Productos extends Controlador_general {
             foreach ($lista_principal_3 as $key => $value) {
                 
                 $array_categoria_3[$key]["id_producto"] = $value['id_producto'];
+                $array_categoria_3[$key]["modelo"] = $value['modelo'];
                 $array_categoria_3[$key]["img"] = $value['img'];  
             }
 
-        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,"electronicos"=>$array_categoria_1,"muebe_hogar"=>$array_categoria_2,"multimedia"=>$array_categoria_3));
+        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,"electronicos"=>$array_categoria_1,"principal_mh"=>$array_categoria_2,"principal_literatura"=>$array_categoria_3));
 
     }
     public function usuario_cuenta(){

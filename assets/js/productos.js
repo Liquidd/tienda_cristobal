@@ -122,7 +122,7 @@ function actualizar_producto(_id){
             foto : file.name
         },function(respuesta){
             console.log(respuesta);
-            swal({title: "Producto Activado",icon: "success",}).then((value) => {
+            swal({title: "Producto Actualizado",icon: "success",}).then((value) => {
                 if(value)location.reload();
             });
         });
@@ -147,7 +147,7 @@ function activar_producto(_id){
     },function(respuesta){
         let datos = JSON.parse(respuesta);
         console.log(datos);
-        swal({title: "Su Pago ha Sido Confirmado",icon: "success",}).then((value) => {
+        swal({title: "Producto Activado",icon: "success",}).then((value) => {
             if(value)location.reload();
         });
     });

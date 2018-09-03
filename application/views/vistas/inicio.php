@@ -6,58 +6,31 @@
 <section class="section-content padding-y-sm bg">
     <div class="container">
         <header class="section-heading heading-line">
-            <h4 class="title-section bg">Categorias Populares.</h4>
+            <h4 class="title-section bg">Las Categorias Destacadas.</h4>
         </header>
         <div class="card">
             <div class="row no-gutters">
-                <div class="col-md-2" style="margin-right:25px;">
+                <div class="col-md-3" style="margin-right:25px;">
                     <article href="#" class="card-banner h-100">
                         <div class="card-body zoom-wrap">
-                            <h5 class="title">Lo mas vendido en Multimedia</h5>
+                            <h5 class="title">Lo mas vendido en eBooks y Literatura</h5>
                             <hr>
-                            <div class="card border-0">
-                                <figure class="itemside">
-                                    <img class="img-sm zoom-in" height="90" src="<?php echo base_url()?>bootstrap_UI/images/items/netflix.jpg">
-                                    <figcaption class="card-body">
-                                        <h6 class="title">Netflix Mensualidad </h6>
-                                        <a href="#">Detalles</a>
-                                    </figcaption>
-                                </figure>
-                            </div> <!-- card.// -->
-                            <hr>
-                            <div class="card border-0">
-                                <figure class="itemside">
-                                    <img class="img-sm zoom-in" height="90" src="<?php echo base_url()?>bootstrap_UI/images/items/amazon1.jpg">
-                                    <figcaption class="card-body">
-                                        <h6 class="title">Amazon Prime</h6>
-                                        <a id="2" class="vista_rapida">Detalles</a>
-                                    </figcaption>
-                                </figure>
-                            </div> <!-- card.// -->
-                            <hr>
-                            <div class="card border-0">
-                                <figure class="itemside">
-                                    <img class="img-sm zoom-in" height="90" src="<?php echo base_url()?>bootstrap_UI/images/items/headphone.jpg">
-                                    <figcaption class="card-body">
-                                        <h6 class="title">BOSS Headphone</h6>
-                                        <a href="#">Detalles</a>
-                                    </figcaption>
-                                </figure>
-                            </div> <!-- card.// -->
-                            <hr>
-                            <div class="card border-0">
-                                <figure class="itemside">
-                                    <img class="img-sm zoom-in" height="90" src="<?php echo base_url()?>bootstrap_UI/images/items/goPRO.jpg">
-                                    <figcaption class="card-body">
-                                        <h6 class="title">Go PRO</h6>
-                                        <a href="#">Detalles</a>
-                                    </figcaption>
-                                </figure>
-                            </div> <!-- card.// -->
+                            <?php foreach($principal_literatura as $value){?>
+                                <div class="card border-0">
+                                    <figure class="itemside">
+                                        <img class="img-sm zoom-in" height="90" src="<?php echo base_url()?><?php echo $value['img'];?>">
+                                        <figcaption class="card-body">
+                                            <h6 class="title"><?php echo $value['modelo'];?></h6>
+                                            <a data-id="<?php echo $value['id_producto'];?>" class="vista_rapida">Detalles</a>
+                                        </figcaption>
+                                    </figure>
+                                </div> <!-- card.// -->
+                                <hr>
+                            <?php }?>                                                       
                         </div>
                     </article>
                 </div> <!-- col.// -->
-                <div class="col-md-9"> <!-- agregarlo al personal.css -->
+                <div class="col-md-8"> <!-- agregarlo al personal.css -->
                     <div class="row">
                         <div class="col-12 col-md-12">
                             <header class="section-heading heading-line">
@@ -69,7 +42,7 @@
                                         <figure class="card card-product">
                                             <div class="img-wrap"> 
                                                 <img class="zoom-in" src="<?php echo base_url()?><?php echo $value['img'];?>">
-                                                <a class="btn-overlay vista_rapida" id='<?php echo $value['id_producto'];?>' ><i class="fa fa-search-plus"></i>Vista Rapida</a>
+                                                <a class="btn-overlay vista_rapida" data-id='<?php echo $value['id_producto'];?>' ><i class="fa fa-search-plus"></i>Vista Rapida</a>
                                             </div>
                                         </figure> <!-- card // -->
                                     </div>
@@ -82,55 +55,17 @@
                             <header class="section-heading heading-line">
                                 <h6 class="title-section bg text-uppercase">Los más vendidos en Muebles y Hogar</h6>
                             </header>
-                            <div class="slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="img-bg zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/sala_v1.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/sala_v1.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/sala_v2.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/sala_v2.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img  class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/sala_v3.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/sala_v3.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/caffe1.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/caffe1.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/caffe2.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/caffe2.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
-                                <div class="item-slide p-2">
-                                    <figure class="card card-product">
-                                        <div class="img-wrap"> 
-                                            <img class="zoom-in" src="<?php echo base_url()?>bootstrap_UI/images/items/caffe3.jpg">
-                                            <a class="btn-overlay" href="<?php echo base_url()?>bootstrap_UI/images/items/caffe3.jpg"><i class="fa fa-search-plus"></i>Vista Rapida</a>
-                                        </div>
-                                    </figure> <!-- card // -->
-                                </div>
+                            <div class="slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}' data-dots="true" data-nav="true">
+                                <?php foreach($principal_mh as $value){?>
+                                    <div class="item-slide p-2">
+                                        <figure class="card card-product">
+                                            <div class="img-wrap"> 
+                                                <img class="zoom-in" src="<?php echo base_url()?><?php echo $value['img'];?>">
+                                                <a class="btn-overlay vista_rapida" data-id='<?php echo $value['id_producto'];?>' ><i class="fa fa-search-plus"></i>Vista Rapida</a>
+                                            </div>
+                                        </figure> <!-- card // -->
+                                    </div>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -189,30 +124,30 @@
         <div class="row-sm">
             <?php foreach($principal as $value){?>
                 <div class="col-md-3">
-                <figure class="card card-product">
-                    <div class="img-wrap"><img src="<?php echo base_url()?><?php echo $value['img'];?>"></div>
-                    <figcaption class="info-wrap">
-                        <h5 class="card-title"><?php echo $value['modelo'];?></h4>
-                        <div class="rating-wrap">
-                            <ul class="rating-stars">
-                                <li style="width:80%" class="stars-active"> 
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
-                                </li>
-                            </ul>
-                            <div class="label-rating">132 reviews</div>
-                            <div class="label-rating">154 orders </div>
-                        </div> <!-- rating-wrap.// -->
-                    </figcaption>
-                    <div class="bottom-wrap">
-                        <a  class="detalles btn btn-light btn-sm float-right" id="<?php echo $value['id_producto'];?>" >DETALLES </a>
-                        <div class="price-wrap h5">
-                            <span class="price-new">$<?php echo $value['precio'];?></span> <del class="price-old">$1980</del>
-                        </div> <!-- price-wrap.// -->
-                    </div> <!-- bottom-wrap.// -->
-                </figure>
+                    <figure class="card card-product">
+                        <div class="img-wrap"><img src="<?php echo base_url()?><?php echo $value['img'];?>"></div>
+                        <figcaption class="info-wrap">
+                            <h5 class="card-title"><?php echo $value['modelo'];?></h4>
+                            <div class="rating-wrap">
+                                <ul class="rating-stars">
+                                    <li style="width:80%" class="stars-active">
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+                                    </li>
+                                </ul>
+                                <div class="label-rating">132 reviews</div>
+                                <div class="label-rating">154 orders </div>
+                            </div> <!-- rating-wrap.// -->
+                        </figcaption>
+                        <div class="bottom-wrap">
+                            <a  class="detalles btn btn-light btn-sm float-right" id="<?php echo $value['id_producto'];?>" >DETALLES </a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">$<?php echo $value['precio'];?></span> <del class="price-old">$1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- bottom-wrap.// -->
+                    </figure>
                 </div> <!-- col // -->
             <?php }?>
         </div> <!-- row.// -->

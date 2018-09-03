@@ -2,13 +2,13 @@
  
 class Controlador_general extends CI_Controller {
 
-    protected $id_user = 1;
+    protected $id_user = 78;
     protected $name_user = "";
     protected $foto_user = "";
     protected $telefono = "";
     protected $email_user = "";
     protected $puntos = 6000;
-    protected $estado_session = false;
+    private $estado_session = false;
     
     public function __construct(){
         parent::__construct();
@@ -16,13 +16,13 @@ class Controlador_general extends CI_Controller {
             $session_datos = $this->session->userdata('session_datos');
             $this->estado_session = $session_datos["estado_session"];
             if (!$this->estado_session) {
-                redirect('login/index');
+                redirect('/login');
             }
-            $this->id_user = $session_datos["id_inmmo"];
+            
             $this->name_user = $session_datos["nombre"];
             $this->email_user = $session_datos["correo"];
             $this->telefono = $session_datos["telefono"];
-            $this->foto_user = $session_datos["foto"];
+            $this->fecha_registrado = $session_datos["fecha_registrado"];
 
     }
     public function view($view, $params = null)
