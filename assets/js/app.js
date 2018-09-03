@@ -1,12 +1,6 @@
 $(document).ready(function(){
     // muestra detalles de producto seleccionado
-<<<<<<< HEAD
-    console.log("AA");
-
-
-=======
     console.log("AAA");
->>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
     $(".detalles").click(function(){
         var id = $(this).attr('id');
         console.log(id);
@@ -175,9 +169,9 @@ $(document).ready(function(){
         });
     });
     $(".detalle_subcategoria").on("click", function(){
-        var id_categoria = $(this).attr('id');
-        console.log(id);   
-        $(".detalle_subcategoria").attr('onClick','buscar_categoria('+id_categoria+')');
+        var id_subcategoria = $(this).attr('data-id');
+        console.log(id_subcategoria);   
+        window.location=base_url+"productos/categorias?id_subcategoria="+id_subcategoria;
     });
     
 });

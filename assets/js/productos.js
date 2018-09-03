@@ -163,7 +163,7 @@ function carrito_contenido() {
 
 function buscar_categoria(_id_categoria) {
     console.log(_id_categoria);
-    window.location=base_url+"productos/categorias?id_categoria="+_id_categoria;
+    window.location=base_url+"productos/detalles_categoria?id_categoria="+_id_categoria;
 
 }
 

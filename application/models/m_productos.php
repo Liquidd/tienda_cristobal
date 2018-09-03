@@ -86,21 +86,32 @@ class M_productos extends CI_Model{
 		}else
 		return FALSE;
 	}
-	function filtro_categorias($id_categoria){
+	function filtro_categorias($id_subcategoria){
+
 		$this->db->distinct();
 		$this->db->select('productos.id_producto AS id_producto,productos.modelo AS modelo,productos.marca AS marca,categorias.nombre AS categoria,subcategoria.nombre AS subcategoria, productos.descripcion AS descripcion,productos.precio AS precio,productos.img AS img');
 		$this->db->from('productos');
 		$this->db->join('categorias','categorias.id_categoria = productos.id_categoria','INNER');
 		$this->db->join('subcategoria','subcategoria.id_subcategoria = productos.id_subcategoria','INNER');
-		$this->db->where('categorias.id_categoria',$id_categoria);
+		$this->db->where('subcategoria.id_subcategoria',$id_subcategoria);
 
 		$query=$this->db->get();
 		if ($query->num_rows() > 0){
 			return $query->result_array();
 		}else
-		return FALSE;		
-	}
+		return FALSE;
 		
+	}
+	function filtro_subcategorias($id_categoria){
+			$this->db->select('id_subcategoria,nombre,foto_subcategoria');
+			$this->db->from('subcategoria');
+			$this->db->where('id_categoria',$id_categoria);
+			$query=$this->db->get();
+			if ($query->num_rows() > 0){
+				return $query->result_array();
+			}else
+		return FALSE;
+	}
 	function historial_usuario($id_cliente){
         $this->db->select('productos.modelo as modelo,productos.marca as marca,productos.descripcion as descripcion,productos.precio as precio,historial.cantidad_comprada as cantidad_comprada,historial.total_pagado as pago_total,historial.id_cliente as id_client');
 		$this->db->from('historial');

@@ -23,11 +23,7 @@
         <form>
             <input type="text" id="correo" class="fadeIn second" name="login" placeholder="Nombre de Correo">
             <input type="text" id="clave" class="fadeIn third" name="login" placeholder="Contraseña">
-<<<<<<< HEAD
-            <button type="buttom" onClick="prueba_login()" >ACEPTAR</button>
-=======
             <button type="button" onClick="prueba_login()" >ACEPTAR</button>
->>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
         </form>
         <!-- Remind Passowrd -->
         <div id="formFooter">
@@ -37,14 +33,6 @@
 </div>
 </body>
 <script>
-<<<<<<< HEAD
-function prueba_login() {
-    var base_url = '<?php echo base_url()?>';
-
-    $.post(base_url+"productos/prueba",{
-            correo : $("#correo").val(),
-            clave : $("#clave").val(),
-=======
 var base_url = '<?php echo base_url()?>';
 
 function prueba_login() {
@@ -53,26 +41,12 @@ function prueba_login() {
     $.post(base_url+"login/api_immo",{
             correo : $("#correo").val(),
             clave : $("#clave").val()
->>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
         },function(respuesta){
         let datos = JSON.parse(respuesta);
         console.log(respuesta);
         console.log(datos);
 
         console.log("-------------------------------------------------------");
-<<<<<<< HEAD
-        if(!datos.error){
-            swal(datos.error,"","warning");
-        }
-        else{
-            console.log("Bienvenido");
-            $.each(datos, function(i, val){
-                //window.location=base_url+"login/log_in?datos_api="+datos;
-                console.log(datos[i].nombre);
-            });
-        }
-        alert(datos);
-=======
         if(datos.error){
             swal({title: datos.error,icon:"warning",button: "Aceptar",});
         }
@@ -97,7 +71,6 @@ function login_success(_session_datos) {
         datos : _session_datos
     },function(respuesta){
         window.location=base_url+"productos/index";
->>>>>>> 3a981065431889eba34b74c5b22933f786dadd1b
     });
 }
 </script>

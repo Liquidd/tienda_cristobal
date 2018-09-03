@@ -25,7 +25,7 @@ class Controlador_general extends CI_Controller {
         $params["nombre"] = $this->session->userdata("nombre");
         $params["puntos"] = $this->puntos;
         $data['content'] = $this->load->view('vistas/'.$view, $params, true);
-        if ($view == "login") {
+        if ($view == "login" ) {
             $this->load->view('layout/main_layout',$data, false);            
         }
         else {
