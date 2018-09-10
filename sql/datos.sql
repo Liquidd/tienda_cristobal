@@ -91,3 +91,12 @@ declare id_producto int;
 	commit;
 END$$
 DELIMITER ;
+
+------------------------------------------------------------------------------------------------------------------------
+SELECT productos.modelo,categorias.nombre,subcategoria.nombre,subcategoria_detalles.detalle,subcategoria_detalles.nombre 
+FROM detalle_producto 
+INNER JOIN categorias ON categorias.id_categoria = detalle_producto.id_categoria 
+INNER JOIN subcategoria ON subcategoria.id_subcategoria = detalle_producto.id_subcategoria 
+INNER JOIN subcategoria_detalles ON subcategoria_detalles.id_sb_detalle = detalle_producto.id_sb_subcategoria 
+INNER JOIN productos ON productos.id_producto = detalle_producto.id_producto 
+WHERE detalle_producto.id_producto = 8

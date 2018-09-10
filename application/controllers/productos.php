@@ -6,10 +6,10 @@ class Productos extends Controlador_general {
         parent::__construct();
         $this->load->model("m_productos",'',TRUE);
         $this->load->library('cart');
-
-
-
+        
+        
     }
+    // lista de detalles de productos
     public function detalles_productos(){
 		$id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->detalle_producto($id_producto);
@@ -34,7 +34,7 @@ class Productos extends Controlador_general {
         echo json_encode($productos_promocion);
 
     }
-    //------------------------------------------------------------------
+    // VISTA INDEX ------------------------------------------------------------------
     
     function index(){
         $lista_categoria = $this->m_productos->lista_categorias();
@@ -92,6 +92,8 @@ class Productos extends Controlador_general {
         $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,"electronicos"=>$array_categoria_1,"principal_mh"=>$array_categoria_2,"principal_literatura"=>$array_categoria_3));
 
     }
+
+    // CONTROLES DE FUNCIONAMIENTO DE PAGINA -----------------------
     public function usuario_cuenta(){
         $lista_categoria = $this->m_productos->lista_categorias();
         $lista_ofertas = $this->m_productos->productos_promocion();
@@ -113,6 +115,7 @@ class Productos extends Controlador_general {
             }
         $this->view('cuenta',array("categoria" =>$array_categorias,"promocion" =>$array_promociones));        
     }
+
     public function filtro_bucador(){
 
         $filtro = $this->input->get("filtro");
@@ -296,7 +299,7 @@ class Productos extends Controlador_general {
         
     }
 
-    //-------------------------------------------
+    // CARRITO DE COMPRAS-------------------------------------------
     public function agregar_carrito(){
         $datos= $this->input->post('datos');
         $data = array(
@@ -330,14 +333,16 @@ class Productos extends Controlador_general {
     }
     public function limpiar_carrito(){
         $this->cart->destroy();
-    }
 
+    }
+    // de momento solo esta imprimiendo contenido hasta tener el api de ga
     public function confirmar_pago(){
         $carrito_productos = $this->cart->contents();
         echo json_encode($carrito_productos);
         
     }
-    
+
+    // vista
     public function carrito_ventas(){
         $lista_carrito = $this->cart->contents();
         $lista_ofertas = $this->m_productos->productos_promocion();
@@ -370,8 +375,7 @@ class Productos extends Controlador_general {
         $this->view('carrito',array("promocion" =>$array_promociones,"carrito_productos" =>$array_productos,"categoria" =>$array_categorias));
     }
 
-
-    //--------------------------------------------
+    // CRUD PRODUCTOS --------------------------------------------
     public function desactivar_producto(){
         $id_producto = $this->input->post("id_producto");
         $respuesta = $this->m_productos->desactivar_producto($id_producto);
@@ -399,6 +403,12 @@ class Productos extends Controlador_general {
 		$id_cliente = $this->id_user;
         $respuesta = $this->m_productos->historial_usuario($id_cliente);
         echo json_encode($respuesta);
+    }
+    // prueba email
+    public function envio_confirmacion(){
+        $mensaje = $this->input->post("mensaje");
+        $respuesta = $this->correo_confirmacion($mensaje);
+        echo $respuesta;
     }
     function prueba(){
         header('Content-Type: application/json');

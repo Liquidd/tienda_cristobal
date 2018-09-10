@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<title><?= $titulo ?></title>
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="max-age=604800" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,52 +55,52 @@
     var cont = 0;
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
-.detalles:hover{
-    font-weight: bold;
-}
-body{
-    font-family: 'Roboto', sans-serif;
-}
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+    .detalles:hover{
+        font-weight: bold;
+    }
+    body{
+        font-family: 'Roboto', sans-serif;
+    }
 
-.content-page{
-    margin-top: 50px;
-    margin-bottom: 150px;
-    border-top: 1px solid #646363;
-    border-bottom: 1px solid #646363;
-}
-.footer-principal{
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-}
-.pago_fila{
-    margin-bottom: 250px;
-    padding-bottom: 250px;
-}
-.btn-light{
-    border-color:   black;
-    font-weight: bold;
-}
-.blog .carousel-indicators {
+    .content-page{
+        margin-top: 50px;
+        margin-bottom: 150px;
+        border-top: 1px solid #646363;
+        border-bottom: 1px solid #646363;
+    }
+    .footer-principal{
+    position: fixed;
     left: 0;
-    top: auto;
-    bottom: -40px;
+    bottom: 0;
+    width: 100%;
+    }
+    .pago_fila{
+        margin-bottom: 250px;
+        padding-bottom: 250px;
+    }
+    .btn-light{
+        border-color:   black;
+        font-weight: bold;
+    }
+    .blog .carousel-indicators {
+        left: 0;
+        top: auto;
+        bottom: -40px;
 
-}
+    }
 
-/* The colour of the indicators */
-.blog .carousel-indicators li {
-    background: #a3a3a3;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-}
+    /* The colour of the indicators */
+    .blog .carousel-indicators li {
+        background: #a3a3a3;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+    }
 
-.blog .carousel-indicators .active {
-    background: #707070;
-}
+    .blog .carousel-indicators .active {
+        background: #707070;
+    }
 </style>
 </head>
 <body>

@@ -70,7 +70,15 @@ function login_success(_session_datos) {
     $.post(base_url+"login/login_success",{
         datos : _session_datos
     },function(respuesta){
-        window.location=base_url+"productos/index";
+        console.log("usuario logeado");
+        window.location=base_url+"productos";
+    });
+}
+function prueba_email() {
+    $.post(base_url+"productos/envio_confirmacion",{
+			mensaje : "hola"
+		},function(data_email){
+        console.log(data_email);
     });
 }
 </script>

@@ -4,10 +4,12 @@ class Login extends CI_Controller {
         parent::__construct();
         $this->load->model("m_productos",'',TRUE);
         $this->load->library('session');
+        $this->load->library("email");
 
     } 
     function index(){
         $this->load->view('vistas/login');
+        
     }
     function logout(){
         $this->session->sess_destroy();

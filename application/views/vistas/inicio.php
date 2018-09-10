@@ -1,6 +1,5 @@
 
-<!-- ========================= SECCION RECOMENDADOS ========================= -->
-<title> GA | Inicio  </title>
+<!-- ========================= SECCION INICIO ========================= -->
 
 <!--inicio de contenido-->
 <section class="section-content padding-y-sm bg">

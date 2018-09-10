@@ -140,6 +140,7 @@ function desactivar_producto(_id) {
         });
     });
 }
+var elmnt = document.getElementById("v-pills-settings-tab");
 function activar_producto(_id){
     console.log(_id);
     $.post(base_url+"productos/activar_producto",{
@@ -148,8 +149,8 @@ function activar_producto(_id){
         let datos = JSON.parse(respuesta);
         console.log(datos);
         swal({title: "Producto Activado",icon: "success",}).then((value) => {
-            if(value)location.reload();
-        });
+            elmnt.scrollIntoView();
+        });                
     });
 }
 

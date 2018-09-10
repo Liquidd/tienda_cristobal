@@ -174,5 +174,4 @@ $(document).ready(function(){
         console.log(id_subcategoria);   
         window.location=base_url+"productos/categorias?id_subcategoria="+id_subcategoria;
     });
-    
 });

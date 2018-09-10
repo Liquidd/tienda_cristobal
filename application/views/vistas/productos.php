@@ -1,4 +1,3 @@
-<title> GA | Categorias </title>
 <section class="section-content bg padding-y">
     <div class="container">
         <div class="row">
