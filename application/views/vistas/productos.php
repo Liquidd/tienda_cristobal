@@ -1,66 +1,7 @@
 <section class="section-content bg padding-y">
     <div class="container">
         <div class="row">
-            <aside class="col-sm-2">
-                <div class="card card-filter">  
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">Precio</h6>
-                        </header>
-                        <div class="card-body">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label>Min</label>
-                                    <input type="number" class="form-control" id="minimo" placeholder="$0">
-                                </div>
-                                <div class="form-group col-md-6 text-right">
-                                    <label>Max</label>
-                                    <input type="number" class="form-control" id="maximo" placeholder="$1,0000">
-                                </div>
-                            </div>
-                        </div> <!-- card-body.// -->
-                    </article> <!-- card-group-item.// -->
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">Marcas </h6>
-                        </header>
-                            <div class="card-body">
-                                <?php foreach($marca as $value){?>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="Check2">
-                                        <label class="custom-control-label" for=""><?php echo $value['marca'];?></label>
-                                    </div> <!-- form-check.// -->
-                                <?php }?>
-                            </div> <!-- card-body.// -->
-                    </article> <!-- card-group-item.// -->
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">Categorias </h6>
-                        </header>
-                        <div class="card-body">
-                            <?php foreach($categoria as $value){?>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="<?php echo $value['id_categoria'];?>">
-                                    <label class="custom-control-label" for="Check1"><?php echo $value['nombre'];?></label>
-                                </div> <!-- form-check.// -->
-                            <?php }?>
-                        </div> <!-- card-body.// -->
-                    </article> <!-- card-group-item.// -->
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">Articulos Relacionados </h6>
-                        </header>
-                            <div class="card-body">
-                                <?php foreach($subcategoria as $value){?>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="<?php echo $value['id_subcategoria'];?>">
-                                        <label class="custom-control-label" for="Check1"><?php echo $value['nombre'];?></label>
-                                    </div> <!-- form-check.// -->
-                                <?php }?>
-                            </div> <!-- card-body.// -->
-                    </article> <!-- card-group-item.// -->
-                </div> <!-- card.// -->
-            </aside> <!-- col.// -->
+            
             <main class="col-md-10">
                 <?php foreach($productos_categoria as $value){?>
                     <article class="card card-product">

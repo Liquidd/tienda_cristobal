@@ -2,7 +2,6 @@
  
 class Controlador_general extends CI_Controller {
 
-    protected $id_user = 78;
     protected $name_user = "";
     protected $foto_user = "";
     protected $telefono = "";
@@ -13,51 +12,10 @@ class Controlador_general extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->library('session');
-
-            $session_datos = $this->session->userdata('session_datos');
-            $this->estado_session = $session_datos["estado_login"];
-            if ($this->estado_session != false) {
-                redirect('/login');
-            }
-            
-            $this->name_user = $session_datos["nombre"];
-            $this->email_user = $session_datos["correo"];
-            $this->telefono = $session_datos["telefono"];
-            $this->fecha_registrado = $session_datos["fecha_registrado"];
+        $this->name_user = "cristobal";
 
     }
-    public function correo_confirmacion($mensaje){
-        $this->load->library("email");
 
-            //configuracion para gmail
-            $configGmail = array(
-                'protocol' => 'smtp',
-                'smtp_host' => 'smtp.gmail.com',
-                'smtp_crypto' => 'ssl',
-                'smtp_port' => 465,
-                'smtp_user' => 'tic15311141@gmail.com',
-                'smtp_pass' => 'MLG6093SRgg+1',
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
-                );
-
-            //cargamos la configuración para enviar con gmail
-            $this->email->initialize($configGmail);
-
-            $this->email->from("tic15311141@gmail.com");
-            $this->email->to("desantiagolab@gmail.com");
-            $this->email->subject("test_email");
-            $this->email->message("prueba codeigniter");
-  
-       if($this->email->send()){
-         return "your email was sent";
-       }
-       else {
-         return show_error($this->email->print_debugger());
-       }
-     
-    }
     public function view($view, $params = null){
         /**
          * @view parametro por donde llega la vista que se desea cargar dentro del layout
@@ -67,7 +25,7 @@ class Controlador_general extends CI_Controller {
          */
 
         $data = array();
-        $params["nombre"] = $this->session->userdata("nombre");
+        $params["nombre"] = $this->name_user;
         $params["puntos"] = $this->puntos;
         $params["titulo"] = "GA | ".$view;
         $data['content'] = $this->load->view('vistas/'.$view, $params, true);

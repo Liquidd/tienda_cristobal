@@ -42,17 +42,18 @@ class Productos extends Controlador_general {
         $lista_principal = $this->m_productos->productos_principales();
         $lista_principal_1 = $this->m_productos->productos_principales(6);
         $lista_principal_2 = $this->m_productos->productos_principales(3);
-        $lista_principal_3 = $this->m_productos->productos_principales(8,4);
 
-
-        $array_promociones = array();
         $array_categorias = array();
-
-        $array_categoria_1 = array();
-        $array_categoria_2 = array();
-        $array_categoria_3 = array();
+        
+        $array_promociones = array();
 
         $array_productos_principales = array();
+
+        $array_categoria_1 = array();
+
+        $array_categoria_2 = array();
+
+
         if($lista_principal !==FALSE)
             foreach ($lista_principal as $key => $value) {
                 
@@ -82,40 +83,12 @@ class Productos extends Controlador_general {
                 $array_categoria_2[$key]["id_producto"] = $value['id_producto'];
                 $array_categoria_2[$key]["img"] = $value['img'];  
             }
-            foreach ($lista_principal_3 as $key => $value) {
-                
-                $array_categoria_3[$key]["id_producto"] = $value['id_producto'];
-                $array_categoria_3[$key]["modelo"] = $value['modelo'];
-                $array_categoria_3[$key]["img"] = $value['img'];  
-            }
 
-        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,"electronicos"=>$array_categoria_1,"principal_mh"=>$array_categoria_2,"principal_literatura"=>$array_categoria_3));
+        $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,"electronicos"=>$array_categoria_1,"principal_mh"=>$array_categoria_2));
 
     }
 
     // CONTROLES DE FUNCIONAMIENTO DE PAGINA -----------------------
-    public function usuario_cuenta(){
-        $lista_categoria = $this->m_productos->lista_categorias();
-        $lista_ofertas = $this->m_productos->productos_promocion();
-
-        $array_promociones = array();
-        $array_categorias = array();
-        if($lista_ofertas !==FALSE)
-            foreach ($lista_ofertas as $key => $value) {
-                $array_promociones[$key]['id_producto'] = $value['id_producto'];
-                $array_promociones[$key]['modelo'] = $value['modelo'];
-                $array_promociones[$key]['descuento'] = $value['descuento'];
-                $array_promociones[$key]['img'] = $value['img'];
-
-            }
-            foreach ($lista_categoria as $key => $value) {
-                $array_categorias[$key]["id_categoria"] = $value['id_categoria']; 
-                $array_categorias[$key]["nombre"] = $value['nombre']; 
-
-            }
-        $this->view('cuenta',array("categoria" =>$array_categorias,"promocion" =>$array_promociones));        
-    }
-
     public function filtro_bucador(){
 
         $filtro = $this->input->get("filtro");
@@ -217,6 +190,7 @@ class Productos extends Controlador_general {
         }
         $this->view('productos',array("promocion" =>$array_promociones,"productos_categoria" => $array_productos,"marca" => $array_marcas,"categoria" => $array_categorias,"subcategoria" => $array_subcategoria));
     }
+
     public function detalles_categoria(){
         $id_categoria = $this->input->get("id_categoria");
         $lista_productos = $this->m_productos->filtro_subcategorias($id_categoria);
@@ -335,12 +309,6 @@ class Productos extends Controlador_general {
         $this->cart->destroy();
 
     }
-    // de momento solo esta imprimiendo contenido hasta tener el api de ga
-    public function confirmar_pago(){
-        $carrito_productos = $this->cart->contents();
-        echo json_encode($carrito_productos);
-        
-    }
 
     // vista
     public function carrito_ventas(){
@@ -375,65 +343,4 @@ class Productos extends Controlador_general {
         $this->view('carrito',array("promocion" =>$array_promociones,"carrito_productos" =>$array_productos,"categoria" =>$array_categorias));
     }
 
-    // CRUD PRODUCTOS --------------------------------------------
-    public function desactivar_producto(){
-        $id_producto = $this->input->post("id_producto");
-        $respuesta = $this->m_productos->desactivar_producto($id_producto);
-        echo $respuesta;
-    }
-    public function activar_producto(){
-        $id_producto = $this->input->post("id_producto");
-        $respuesta = $this->m_productos->activar_producto($id_producto);
-        echo $respuesta;
-    }
-    public function actualizar_producto(){
-
-        $datos = $this->input->post("datos");
-        $foto = $this->input->post("foto");
-        $id_producto = $this->input->post("id_producto");
-        $respuesta = $this->m_productos->actualizar_producto($id_producto,$datos,$foto);
-        echo $respuesta;
-    }
-    public function nuevo_producto(){
-        $datos = $this->input->post("datos");
-        $respuesta = $this->m_productos->alta_producto($datos["modelo"],$datos["marca"],$datos["categoria"],$datos["subcategoria"],$datos["descripcion"],$datos["precio"],$datos["cantidad"],$datos["foto"],$datos["descuento"]);
-        echo $respuesta;
-    }
-    public function historial_usuario(){
-		$id_cliente = $this->id_user;
-        $respuesta = $this->m_productos->historial_usuario($id_cliente);
-        echo json_encode($respuesta);
-    }
-    // prueba email
-    public function envio_confirmacion(){
-        $mensaje = $this->input->post("mensaje");
-        $respuesta = $this->correo_confirmacion($mensaje);
-        echo $respuesta;
-    }
-    function prueba(){
-        header('Content-Type: application/json');
-
-        $correo = $this->input->post('correo');
-        $clave  = $this->input->post('clave');
-        
-        $datos_enviar = array(
-            'correo' => $correo,
-            'clave' => $clave 
-        );
-        
-        $json = json_encode($datos_enviar);
-        
-        $url = "https://inmo-carloalejandrosalas.c9users.io/login/log_me_reco";
-        
-        $request_headers = array();
-        $request_headers[] = 'Content-Type: application/json';
-        $request_headers[] = 'X-Requested-With: XMLHttpRequest';
-        
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-        echo $response_body = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any)
-
-        curl_close($ch);
-    }
 }

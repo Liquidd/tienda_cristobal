@@ -16,11 +16,6 @@
                                             </a>
                                         </div>
                                     </div> <!-- slider-product.// -->
-                                    <div class="img-small-wrap">
-                                        <div class="item-gallery"> <img src="<?php echo base_url();?>bootstrap_UI/images/items/gtx1.png"></div>
-                                        <div class="item-gallery"> <img src="<?php echo base_url();?>bootstrap_UI/images/items/gtx2.png"></div>
-                                        <div class="item-gallery"> <img src="<?php echo base_url();?>bootstrap_UI/images/items/gtx3.png"></div>
-                                    </div> <!-- slider-nav.// -->
                                 </article> <!-- gallery-wrap .end// -->
                             </aside>
                             <aside class="col-sm-6">
