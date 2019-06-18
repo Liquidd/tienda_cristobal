@@ -29,7 +29,7 @@
 						<small class="title text-muted">Hola <?= $nombre ?></small>
 						<div> 
 							<a> Salir </a> <span class="dark-transp"> | </span>
-							<a> Configuracion </a></div>
+							<a style="text-decoration:none;" href='<?php echo base_url();?>productos/configuracion'>Configuracion</a></div>
 						</div>
 						<a href="<?php echo base_url();?>productos/carrito_ventas" class="widget-header border-left pl-3 ml-3">
 							<div class="icontext">

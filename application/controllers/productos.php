@@ -87,7 +87,37 @@ class Productos extends Controlador_general {
         $this->view('inicio',array("categoria" =>$array_categorias,"promocion" =>$array_promociones,"principal" =>$array_productos_principales,"electronicos"=>$array_categoria_1,"principal_mh"=>$array_categoria_2));
 
     }
+    public function configuracion()
+    {
 
+        $lista_productos = $this->m_productos->lista_productos();
+        $lista_categoria = $this->m_productos->lista_categorias();
+        $lista_ofertas = $this->m_productos->productos_promocion();
+
+        foreach ($lista_productos as $key => $value) {
+            $array_productos[$key]["id_producto"] = $value['id_producto'];
+            $array_productos[$key]["modelo"] = $value['modelo'];
+            $array_productos[$key]["marca"] = $value['marca'];
+            $array_productos[$key]["categoria"] = $value['categoria'];
+            $array_productos[$key]["subcategoria"] = $value['subcategoria'];
+            $array_productos[$key]["precio"] = $value['precio'];
+            $array_productos[$key]["estado"] = $value['estado'];
+
+        }
+        foreach ($lista_categoria as $key => $value) {
+            $array_categorias[$key]["id_categoria"] = $value['id_categoria']; 
+            $array_categorias[$key]["nombre"] = $value['nombre']; 
+
+        }
+        foreach ($lista_ofertas as $key => $value) {
+            $array_promociones[$key]['id_producto'] = $value['id_producto'];
+            $array_promociones[$key]['modelo'] = $value['modelo'];
+            $array_promociones[$key]['descuento'] = $value['descuento'];
+            $array_promociones[$key]['img'] = $value['img'];
+        }
+
+        $this->view('configuracion',array("productos" =>$array_productos,"categoria" =>$array_categorias,"promocion" =>$array_promociones));
+    }
     // CONTROLES DE FUNCIONAMIENTO DE PAGINA -----------------------
     public function filtro_bucador(){
 

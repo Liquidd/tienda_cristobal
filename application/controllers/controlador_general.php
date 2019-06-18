@@ -27,7 +27,7 @@ class Controlador_general extends CI_Controller {
         $data = array();
         $params["nombre"] = $this->name_user;
         $params["puntos"] = $this->puntos;
-        $params["titulo"] = "GA | ".$view;
+        $params["titulo"] = "WichoShop | ".$view;
         $data['content'] = $this->load->view('vistas/'.$view, $params, true);
         if ($view == "login") {
             $this->load->view('layout/main_layout',$data, false);
