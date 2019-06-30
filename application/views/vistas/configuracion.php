@@ -22,12 +22,12 @@
                         <td><?php echo $value['subcategoria'];?></td>
                         <td>
                             <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modal"><i class="fas fa-sync"></i></button>
-                            <?php if ($value["estado"] <= 0) {?>
-                                <button type="button" class="btn btn-outline-danger" value='<?php echo $value['estado'];?>'>
+                            <?php if ($value["estado"] == 0) {?>
+                                <button type="button" class="btn btn-outline-danger btn_eliminar" data-id='<?php echo $value['id_producto'];?>'>
                                     <i class="fas fa-trash"></i>
                                 </button>
                             <?php } else{?>
-                                <button type="button" class="btn btn-outline-success" value='<?php echo $value['estado'];?>'>
+                                <button type="button" class="btn btn-outline-success btn_activar" data-id='<?php echo $value['id_producto'];?>'>
                                     <i class="fas fa-clipboard-check"></i>
                                 </button>
                             <?php }?>
@@ -65,19 +65,25 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-md-6 mb-3">
-                <select class="custom-select" id="categorias">
-                    <option selected>Selecciona Categria</option>
-                    <?php foreach ($categoria as $value) {?>
-                       <option value="<?php echo $value['id_categoria'];?>"><?php echo $value['nombre'];?></option>
-                    <?php }?>
-                </select>
+                <div class="col-md-4 mb-3">
+                    <select class="custom-select" id="categorias">
+                        <option selected>Selecciona Categria</option>
+                        <?php foreach ($categoria as $value) {?>
+                        <option value="<?php echo $value['id_categoria'];?>"><?php echo $value['nombre'];?></option>
+                        <?php }?>
+                    </select>
                 </div>
-                <div class="col-md-6 mb-3">
-                <select class="custom-select" id="subcategorias">
-                    <option selected>Selecciona Subcategoria</option>
-                    
-                </select>
+                <div class="col-md-4 mb-3">
+                    <select class="custom-select" id="subcategorias">
+                        <option selected>Selecciona Subcategoria</option>
+                        
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                        <label class="custom-file-label">Seleccionar Foto</label>
+                    </div>
                 </div>
             </div>
         </form>
@@ -140,6 +146,8 @@
     </div>
   </div>
 </div>
+
+
 <script>
     $(document).ready(function(){
         $("#categorias").change(function(){            
@@ -154,6 +162,31 @@
 
             }
                 $("#subcategorias").html('<option value="0">Seleccione una Subcategoria </option>'+opciones_subcategoria);
+            });
+        });
+        // TODO PENDEJO :v 
+        $(".btn_eliminar").on("click", function(){
+            var id = $(this).attr("data-id");
+            $.post(base_url+"productos/desactivar_producto",{
+                id : id
+            },function(respuesta){
+                let datos = JSON.parse(respuesta);
+                console.log(datos);
+                swal({title: "Producto Eliminado",icon: "error",}).then((value) => {
+                    if(value)location.reload();
+                });
+            });
+        });
+        $(".btn_activar").on("click", function(){
+            var id = $(this).attr("data-id");
+            $.post(base_url+"productos/activar_producto",{
+                id : id
+            },function(respuesta){
+                let datos = JSON.parse(respuesta);
+                console.log(datos);
+                swal({title: "Producto Activado",icon: "success",}).then((value) => {
+                    if(value)location.reload();
+                });
             });
         });
     });

@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Bootstrap-ecommerce by Vosidiy">
 
+
+
 <!-- cambios personales -->
 <link href="<?php echo base_url()?>bootstrap_UI/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="<?php echo base_url()?>assets/css/personal.css" rel="stylesheet" type="text/css"/>

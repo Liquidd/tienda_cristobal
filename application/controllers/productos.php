@@ -303,6 +303,16 @@ class Productos extends Controlador_general {
         
     }
 
+    public function activar_producto(){
+        $id = $this->input->post("id");
+        $respuesta = $this->m_productos->activar_producto($id);
+        echo $respuesta;
+    }
+    public function desactivar_producto(){
+        $id = $this->input->post("id");
+        $respuesta = $this->m_productos->desactivar_producto($id);
+        echo $respuesta;
+    }
     // CARRITO DE COMPRAS-------------------------------------------
     public function agregar_carrito(){
         $datos= $this->input->post('datos');
